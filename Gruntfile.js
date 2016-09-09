@@ -46,7 +46,7 @@ module.exports = function(grunt) {
         }
     },
     usemin: {
-        html: ['index.html'],
+        html: ['static/index.html'],
         options: {
             assetDirs: ["static/js","static/css"],
             blockReplacements: {
