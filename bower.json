@@ -1,7 +1,8 @@
 {
   "name": "angular-diff-match-patch",
   "authors": [
-    "Adam Weiss <cseadam@gmail.com>"
+    "Adam Weiss <cseadam@gmail.com>",
+    "Ari Hershowitz <arihershowitz@gmail.com>"
   ],
   "license": "MIT",
   "version": "0.4.0",
@@ -17,6 +18,12 @@
   "main": "angular-diff-match-patch.js",
   "dependencies": {
     "angular": "^1.*",
-    "google-diff-match-patch": "0.1.0"
+    "angular-animate": "^1.*",
+    "angular-aria": "^1.*",
+    "angular-material": "^1.*",
+    "google-diff-match-patch": "0.1.0",
+    "octicons":"~3.5",
+    "angular-sanitize":"~1",
+    "angular-rich-text-diff":"https://github.com/bill-long/angular-rich-text-diff.git"
   }
 }

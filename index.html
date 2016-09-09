@@ -6,14 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>angular-diff-match-patch</title>
-  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css">
-  <link rel="icon" type="image/x-icon" href="https://angularjs.org/favicon.ico">
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-aria.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
-  <script src="//neil.fraser.name/software/diff_match_patch/svn/trunk/javascript/diff_match_patch.js"></script>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="bower_components/octicons/octicons/octicons.css">
+  <link rel="stylesheet" href="bower_components/angular-rich-text-diff/angular-rich-text-diff.css">
+  <script src="bower_components/google-diff-match-patch/diff_match_patch.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="bower_components/angular-material/angular-material.min.js"></script>
+  <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+  <script src="bower_components/angular-rich-text-diff/angular-rich-text-diff.js"></script>
   <script src="angular-diff-match-patch.js"></script>
   <style>
     body md-content {
@@ -58,7 +60,7 @@
 
 <body layout="column" flex ng-controller="diffCtrl">
   <script>
-    var app = angular.module('diffDemo', ['ngMaterial', 'diff-match-patch']);
+    var app = angular.module('diffDemo', ['ngMaterial', 'diff-match-patch', 'angular-rich-text-diff']);
     app.config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
         .primaryPalette('indigo')
@@ -96,19 +98,6 @@
       };
     }]);
   </script>
-
-  <md-toolbar>
-    <div class="md-toolbar-tools" layout="row">
-      <span>angular-diff-match-patch</span>
-      <md-button class="md-icon-button" href="https://github.com/amweiss/angular-diff-match-patch" aria-label="Fork me on Github">
-        <span class="octicon octicon-mark-github"></span>
-      </md-button>
-      <md-button class="md-icon-button" href="https://codepen.io/amweiss/pen/grXNPm" aria-label="Open in Codepen">
-        <span class="octicon octicon-pencil"></span>
-      </md-button>
-    </div>
-  </md-toolbar>
-
   <md-content flex layout-padding>
     <div flex layout="column">
       <div flex layout="column" layout-gt-md="row">
@@ -126,41 +115,16 @@
       <div flex layout="column" layout-gt-md="row">
         <md-card flex>
           <md-card-content>
-            <h2>diff</h2>
-            <pre class="textdiff" diff left-obj="left" right-obj="right"></pre>
-          </md-card-content>
-        </md-card>
-        <md-card flex>
-          <md-card-content>
-            <div layout="row">
-              <h2>processingDiff</h2>
-              <span flex></span>
-              <md-input-container>
-                <label>editCost</label><input type="number" step="1" name="editCost" ng-model="options.editCost" min="1"
-                  max="99999">
-              </md-input-container>
-            </div>
-            <pre class="textdiff" processing-diff left-obj="left" right-obj="right" options="options"></pre>
+            <h2>semanticDiff (with custom attributes)</h2>
+            <pre class="textdiff" semantic-diff left-obj="left" right-obj="right" options="options"></pre>
           </md-card-content>
         </md-card>
       </div>
       <div flex layout="column" layout-gt-md="row">
         <md-card flex>
           <md-card-content>
-            <h2>semanticDiff (with custom attributes)</h2>
-            <pre class="textdiff" semantic-diff left-obj="left" right-obj="right" options="options"></pre>
-          </md-card-content>
-        </md-card>
-        <md-card flex>
-          <md-card-content>
-            <div layout="row">
-              <h2>lineDiff</h2>
-              <span flex></span>
-              <md-input-container>
-                <md-checkbox name="interLineDiff" ng-model="options.interLineDiff">interLineDiff</md-checkbox>
-              </md-input-container>
-            </div>
-            <pre class="textdiff" line-diff left-obj="left" right-obj="right" options="options"></pre>
+            <h2>Rich Text Diff</h2>
+            <rich-text-diff left="left" right="right"></rich-text-diff>
           </md-card-content>
         </md-card>
       </div>
