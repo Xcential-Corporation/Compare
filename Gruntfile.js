@@ -23,8 +23,23 @@ module.exports = function(grunt) {
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
       ' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n',
+    copy: {
+        pre: {
+            expand: true,
+            cwd: 'static/src',
+            src: '**',
+            dest: 'static/'
+        },
+        post: {
+            expand: true,
+            files: [
+                { src: 'static/index.html', dest: './index.html' }
+            ],
+            filter: 'isFile'
+        }
+    },
     useminPrepare: {
-        html: ['index.html'],
+        html: ['static/index.html'],
         options: {
             src: 'static',
             dest: 'static'
@@ -74,6 +89,7 @@ module.exports = function(grunt) {
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-bower-install-simple');  
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-filerev');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -82,7 +98,7 @@ module.exports = function(grunt) {
 
 
   // Build task.
-  grunt.registerTask('build', ['bower-install-simple', 'useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin']);
+  grunt.registerTask('build', ['bower-install-simple', 'copy:pre', 'useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin', 'copy:post']);
 
 };
 
