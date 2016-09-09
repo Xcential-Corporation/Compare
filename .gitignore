@@ -1,5 +1,6 @@
 **/bower_components/
 **/node_modules/
-**/coverage/
+.tmp/
 npm-debug.log
-test/results
+*.swp
+*.swo
