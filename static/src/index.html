@@ -13,7 +13,7 @@
 <!-- endbuild -->
 <!-- build:js(./) js/packed.min.js -->
   <script src="static/bower_components/google-diff-match-patch/diff_match_patch.js"></script>
-  <script src="static/bower_components/angular/angular.min.js"></script>
+  <script src="static/bower_components/angular/angular.js"></script>
   <script src="static/bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="static/bower_components/angular-aria/angular-aria.min.js"></script>
   <script src="static/bower_components/angular-material/angular-material.min.js"></script>
@@ -22,7 +22,6 @@
 <!-- endbuild -->
 
   
-  <script src="angular-diff-match-patch.js"></script>
   <style>
     body md-content {
       background-color: #f7f7f7;
@@ -66,43 +65,6 @@
 
 <body layout="column" flex ng-controller="diffCtrl">
   <script>
-    var app = angular.module('diffDemo', ['ngMaterial', 'diff-match-patch', 'angular-rich-text-diff']);
-    app.config(function($mdThemingProvider) {
-      $mdThemingProvider.theme('default')
-        .primaryPalette('indigo')
-        .accentPalette('blue');
-    });
-
-    app.controller('diffCtrl', ['$scope', function($scope) {
-      $scope.left = ['I am the very model of a modern Major-General,',
-        'I\'ve information vegetable, animal, and mineral,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From Marathon to Waterloo, in order categorical.'
-      ].join('\n');
-
-      $scope.right = ['I am the very model of a cartoon individual,',
-        'My animation\'s comical, unusual, and whimsical,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From wicked puns and stupid jokes to anvils that drop on your head.'
-      ].join('\n');
-
-      $scope.options = {
-        editCost: 4,
-        interLineDiff: true,
-        attrs: {
-          insert: {
-            'data-attr': 'insert',
-            'class': 'insertion'
-          },
-          delete: {
-            'data-attr': 'delete'
-          },
-          equal: {
-            'data-attr': 'equal'
-          }
-        }
-      };
-    }]);
   </script>
   <md-content flex layout-padding>
     <div flex layout="column">
@@ -137,3 +99,6 @@
     </div>
   </md-content>
 </body>
+  <script src="static/js/angular-diff-match-patch.js"></script>
+  <script src="static/js/app.js"></script>
+</html>
