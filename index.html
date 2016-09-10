@@ -1,6 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" id="ng-app" ng-app="diffDemo">
-
+<html xmlns="http://www.w3.org/1999/xhtml" id="ng-app" ng-app="diffDemo" lang="en-us">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,9 +7,6 @@
   <title>angular-diff-match-patch</title>
 <link rel="stylesheet" href="static/css/packed.css"/>
 <script type="text/javascript" src="static/js/packed.min.js"></script>
-
-  
-  <script src="angular-diff-match-patch.js"></script>
   <style>
     body md-content {
       background-color: #f7f7f7;
@@ -54,43 +50,6 @@
 
 <body layout="column" flex ng-controller="diffCtrl">
   <script>
-    var app = angular.module('diffDemo', ['ngMaterial', 'diff-match-patch', 'angular-rich-text-diff']);
-    app.config(function($mdThemingProvider) {
-      $mdThemingProvider.theme('default')
-        .primaryPalette('indigo')
-        .accentPalette('blue');
-    });
-
-    app.controller('diffCtrl', ['$scope', function($scope) {
-      $scope.left = ['I am the very model of a modern Major-General,',
-        'I\'ve information vegetable, animal, and mineral,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From Marathon to Waterloo, in order categorical.'
-      ].join('\n');
-
-      $scope.right = ['I am the very model of a cartoon individual,',
-        'My animation\'s comical, unusual, and whimsical,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From wicked puns and stupid jokes to anvils that drop on your head.'
-      ].join('\n');
-
-      $scope.options = {
-        editCost: 4,
-        interLineDiff: true,
-        attrs: {
-          insert: {
-            'data-attr': 'insert',
-            'class': 'insertion'
-          },
-          delete: {
-            'data-attr': 'delete'
-          },
-          equal: {
-            'data-attr': 'equal'
-          }
-        }
-      };
-    }]);
   </script>
   <md-content flex layout-padding>
     <div flex layout="column">
@@ -125,3 +84,6 @@
     </div>
   </md-content>
 </body>
+  <script type="text/javascript" defer src="static/js/angular-diff-match-patch.js"></script>
+  <script type="text/javascript" defer src="static/js/app.js"></script>
+</html>
