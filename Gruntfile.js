@@ -30,6 +30,12 @@ module.exports = function(grunt) {
             src: '**',
             dest: 'static/'
         },
+        glyph: {
+            expand: true,
+            cwd: 'static/bower_components/bootstrap/dist/fonts',
+            src: '**',
+            dest: 'static/fonts'
+        },
         post: {
             expand: true,
             files: [
@@ -98,7 +104,7 @@ module.exports = function(grunt) {
 
 
   // Build task.
-  grunt.registerTask('build', ['bower-install-simple', 'copy:pre', 'useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin', 'copy:post']);
+  grunt.registerTask('build', ['bower-install-simple', 'copy:pre', 'copy:glyph','useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin', 'copy:post']);
 
 };
 
