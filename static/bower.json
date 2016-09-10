@@ -24,6 +24,9 @@
     "google-diff-match-patch": "0.1.0",
     "octicons":"~3.5",
     "angular-sanitize":"~1",
-    "angular-rich-text-diff":"https://github.com/bill-long/angular-rich-text-diff.git"
+    "angular-rich-text-diff":"https://github.com/bill-long/angular-rich-text-diff.git",
+    "bootstrap": "~3.3",
+    "jquery-file-upload": "~9",
+    "alertify.js": "~0.3.11"
   }
 }

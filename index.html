@@ -5,8 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>angular-diff-match-patch</title>
+
+  <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen"/>
 <link rel="stylesheet" href="static/css/packed.css"/>
+
 <script type="text/javascript" src="static/js/packed.min.js"></script>
+
   <style>
     body md-content {
       background-color: #f7f7f7;
@@ -49,35 +53,52 @@
 </head>
 
 <body layout="column" flex ng-controller="diffCtrl">
-  <script>
-  </script>
   <md-content flex layout-padding>
-    <div flex layout="column">
+          <div class="md-toolbar-tools">
+            <div class="btn-group">
+                <span class="btn btn-default btn-sm" ng-click="showRichTextDiff=!showRichTextDiff"><span ng-if="showRichTextDiff">Hide</span><span ng-if="!showRichTextDiff">Show</span> Rich Text Diff</span>
+                <span class="btn btn-default btn-sm" ng-click="showSemanticDiff=!showSemanticDiff"><span ng-if="showSemanticDiff">Hide</span><span ng-if="!showSemanticDiff">Show</span> Semantic Diff</span>
+            </div>
+          </div>
       <div flex layout="column" layout-gt-md="row">
-        <md-card flex>
+          <md-card flex>
           <md-card-content>
-            <textarea layout-fill class="inputBox" ng-model="left"></textarea>
+            <div class="uploadbtngroupleft" >
+                <span text-file-upload="" data-file-upload="options" textsourcename="leftDoc" dropzoneselect="#leftDocInput" class="btn btn-default btn-md fileinput-button" title="Upload Document (left)" ng-click="uploadLeft($event)">
+                <i class="glyphicon glyphicon-upload"></i>
+                <input type="file" name="files[]" ng-disabled="disabled"/>
+                </span>
+                <span>{{leftDoc.name}}</span>
+            </div>
+            <textarea layout-fill id="leftDocInput" class="inputBox" ng-model="leftDoc.text"></textarea>
           </md-card-content>
         </md-card>
         <md-card flex>
           <md-card-content>
-            <textarea layout-fill class="inputBox" ng-model="right"></textarea>
+            <div class="uploadbtngroupright"  >
+                <span text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)">
+                    <i class="glyphicon glyphicon-upload"></i>
+                    <input type="file" name="files[]" ng-disabled="disabled"/>
+                </span>
+                <span>{{rightDoc.name}}</span>
+            </div>
+            <textarea layout-fill id="rightDocInput" class="inputBox" ng-model="rightDoc.text"></textarea>
           </md-card-content>
         </md-card>
       </div>
-      <div flex layout="column" layout-gt-md="row">
-        <md-card flex>
-          <md-card-content>
-            <h2>semanticDiff (with custom attributes)</h2>
-            <pre class="textdiff" semantic-diff left-obj="left" right-obj="right" options="options"></pre>
-          </md-card-content>
-        </md-card>
-      </div>
-      <div flex layout="column" layout-gt-md="row">
+      <div flex layout="column" layout-gt-md="row" ng-if="showRichTextDiff">
         <md-card flex>
           <md-card-content>
             <h2>Rich Text Diff</h2>
-            <rich-text-diff left="left" right="right"></rich-text-diff>
+            <rich-text-diff left="leftDoc.text" right="rightDoc.text"></rich-text-diff>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div flex layout="column" layout-gt-md="row" ng-if="showSemanticDiff">
+        <md-card flex>
+          <md-card-content>
+            <h2>Semantic Diff</h2>
+            <pre class="textdiff" semantic-diff left-obj="leftDoc.text" right-obj="rightDoc.text" options="options"></pre>
           </md-card-content>
         </md-card>
       </div>
