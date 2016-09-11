@@ -52,6 +52,7 @@
                 <span>{{leftDoc.name}}</span>
                 <input type="file" name="files[]" ng-disabled="disabled"/>
             </span>
+            
             <span id="rightDocInput" text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)" style="height:40px; width:300px;">
             <i class="glyphicon glyphicon-upload"></i>&#160;
             <span>{{rightDoc.name}}</span>
@@ -61,27 +62,36 @@
   </div><!-- .navbar -->
   <div style="margin-top:50px;"> <!-- tabset -->
   <uib-tabset active="active">
-    <uib-tab index="0" heading="{{leftDoc.name}}">
-        {{leftDoc.text}}
+    <uib-tab index="0" heading="">
+      <uib-tab-heading>
+      {{leftDoc.name}}<a href="#" ng-click="editLeft=!editLeft" ng-class="{active:editLeft}"><i glyphicon glyphicon-edit></i></a>
+
+      </uib-tab-heading>
+      <textarea ng-model="leftDoc.text" ng-if="editLeft"></textarea>
+      <div ng-bind-html="leftDoc.text | trust" ng-if="!editLeft"></div>
     </uib-tab>
-    <uib-tab index="2" heading="{{rightDoc.name}}">
-        {{rightDoc.text}}
+    <uib-tab index="2" >
+      <uib-tab-heading>
+      {{leftDoc.name}}<a href="#" ng-click="editRight=!editRight" ng-class="{active:editRight}"><i glyphicon glyphicon-edit></i></a>
+      </uib-tab-heading>
+      <textarea ng-model="leftDoc.text" ng-if="editRight"></textarea>
+      <div ng-bind-html="rightDoc.text | trust" ng-if="!editRight"></div>
     </uib-tab>
     <uib-tab index="3" >
       <uib-tab-heading>
-      Structured Text Diff 
+        Structured Compare
       </uib-tab-heading>
       <rich-text-diff left="leftDoc.text" right="rightDoc.text"></rich-text-diff>
     </uib-tab>
     <uib-tab index="4" >
       <uib-tab-heading>
-      Plain Text Diff 
+        Text Compare
       </uib-tab-heading>
       <pre class="textdiff" semantic-diff left-obj="leftDoc.text" right-obj="rightDoc.text" options="options"></pre>
-    </uib-tab>
-  </uib-tabset>
+      </uib-tab>
+      </uib-tabset>
   </div>
 </body>
-  <script type="text/javascript" defer src="static/js/angular-diff-match-patch.js"></script>
-  <script type="text/javascript" defer src="static/js/app.js"></script>
+<script type="text/javascript" defer src="static/js/angular-diff-match-patch.js"></script>
+<script type="text/javascript" defer src="static/js/app.js"></script>
 </html>

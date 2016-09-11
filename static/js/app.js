@@ -24,6 +24,7 @@
                 };
 
     var app = angular.module('diffDemo', ['ng',  'ui.bootstrap', 'diff-match-patch', 'angular-rich-text-diff', 'blueimp.fileupload']);
+
     app.config(['$locationProvider', '$httpProvider', 'fileUploadProvider', function($locationProvider, $httpProvider, fileUploadProvider) {
 
       $locationProvider.html5Mode({
@@ -38,23 +39,28 @@
                 );
     }]);
 
-    app.controller('diffCtrl', ['$scope', function($scope) {
+    app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
+      
+      var EXAMPLEPATH = 'static/examples';
+      var LEFTDOCPATH = EXAMPLEPATH + '/BILLS-114hr776/BILLS-114hr776ih.xml';
+      var RIGHTDOCPATH = EXAMPLEPATH + '/BILLS-114hr776/BILLS-114hr776rh.xml';
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
-      $scope.leftDoc = {'name':'Doc 1',
-                        'text': ['I am the very model of a modern Major-General,',
-        'I\'ve information vegetable, animal, and mineral,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From Marathon to Waterloo, in order categorical.'
-      ].join('\n')};
 
-      $scope.rightDoc = {'name':'Doc 2',
-                         'text':['I am the very model of a cartoon individual,',
-        'My animation\'s comical, unusual, and whimsical,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From wicked puns and stupid jokes to anvils that drop on your head.'
-      ].join('\n')};
+      $http.get(LEFTDOCPATH).then(function(result){
+        $scope.leftDoc = {'name': LEFTDOCPATH.replace(/.*\//,''),
+                          'text': result
+        };
+      }
+      );
+      $http.get(RIGHTDOCPATH).then(function(result){
+        $scope.rightDoc = {'name': RIGHTDOCPATH.replace(/.*\//,''),
+                          'text': result
+        };
+      }
+      );
 
+      //For angular-diff-match-patch
       $scope.options = {
         editCost: 4,
         interLineDiff: true,
@@ -73,6 +79,12 @@
       };
 
 
+    }]);
+
+    app.filter("trust", ['$sce', function($sce) {
+        return function(htmlCode){
+            return $sce.trustAsHtml(htmlCode);
+        };
     }]);
 
     app.directive('textFileUpload', [function () {
