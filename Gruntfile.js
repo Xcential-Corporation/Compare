@@ -90,11 +90,23 @@ module.exports = function(grunt) {
         algorithm: 'md5',
         length: 8
       }
-    }
+    },
+    markdown: {
+    all: {
+      files: [
+        {
+          expand: true,
+          src: '*.md',
+          dest: 'static/',
+          ext: '.html'
+        }
+      ]
+    }}
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-bower-install-simple');  
+  grunt.loadNpmTasks('grunt-markdown');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-filerev');
@@ -104,7 +116,7 @@ module.exports = function(grunt) {
 
 
   // Build task.
-  grunt.registerTask('build', ['bower-install-simple', 'copy:pre', 'copy:glyph','useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin', 'copy:post']);
+  grunt.registerTask('build', ['bower-install-simple', 'markdown', 'copy:pre', 'copy:glyph','useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin', 'copy:post']);
 
 };
 
