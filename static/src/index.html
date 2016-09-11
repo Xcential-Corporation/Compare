@@ -8,7 +8,6 @@
 
 <!-- build:css(./) css/packed.css -->
   <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen"/>
-  <link rel="stylesheet" href="static/bower_components/angular-material/angular-material.min.css">
   <link rel="stylesheet" href="static/bower_components/octicons/octicons/octicons.css">
   <link rel="stylesheet" href="static/bower_components/jquery-file-upload/css/jquery.fileupload.css">
   <link rel="stylesheet" href="static/bower_components/angular-rich-text-diff/angular-rich-text-diff.css">
@@ -19,9 +18,10 @@
   <script src="static/bower_components/jquery/dist/jquery.min.js"></script>
   <script src="static/bower_components/angular/angular.js"></script>
   <script src="static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="static/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="static/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="static/bower_components/angular-animate/angular-animate.min.js"></script>
   <script src="static/bower_components/angular-aria/angular-aria.min.js"></script>
-  <script src="static/bower_components/angular-material/angular-material.min.js"></script>
   <script src="static/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
   <script src="static/bower_components/angular-rich-text-diff/angular-rich-text-diff.js"></script>
   <script src='static/bower_components/jquery-file-upload/js/vendor/jquery.ui.widget.js'></script>
@@ -35,18 +35,6 @@
 <!-- endbuild -->
 
   <style>
-    body md-content {
-      background-color: #f7f7f7;
-    }
-
-    md-card-content pre {
-      overflow: auto
-    }
-
-    .inputBox {
-      height: 100px;
-    }
-
     .match,
     .textdiff span {
       color: gray;
@@ -72,61 +60,51 @@
       -ms-user-select: none;
       user-select: none;
     }
+    .tab-content {
+        padding:20px;
+    }
   </style>
 </head>
-
-<body layout="column" flex ng-controller="diffCtrl">
-  <md-content flex layout-padding>
-          <div class="md-toolbar-tools">
-            <div class="btn-group">
-                <span class="btn btn-default btn-sm" ng-click="showRichTextDiff=!showRichTextDiff"><span ng-if="showRichTextDiff">Hide</span><span ng-if="!showRichTextDiff">Show</span> Rich Text Diff</span>
-                <span class="btn btn-default btn-sm" ng-click="showSemanticDiff=!showSemanticDiff"><span ng-if="showSemanticDiff">Hide</span><span ng-if="!showSemanticDiff">Show</span> Semantic Diff</span>
-            </div>
-          </div>
-      <div flex layout="column" layout-gt-md="row">
-          <md-card flex>
-          <md-card-content>
-            <div class="uploadbtngroupleft" >
-                <span text-file-upload="" data-file-upload="options" textsourcename="leftDoc" dropzoneselect="#leftDocInput" class="btn btn-default btn-md fileinput-button" title="Upload Document (left)" ng-click="uploadLeft($event)">
-                <i class="glyphicon glyphicon-upload"></i>
-                <input type="file" name="files[]" ng-disabled="disabled"/>
-                </span>
+<body ng-controller="diffCtrl">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">LDiff</a>
+      </div><!--/.navbar-header -->
+      <div class="uploadbtngroup btn-group" style="margin-left:40px">
+            <span id="leftDocInput" text-file-upload="" data-file-upload="options" textsourcename="leftDoc" dropzoneselect="#leftDocInput" class="btn btn-default btn-md fileinput-button" title="Upload Document (left)" ng-click="uploadLeft($event)" style="height:40px; width:300px;">
+                <i class="glyphicon glyphicon-upload"></i>&#160;
                 <span>{{leftDoc.name}}</span>
-            </div>
-            <textarea layout-fill id="leftDocInput" class="inputBox" ng-model="leftDoc.text"></textarea>
-          </md-card-content>
-        </md-card>
-        <md-card flex>
-          <md-card-content>
-            <div class="uploadbtngroupright"  >
-                <span text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)">
-                    <i class="glyphicon glyphicon-upload"></i>
-                    <input type="file" name="files[]" ng-disabled="disabled"/>
-                </span>
-                <span>{{rightDoc.name}}</span>
-            </div>
-            <textarea layout-fill id="rightDocInput" class="inputBox" ng-model="rightDoc.text"></textarea>
-          </md-card-content>
-        </md-card>
+                <input type="file" name="files[]" ng-disabled="disabled"/>
+            </span>
+            <span id="rightDocInput" text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)" style="height:40px; width:300px;">
+            <i class="glyphicon glyphicon-upload"></i>&#160;
+            <span>{{rightDoc.name}}</span>
+            <input type="file" name="files[]" ng-disabled="disabled"/>
+            </span>
       </div>
-      <div flex layout="column" layout-gt-md="row" ng-if="showRichTextDiff">
-        <md-card flex>
-          <md-card-content>
-            <h2>Rich Text Diff</h2>
-            <rich-text-diff left="leftDoc.text" right="rightDoc.text"></rich-text-diff>
-          </md-card-content>
-        </md-card>
-      </div>
-      <div flex layout="column" layout-gt-md="row" ng-if="showSemanticDiff">
-        <md-card flex>
-          <md-card-content>
-            <h2>Semantic Diff</h2>
-            <pre class="textdiff" semantic-diff left-obj="leftDoc.text" right-obj="rightDoc.text" options="options"></pre>
-          </md-card-content>
-        </md-card>
-      </div>
-    </div>
-  </md-content>
+  </div><!-- .navbar -->
+  <div style="margin-top:50px;"> <!-- tabset -->
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="{{leftDoc.name}}">
+        {{leftDoc.text}}
+    </uib-tab>
+    <uib-tab index="2" heading="{{rightDoc.name}}">
+        {{rightDoc.text}}
+    </uib-tab>
+    <uib-tab index="3" >
+      <uib-tab-heading>
+      Structured Text Diff 
+      </uib-tab-heading>
+      <rich-text-diff left="leftDoc.text" right="rightDoc.text"></rich-text-diff>
+    </uib-tab>
+    <uib-tab index="4" >
+      <uib-tab-heading>
+      Plain Text Diff 
+      </uib-tab-heading>
+      <pre class="textdiff" semantic-diff left-obj="leftDoc.text" right-obj="rightDoc.text" options="options"></pre>
+    </uib-tab>
+  </uib-tabset>
+  </div>
 </body>
   <script type="text/javascript" defer src="static/js/angular-diff-match-patch.js"></script>
   <script type="text/javascript" defer src="static/js/app.js"></script>
