@@ -42,20 +42,23 @@
     app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
       
       var EXAMPLEPATH = 'static/examples';
-      var LEFTDOCPATH = EXAMPLEPATH + '/BILLS-114hr776/BILLS-114hr776ih.xml';
-      var RIGHTDOCPATH = EXAMPLEPATH + '/BILLS-114hr776/BILLS-114hr776rh.xml';
+      var LEFTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
+      var RIGHTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
+      $scope.leftDoc = {'name':'Doc 1','text': 'Loading...'};
+      $scope.rightDoc = {'name':'Doc 2', 'text':'Loading...'};
+      
 
       $http.get(LEFTDOCPATH).then(function(result){
-        $scope.leftDoc = {'name': LEFTDOCPATH.replace(/.*\//,''),
-                          'text': result
+        $scope.leftDoc = {'name': 'Example 1: '+LEFTDOCPATH.replace(/.*\//,''),
+                          'text': result.data
         };
       }
       );
       $http.get(RIGHTDOCPATH).then(function(result){
-        $scope.rightDoc = {'name': RIGHTDOCPATH.replace(/.*\//,''),
-                          'text': result
+        $scope.rightDoc = {'name': 'Example 2: '+RIGHTDOCPATH.replace(/.*\//,''),
+                          'text': result.data
         };
       }
       );
