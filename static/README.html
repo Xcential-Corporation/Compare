@@ -1,0 +1,135 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>doc</title>
+    <style>
+      /*github.com style (c) Vasily Polovnyov <vast@whiteants.net>*/
+      pre code {
+        display: block; padding: 0.5em;
+        color: #333;
+        background: #f8f8ff
+      }
+      pre .comment,
+      pre .template_comment,
+      pre .diff .header,
+      pre .javadoc {
+        color: #998;
+        font-style: italic
+      }
+      pre .keyword,
+      pre .css .rule .keyword,
+      pre .winutils,
+      pre .javascript .title,
+      pre .nginx .title,
+      pre .subst,
+      pre .request,
+      pre .status {
+        color: #333;
+        font-weight: bold
+      }
+      pre .number,
+      pre .hexcolor,
+      pre .ruby .constant {
+        color: #099;
+      }
+      pre .string,
+      pre .tag .value,
+      pre .phpdoc,
+      pre .tex .formula {
+        color: #d14
+      }
+      pre .title,
+      pre .id {
+        color: #900;
+        font-weight: bold
+      }
+      pre .javascript .title,
+      pre .lisp .title,
+      pre .clojure .title,
+      pre .subst {
+        font-weight: normal
+      }
+      pre .class .title,
+      pre .haskell .type,
+      pre .vhdl .literal,
+      pre .tex .command {
+        color: #458;
+        font-weight: bold
+      }
+      pre .tag,
+      pre .tag .title,
+      pre .rules .property,
+      pre .django .tag .keyword {
+        color: #000080;
+        font-weight: normal
+      }
+      pre .attribute,
+      pre .variable,
+      pre .lisp .body {
+        color: #008080
+      }
+      pre .regexp {
+        color: #009926
+      }
+      pre .class {
+        color: #458;
+        font-weight: bold
+      }
+      pre .symbol,
+      pre .ruby .symbol .string,
+      pre .lisp .keyword,
+      pre .tex .special,
+      pre .prompt {
+        color: #990073
+      }
+      pre .built_in,
+      pre .lisp .title,
+      pre .clojure .built_in {
+        color: #0086b3
+      }
+      pre .preprocessor,
+      pre .pi,
+      pre .doctype,
+      pre .shebang,
+      pre .cdata {
+        color: #999;
+        font-weight: bold
+      }
+      pre .deletion {
+        background: #fdd
+      }
+      pre .addition {
+        background: #dfd
+      }
+      pre .diff .change {
+        background: #0086b3
+      }
+      pre .chunk {
+        color: #aaa
+      }
+    </style>
+  </head>
+  <body>  
+    <h1 id="ldiff">LDiff</h1>
+<p>LDiff shows the differences between two documents. It is intended primarily for legislative documents (e.g. amended bills and regulations, updated compilations or codes). </p>
+<p>##Quick Start
+Try it out <a href="https://xcential.github.io/LDiff/index.html">here</a>. The initial demo shows two versions of a U.S. House bill. The first two tabs show the two bills, HR766 as &#39;introduced&#39; in the House, and HR766 as &#39;reported&#39; in the House. The third tab shows the differences between the two bills and the fourth tab shows the differences in the underlying XML of the bill documents. Replace these samples to compare your own documents.</p>
+<p>###Upload documents
+There are three ways to upload documents to compare:</p>
+<ol>
+<li>Click on the buttons at the top right to upload documents from your local filesystem. The left button loads the first tab and the right button loads the second tab.</li>
+<li>Drag and drop a file from your filesystem onto one of the two buttons.</li>
+<li>Click on the &#39;edit&#39; icon on one of the first two tabs to copy and paste your text into a new input area. Note that you can paste or type plain text or structured text (html/xml) to compare.</li>
+</ol>
+<p>###Comparisons
+Two kinds of comparisons are shown, &#39;Structural&#39; comparisons, which retain the xml structure of the documents, and display the comparison in html. This does <em>not</em> compare structural or styling elements, but strips them before comparing the text, and then attempts to restore the structure to the final document. As a result, this &#39;structural&#39; comparison may not accurately show changes in the underlying elements. For example, comparing <code>this is &lt;bold&gt;bold&lt;/bold&gt;</code> to <code>this is &lt;italic&gt;italic&lt;/italic&gt;</code> will show the changed word in both bold and italic. By contrast, the Text comparison compares all input as plain text.</p>
+<p>##Technical Overview
+This application uses the <a href="https://code.google.com/p/google-diff-match-patch/">Google diff-match-patch algorithm</a> to calculate differences between documents. The javascript version of the algorithm was wrapped in an <a href="https://angular.io/">AngularJS</a> directive in <a href="https://github.com/amweiss/angular-diff-match-patch">https://github.com/amweiss/angular-diff-match-patch</a>. The current application also uses an <a href="https://github.com/bill-long/angular-rich-text-diff.git">angular-rich-text</a> directive to compare xml or html documents and retain their structure.
+No data is sent to the server: the comparisons are done in javascript, entirely in your local browser. As a result, comparison of large documents may be slow and may cause your browser to crash. For very large documents (e.g. hundreds of pages), it is probably better to run a comparison algorithm in Python or C.</p>
+<p>##Dependencies</p>
+<p>##Installation</p>
+
+  </body>
+</html>
