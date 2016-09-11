@@ -79,7 +79,7 @@
       <uib-tab-heading>
       {{rightDoc.name}}<a href="#" ng-click="editRight=!editRight" >&#160;&#160;<i class="glyphicon glyphicon-edit" ng-if="!editRight"></i><i class="glyphicon glyphicon-file" ng-if="editRight"></i></a>
       </uib-tab-heading>
-      <textarea ng-model="leftDoc.text" ng-if="editRight" style="width:100%; min-height:500px"></textarea>
+      <textarea ng-model="rightDoc.text" ng-if="editRight" style="width:100%; min-height:500px"></textarea>
       <div ng-bind-html="rightDoc.text | trust" ng-if="!editRight"></div>
     </uib-tab>
     <uib-tab index="3" >
