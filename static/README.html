@@ -114,22 +114,22 @@
   <body>  
     <h1 id="ldiff">LDiff</h1>
 <p>LDiff shows the differences between two documents. It is intended primarily for legislative documents (e.g. amended bills and regulations, updated compilations or codes). </p>
-<p>##Quick Start
-Try it out <a href="https://xcential.github.io/LDiff/index.html">here</a>. The initial demo shows two versions of a U.S. House bill. The first two tabs show the two bills, HR766 as &#39;introduced&#39; in the House, and HR766 as &#39;reported&#39; in the House. The third tab shows the differences between the two bills and the fourth tab shows the differences in the underlying XML of the bill documents. Replace these samples to compare your own documents.</p>
-<p>###Upload documents
-There are three ways to upload documents to compare:</p>
+<h2 id="quick-start">Quick Start</h2>
+<p>Try it out <a href="https://xcential.github.io/LDiff/index.html">here</a>. The initial demo shows two versions of a U.S. House bill. The first two tabs show the two bills, HR766 as &#39;introduced&#39; in the House, and HR766 as &#39;reported&#39; in the House. The third tab shows the differences between the two bills and the fourth tab shows the differences in the underlying XML of the bill documents. Replace these samples to compare your own documents.</p>
+<h3 id="upload-documents">Upload documents</h3>
+<p>There are three ways to upload documents to compare:</p>
 <ol>
 <li>Click on the buttons at the top right to upload documents from your local filesystem. The left button loads the first tab and the right button loads the second tab.</li>
 <li>Drag and drop a file from your filesystem onto one of the two buttons.</li>
 <li>Click on the &#39;edit&#39; icon on one of the first two tabs to copy and paste your text into a new input area. Note that you can paste or type plain text or structured text (html/xml) to compare.</li>
 </ol>
-<p>###Comparisons
-Two kinds of comparisons are shown, &#39;Structural&#39; comparisons, which retain the xml structure of the documents, and display the comparison in html. This does <em>not</em> compare structural or styling elements, but strips them before comparing the text, and then attempts to restore the structure to the final document. As a result, this &#39;structural&#39; comparison may not accurately show changes in the underlying elements. For example, comparing <code>this is &lt;bold&gt;bold&lt;/bold&gt;</code> to <code>this is &lt;italic&gt;italic&lt;/italic&gt;</code> will show the changed word in both bold and italic. By contrast, the Text comparison compares all input as plain text.</p>
-<p>##Technical Overview
-This application uses the <a href="https://code.google.com/p/google-diff-match-patch/">Google diff-match-patch algorithm</a> to calculate differences between documents. The javascript version of the algorithm was wrapped in an <a href="https://angular.io/">AngularJS</a> directive in <a href="https://github.com/amweiss/angular-diff-match-patch">https://github.com/amweiss/angular-diff-match-patch</a>. The current application also uses an <a href="https://github.com/bill-long/angular-rich-text-diff.git">angular-rich-text</a> directive to compare xml or html documents and retain their structure.
+<h3 id="comparisons">Comparisons</h3>
+<p>Two kinds of comparisons are shown, &#39;Structural&#39; comparisons, which retain the xml structure of the documents, and display the comparison in html. This does <em>not</em> compare structural or styling elements, but strips them before comparing the text, and then attempts to restore the structure to the final document. As a result, this &#39;structural&#39; comparison may not accurately show changes in the underlying elements. For example, comparing <code>this is &lt;bold&gt;bold&lt;/bold&gt;</code> to <code>this is &lt;italic&gt;italic&lt;/italic&gt;</code> will show the changed word in both bold and italic. By contrast, the Text comparison compares all input as plain text.</p>
+<h2 id="technical-overview">Technical Overview</h2>
+<p>This application uses the <a href="https://code.google.com/p/google-diff-match-patch/">Google diff-match-patch algorithm</a> to calculate differences between documents. The javascript version of the algorithm was wrapped in an <a href="https://angular.io/">AngularJS</a> directive in <a href="https://github.com/amweiss/angular-diff-match-patch">https://github.com/amweiss/angular-diff-match-patch</a>. The current application also uses an <a href="https://github.com/bill-long/angular-rich-text-diff.git">angular-rich-text</a> directive to compare xml or html documents and retain their structure.
 No data is sent to the server: the comparisons are done in javascript, entirely in your local browser. As a result, comparison of large documents may be slow and may cause your browser to crash. For very large documents (e.g. hundreds of pages), it is probably better to run a comparison algorithm in Python or C.</p>
-<p>##Dependencies</p>
-<p>##Installation</p>
+<h2 id="dependencies">Dependencies</h2>
+<h2 id="installation">Installation</h2>
 
   </body>
 </html>

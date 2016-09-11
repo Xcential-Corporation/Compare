@@ -100,8 +100,19 @@ module.exports = function(grunt) {
           dest: 'static/',
           ext: '.html'
         }
-      ]
-    }}
+      ],
+      options: {
+        markdownOptions: {
+          gfm: true,
+          highlight: 'manual',
+          codeLines: {
+            before: '<span>',
+            after: '</span>'
+          }
+        }
+      }
+    }
+  }
   });
 
   // These plugins provide necessary tasks.
