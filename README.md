@@ -1,87 +1,24 @@
-angular-diff-match-patch
+LDiff
 ========================
-[![Circle CI](https://circleci.com/gh/amweiss/angular-diff-match-patch.svg?style=svg)](https://circleci.com/gh/amweiss/angular-diff-match-patch) [![Coverage Status](https://coveralls.io/repos/github/amweiss/angular-diff-match-patch/badge.svg?branch=master)](https://coveralls.io/github/amweiss/angular-diff-match-patch?branch=master)
+LDiff shows the differences between two documents. It is intended primarily for legislative documents (e.g. amended bills and regulations, updated compilations or codes). 
 
-[![Dependencies](https://david-dm.org/amweiss/angular-diff-match-patch.svg)](https://david-dm.org/amweiss/angular-diff-match-patch/#info=dependencies&view=table) [![DevDependencies](https://david-dm.org/amweiss/angular-diff-match-patch/dev-status.svg)](https://david-dm.org/amweiss/angular-diff-match-patch/#info=devDependencies&view=table) [![PeerDependencies](https://david-dm.org/amweiss/angular-diff-match-patch/peer-status.svg)](https://david-dm.org/amweiss/angular-diff-match-patch/#info=peerDependencies&view=table)
+##Quick Start
+Try it out [here](https://xcential.github.io/LDiff/index.html). The initial demo shows two versions of a U.S. House bill. The first two tabs show the two bills, HR766 as 'introduced' in the House, and HR766 as 'reported' in the House. The third tab shows the differences between the two bills and the fourth tab shows the differences in the underlying XML of the bill documents. Replace these samples to compare your own documents.
 
-This library is simply a wrapper around [google-diff-match-patch](https://code.google.com/p/google-diff-match-patch/).
+###Upload documents
+There are three ways to upload documents to compare:
 
-![Simple](http://amweiss.github.io/angular-diff-match-patch/simple.png)
+1.  Click on the buttons at the top right to upload documents from your local filesystem. The left button loads the first tab and the right button loads the second tab.
+2.  Drag and drop a file from your filesystem onto one of the two buttons.
+3.  Click on the 'edit' icon on one of the first two tabs to copy and paste your text into a new input area. Note that you can paste or type plain text or structured text (html/xml) to compare.
 
-(Shown here with some custom styles)
+###Comparisons
+Two kinds of comparisons are shown, 'Structural' comparisons, which retain the xml structure of the documents, and display the comparison in html. This does _not_ compare structural or styling elements, but strips them before comparing the text, and then attempts to restore the structure to the final document. As a result, this 'structural' comparison may not accurately show changes in the underlying elements. For example, comparing ```this is <bold>bold</bold>``` to ```this is <italic>italic</italic>``` will show the changed word in both bold and italic. By contrast, the Text comparison compares all input as plain text.
 
-Setup
------
+##Technical Overview
+This application uses the [Google diff-match-patch algorithm](https://code.google.com/p/google-diff-match-patch/) to calculate differences between documents. The javascript version of the algorithm was wrapped in an [AngularJS](https://angular.io/) directive in https://github.com/amweiss/angular-diff-match-patch. The current application also uses an [angular-rich-text](https://github.com/bill-long/angular-rich-text-diff.git) directive to compare xml or html documents and retain their structure.
+No data is sent to the server: the comparisons are done in javascript, entirely in your local browser. As a result, comparison of large documents may be slow and may cause your browser to crash. For very large documents (e.g. hundreds of pages), it is probably better to run a comparison algorithm in Python or C.
 
-Install from [NPM](http://npmjs.com)
+##Dependencies
 
-`npm install amweiss/angular-diff-match-patch`
-
-Install from [Bower](http://bower.io/)
-
-`bower install angular-diff-match-patch`
-
-Usage
------
-
-See [the included demo](http://amweiss.github.io/angular-diff-match-patch/) for reference or view a sample on [Codepen](http://codepen.io/amweiss/pen/grXNPm).
-
-```html
-<pre line-diff left-obj="left" right-obj="right"></pre>
-```
-
-Where `left` and `right` are defined on your scope.  The `options` attribute can be used as well, but it's optional.
-
-```javascript
-$scope.options = {
-  editCost: 4,
-  attrs: {
-    insert: {
-      'data-attr': 'insert',
-      'class': 'insertion'
-    },
-    delete: {
-      'data-attr': 'delete'
-    },
-    equal: {
-      'data-attr': 'equal'
-    }
-  }
-};
-```
-
-`editCost` is specific to `processingDiff` and controls the tolerence for hunk separation.  `attrs` can contain any/all/none of the following: `insert`, `delete`, and `equal` where the properties in those objects represent attributes that get added to the tags.
-
-Add some style
-```css
-.match{
-  color: gray;
-}
-
-.ins{
-  color: black;
-  background: #bbffbb;
-}
-
-.del{
-  color: black;
-  background: #ffbbbb;
-}
-```
-
-Development
------
-
-Development work requires npm from [Node.js](http://nodejs.org/)
-
-Begin with:
-
-`npm install`
-
-Then you can use:
-
-`npm start` To host the directory so you can see the demo
-
-`npm test` To run the Jasmine tests once
-
-`npm test-watch` To run the Jasmine tests with change detection
+##Installation
