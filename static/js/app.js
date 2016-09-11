@@ -23,11 +23,9 @@
                     return dfd.resolveWith(this, [data]);
                 };
 
-    var app = angular.module('diffDemo', ['ngMaterial', 'diff-match-patch', 'angular-rich-text-diff', 'blueimp.fileupload']);
-    app.config(['$mdThemingProvider', '$locationProvider', '$httpProvider', 'fileUploadProvider', function($mdThemingProvider, $locationProvider, $httpProvider, fileUploadProvider) {
-      $mdThemingProvider.theme('default')
-        .primaryPalette('indigo')
-        .accentPalette('blue');
+    var app = angular.module('diffDemo', ['ng',  'ui.bootstrap', 'diff-match-patch', 'angular-rich-text-diff', 'blueimp.fileupload']);
+
+    app.config(['$locationProvider', '$httpProvider', 'fileUploadProvider', function($locationProvider, $httpProvider, fileUploadProvider) {
 
       $locationProvider.html5Mode({
             enabled: true,
@@ -41,23 +39,31 @@
                 );
     }]);
 
-    app.controller('diffCtrl', ['$scope', function($scope) {
+    app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
+      
+      var EXAMPLEPATH = 'static/examples';
+      var LEFTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
+      var RIGHTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
-      $scope.leftDoc = {'name':'',
-                        'text': ['I am the very model of a modern Major-General,',
-        'I\'ve information vegetable, animal, and mineral,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From Marathon to Waterloo, in order categorical.'
-      ].join('\n')};
+      $scope.leftDoc = {'name':'Doc 1','text': 'Loading...'};
+      $scope.rightDoc = {'name':'Doc 2', 'text':'Loading...'};
+      
 
-      $scope.rightDoc = {'name':'',
-                         'text':['I am the very model of a cartoon individual,',
-        'My animation\'s comical, unusual, and whimsical,',
-        'I know the kings of England, and I quote the fights historical,',
-        'From wicked puns and stupid jokes to anvils that drop on your head.'
-      ].join('\n')};
+      $http.get(LEFTDOCPATH).then(function(result){
+        $scope.leftDoc = {'name': 'Example 1: '+LEFTDOCPATH.replace(/.*\//,''),
+                          'text': result.data
+        };
+      }
+      );
+      $http.get(RIGHTDOCPATH).then(function(result){
+        $scope.rightDoc = {'name': 'Example 2: '+RIGHTDOCPATH.replace(/.*\//,''),
+                          'text': result.data
+        };
+      }
+      );
 
+      //For angular-diff-match-patch
       $scope.options = {
         editCost: 4,
         interLineDiff: true,
@@ -76,6 +82,12 @@
       };
 
 
+    }]);
+
+    app.filter("trust", ['$sce', function($sce) {
+        return function(htmlCode){
+            return $sce.trustAsHtml(htmlCode);
+        };
     }]);
 
     app.directive('textFileUpload', [function () {

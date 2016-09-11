@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" id="ng-app" ng-app="diffDemo" lang="en-us">
+<html xmlns="http://www.w3.org/1999/xhtml" id="ng-app" ng-app="diffDemo" ng-cloak lang="en-us">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,6 @@
 <script type="text/javascript" src="static/js/packed.min.js"></script>
 
   <style>
-    body md-content {
-      background-color: #f7f7f7;
-    }
-
-    md-card-content pre {
-      overflow: auto
-    }
-
-    .inputBox {
-      height: 100px;
-    }
-
     .match,
     .textdiff span {
       color: gray;
@@ -48,62 +36,84 @@
       -ms-user-select: none;
       user-select: none;
     }
+    .tab-content {
+        padding:20px;
+    }
+    @media print { 
+      textarea {
+        min-height: 900px;  
+     }
+    }
   </style>
 </head>
-
-<body layout="column" flex ng-controller="diffCtrl">
-  <md-content flex layout-padding>
-          <div class="md-toolbar-tools">
-            <div class="btn-group">
-                <span class="btn btn-default btn-sm" ng-click="showRichTextDiff=!showRichTextDiff"><span ng-if="showRichTextDiff">Hide</span><span ng-if="!showRichTextDiff">Show</span> Rich Text Diff</span>
-                <span class="btn btn-default btn-sm" ng-click="showSemanticDiff=!showSemanticDiff"><span ng-if="showSemanticDiff">Hide</span><span ng-if="!showSemanticDiff">Show</span> Semantic Diff</span>
-            </div>
-          </div>
-      <div flex layout="column" layout-gt-md="row">
-          <md-card flex>
-          <md-card-content>
-            <div class="uploadbtngroupleft" >
-                <span text-file-upload="" data-file-upload="options" textsourcename="leftDoc" dropzoneselect="#leftDocInput" class="btn btn-default btn-md fileinput-button" title="Upload Document (left)" ng-click="uploadLeft($event)">
-                <i class="glyphicon glyphicon-upload"></i>
-                <input type="file" name="files[]" ng-disabled="disabled"/>
-                </span>
+<body ng-controller="diffCtrl">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#" data-toggle="modal" data-target="#aboutModal">LDiff</a>
+      </div><!--/.navbar-header -->
+      <div class="uploadbtngroup pull-right btn-group" style="margin-right: 40px !important; margin-top:5px;">
+            <span id="leftDocInput" text-file-upload="" data-file-upload="options" textsourcename="leftDoc" dropzoneselect="#leftDocInput" class="btn btn-default btn-md fileinput-button" title="Upload Document (left)" ng-click="uploadLeft($event)" style="height:40px; width:300px;">
+                <i class="glyphicon glyphicon-upload"></i>&#160;
                 <span>{{leftDoc.name}}</span>
-            </div>
-            <textarea layout-fill id="leftDocInput" class="inputBox" ng-model="leftDoc.text"></textarea>
-          </md-card-content>
-        </md-card>
-        <md-card flex>
-          <md-card-content>
-            <div class="uploadbtngroupright"  >
-                <span text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)">
-                    <i class="glyphicon glyphicon-upload"></i>
-                    <input type="file" name="files[]" ng-disabled="disabled"/>
-                </span>
-                <span>{{rightDoc.name}}</span>
-            </div>
-            <textarea layout-fill id="rightDocInput" class="inputBox" ng-model="rightDoc.text"></textarea>
-          </md-card-content>
-        </md-card>
+                <input type="file" name="files[]" ng-disabled="disabled"/>
+            </span>
+            
+            <span id="rightDocInput" text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)" style="height:40px; width:300px;">
+            <i class="glyphicon glyphicon-upload"></i>&#160;
+            <span>{{rightDoc.name}}</span>
+            <input type="file" name="files[]" ng-disabled="disabled"/>
+            </span>
       </div>
-      <div flex layout="column" layout-gt-md="row" ng-if="showRichTextDiff">
-        <md-card flex>
-          <md-card-content>
-            <h2>Rich Text Diff</h2>
-            <rich-text-diff left="leftDoc.text" right="rightDoc.text"></rich-text-diff>
-          </md-card-content>
-        </md-card>
+  </div><!-- .navbar -->
+  <div style="margin-top:50px;"> <!-- tabset -->
+  <uib-tabset active="active">
+    <uib-tab index="0" heading="">
+      <uib-tab-heading>
+      {{leftDoc.name}}<a href="#" ng-click="editLeft=!editLeft" >&#160;&#160;<i class="glyphicon glyphicon-edit" ng-if="!editLeft"></i><i class="glyphicon glyphicon-file" ng-if="editLeft"></i></a>
+
+      </uib-tab-heading>
+      <textarea ng-model="leftDoc.text" ng-if="editLeft" style="width:100%; min-height:500px;"></textarea>
+      <div ng-bind-html="leftDoc.text | trust" ng-if="!editLeft"></div>
+    </uib-tab>
+    <uib-tab index="2" >
+      <uib-tab-heading>
+      {{rightDoc.name}}<a href="#" ng-click="editRight=!editRight" >&#160;&#160;<i class="glyphicon glyphicon-edit" ng-if="!editRight"></i><i class="glyphicon glyphicon-file" ng-if="editRight"></i></a>
+      </uib-tab-heading>
+      <textarea ng-model="leftDoc.text" ng-if="editRight" style="width:100%; min-height:500px"></textarea>
+      <div ng-bind-html="rightDoc.text | trust" ng-if="!editRight"></div>
+    </uib-tab>
+    <uib-tab index="3" >
+      <uib-tab-heading>
+        Structured Compare
+      </uib-tab-heading>
+      <rich-text-diff left="leftDoc.text" right="rightDoc.text"></rich-text-diff>
+    </uib-tab>
+    <uib-tab index="4" >
+      <uib-tab-heading>
+        Text Compare
+      </uib-tab-heading>
+      <pre class="textdiff" semantic-diff left-obj="leftDoc.text" right-obj="rightDoc.text" options="options"></pre>
+      </uib-tab>
+      </uib-tabset>
+  </div>
+<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">About&#160;LDiff</h4>
       </div>
-      <div flex layout="column" layout-gt-md="row" ng-if="showSemanticDiff">
-        <md-card flex>
-          <md-card-content>
-            <h2>Semantic Diff</h2>
-            <pre class="textdiff" semantic-diff left-obj="leftDoc.text" right-obj="rightDoc.text" options="options"></pre>
-          </md-card-content>
-        </md-card>
+      <div class="modal-body">
+          <i>LDiff</i> compares two documents in the browser. You can upload two files to compare using the buttons on the right of the navbar, at the top of the page, or simply drag and drop a file from your desktop onto each button. To copy and paste text to compare, click on the 'edit' icon next to the document name.
+          <i>LDiff</i>  works for both structured and unstructured text. The 'Structured Compare' tab is best for viewing comparisons of xml or html documents; the 'Text Compare' is best for plain text documents. The default styling, and the initial example, is for a U.S. House bill.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-  </md-content>
+  </div>
+</div>
 </body>
-  <script type="text/javascript" defer src="static/js/angular-diff-match-patch.js"></script>
-  <script type="text/javascript" defer src="static/js/app.js"></script>
+<script type="text/javascript" defer src="static/js/angular-diff-match-patch.js"></script>
+<script type="text/javascript" defer src="static/js/app.js"></script>
 </html>
