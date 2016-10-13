@@ -40,10 +40,15 @@
     }]);
 
     app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
+
+    
       
       var EXAMPLEPATH = 'static/examples';
       var LEFTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
       var RIGHTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
+      var BILLCSS = 'static/css/docexample.css';
+      var RULESCSS = 'static/css/rules.css';
+      var USCODECSS = 'static/css/usctitle.css';
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
       $scope.leftDoc = {'name':'Doc 1','text': 'Loading...'};
@@ -62,6 +67,7 @@
         };
       }
       );
+      
 
       //For angular-diff-match-patch
       $scope.options = {
@@ -78,8 +84,21 @@
           equal: {
             'data-attr': 'equal'
           }
-        }
+        },
+        docType : 'bill',
+        docCSS: BILLCSS
       };
+      
+      $scope.$watch('options.docType', function(newValue, oldValue) {
+            if(newValue=='bill'){
+                $scope.options.docCSS = BILLCSS;
+                
+            }else if(newValue=='rules'){
+                $scope.options.docCSS = RULESCSS;
+            }else if(newValue=='uscode'){
+                $scope.options.docCSS = USCODECSS;
+            }
+        });
     }]);
     app.filter("trust", ['$sce', function($sce) {
         return function(htmlCode){
