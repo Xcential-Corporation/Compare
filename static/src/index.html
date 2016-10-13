@@ -7,6 +7,8 @@
   <title>Legislative Diff</title>
 
 <!-- build:css(./) css/packed.css -->
+   <link rel="stylesheet" href="static/bower_components/alertify.js/themes/alertify.core.css" media="screen"/>
+   <link rel="stylesheet" href="static/bower_components/alertify.js/themes/alertify.default.css" media="screen"/>
   <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen"/>
   <link rel="stylesheet" href="static/bower_components/octicons/octicons/octicons.css">
   <link rel="stylesheet" href="static/bower_components/jquery-file-upload/css/jquery.fileupload.css">
@@ -59,8 +61,19 @@
       -ms-user-select: none;
       user-select: none;
     }
+    .nav-tabs{
+        position:fixed; 
+        width:100%;
+        background:white; 
+        opacity:1;
+        margin-top:-4px;
+        margin-bottom:10px;
+    }
     .tab-content {
         padding:20px;
+    }
+    .tab-pane {
+        padding-top:40px;
     }
     @media print { 
       textarea {
@@ -99,7 +112,7 @@
             </span>
       </div>
   </div><!-- .navbar -->
-  <div style="margin-top:50px;"> <!-- tabset -->
+  <div style="margin-top:50px; "> <!-- tabset -->
   <uib-tabset active="active">
     <uib-tab index="0" heading="">
       <uib-tab-heading>

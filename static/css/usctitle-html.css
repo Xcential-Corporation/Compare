@@ -1,0 +1,1023 @@
+/* 
+@namespace "http://xml.house.gov/schemas/uslm/1.0";
+@namespace xml "http://www.w3.org/XML/1998/namespace";
+@namespace dc "http://purl.org/dc/elements/1.1/"; 
+*/
+
+/* ------------------------------------------------------------------------- */
+
+.tab-content 
+{
+    font-family:        sans-serif;
+    font-size:          8pt;
+    margin-left:        auto;
+    margin-right:       auto;
+    max-width:          426pt;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Metadata Rules */
+
+.uslm-meta  
+{
+    display:            block;
+    border-style:       solid;
+    border-width:       1pt;  
+    border-color:       gray;
+    margin-left:        3pt;
+    margin-top:         3pt;
+    margin-bottom:      3pt;
+    width:              600pt;
+    text-align:         left;
+    text-indent:        12pt;
+    font-size:          10pt;
+}
+
+.uslm-meta:before  
+{
+    display:            inline;
+    color:              gray;
+    font-size:          12pt;
+    font-weight:        bold;
+    content:            "[Metadata]";
+}
+
+.dc-title 
+{
+    display:            block;
+    margin-top:         0pt;
+    margin-bottom:      0pt;
+    text-align:         left;
+    font-size:          10pt;
+}
+
+.dc-title:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Title: ";
+}
+
+.dc-type  
+{
+    display:            block;
+}
+
+.dc-type:before  
+{
+    display:            inline;
+    color:              gray; 
+    content:            "Doc Type: ";
+}
+
+.uslm-docNumber  
+{
+    display:            block;
+}
+
+.uslm-docNumber:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Doc Number: ";
+}
+
+.uslm-docReleasePoint  
+{
+    display:            block;
+}
+
+.uslm-docReleasePoint:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Doc Release Point: ";
+}
+
+.uslm-issued  
+{
+    display:            block;
+}
+
+.uslm-issued:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Issue Date: ";
+}
+
+.dc-identifier  
+{
+    display:            block;
+}
+
+.dc-identifier:before
+{
+    display:            inline;
+    color:              gray;
+    content:            "Identifier: ";
+}
+
+.uslm-docPublicationName  
+{
+    display:            block;
+}
+
+.uslm-docPublicationName:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Pub Name: ";
+}
+
+.dc-publisher  
+{
+    display:            block;
+}
+
+.dc-publisher:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Publisher: ";
+}
+
+.dc-copyright  
+{
+    display:            block;
+}
+
+.dc-copyright:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Copyright: ";
+}
+
+.dcterms-created  
+{
+    display:            block;
+}
+
+.dcterms-created:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Created On: ";
+}
+
+.dc-creator  
+{
+    display:            block;
+}
+
+.dc-creator:before 
+{
+    display:            inline;
+    color:              gray;
+    content:            "Created By: ";
+}
+
+/* ------------------------------------------------------------------------- */
+
+.uslm-main, 
+.uslm-appendix,
+.uslm-schedule
+{
+    display:            block;
+    margin-left:        24pt;
+    margin-right:       24pt;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Big-level rules */
+
+.uslm-title, 
+.uslm-subtitle, 
+.uslm-chapter, 
+.uslm-subchapter,
+.uslm-part, 
+.uslm-subpart, 
+.uslm-division, 
+.uslm-subdivision, 
+.uslm-level,
+.uslm-appendix,
+.uslm-compiledAct,
+.uslm-courtRule, 
+.uslm-reorganizationPlan 
+{
+    display:            block;
+    margin-top:         50pt;
+    margin-bottom:      3pt;
+    text-align:         center;
+}
+
+.uslm-title, 
+.uslm-subtitle, 
+.uslm-chapter,
+.uslm-subchapter,
+.uslm-division,
+.uslm-subdivision,
+.uslm-level,
+.uslm-appendix, 
+.uslm-compiledAct,
+.uslm-courtRule,
+.uslm-reorganizationPlan  
+{
+    font-size:          11pt;
+}
+
+.uslm-part, 
+.uslm-subpart  
+{
+    font-size:          14pt;
+}
+
+.uslm-part[data-status] > .uslm-num 
+{
+    color:              red;
+}
+
+.uslm-part[data-status] > .uslm-heading 
+{
+    color:              red;
+}
+
+.uslm-heading 
+{
+    font-weight:        bold;
+    display:            inline;
+}
+
+
+/* ------------------------------------------------------------------------- */
+/* ToC rules */
+
+.uslm-toc 
+{
+    border-style:       solid;
+    border-color:       gray;
+    border-width:       1pt;    
+    margin-left:        0pt;
+    margin-top:         24pt;
+    margin-bottom:      3pt;
+    margin-right:       12pt;
+    text-align:         left;
+    display:            table;
+    font-size:          11pt;
+}
+
+.uslm-toc > .uslm-layout > .uslm-header 
+{
+    display:            table-row;
+}
+
+.uslm-toc > .uslm-layout > .uslm-header[role="tocColumnHeader"]  
+{
+    display:            table-row;
+    font-size:          9pt;
+}
+
+.uslm-toc > .uslm-layout > .uslm-header[role="tocSubchapterHeader"]  
+{
+    display:            block;
+}
+
+.uslm-toc > .uslm-layout > .uslm-header[role="tocSubchapterHeader"] > .uslm-column 
+{
+    display:            block;
+    text-align:         center;
+}
+
+.uslm-toc > .uslm-layout > .uslm-header[role="tocSubpartHeader"]  
+{
+    display:            block;
+}
+
+.uslm-toc > .uslm-layout > .uslm-header[role="tocSubpartHeader"] > .uslm-column 
+{
+    display:            block;
+    text-align:         center;
+}
+
+.uslm-tocItem 
+{
+    display:            table-row;
+}
+
+.uslm-column 
+{
+    display:            table-cell;
+}
+
+.uslm-column[class~="threeColumnLeft"]  
+{
+    width:              50pt;
+    font-weight:        bold;
+}
+
+.uslm-column[class~="threeColumnMiddle"]  
+{
+    width:              300pt;
+    font-weight:        bold;
+}
+
+.uslm-column[class~="threeColumnRight"]  
+{
+    width:              200pt;
+    font-weight:        bold;
+}
+
+.uslm-column[class~="twoColumnLeft"]  
+{
+    width:              50pt;
+}
+
+.uslm-column[class~="twoColumnRight"]  
+{
+    width:              500pt;
+}
+
+.uslm-toc[role="twoColumnPageWidthTOC"]  
+{
+    width:              426pt;
+}
+
+.uslm-toc[role="twoColumnPageWidthTOC"] 
+.uslm-column[class~="twoColumnLeft"]  
+{
+    width:              380pt;
+    margin-right:       10pt;
+    font-weight:        bold;
+}
+
+.uslm-toc[role="twoColumnPageWidthTOC"]
+.uslm-column[class~="twoColumnRight"],
+.uslm-toc[role="twoColumnPageWidthTOC"]
+.uslm-column[class~="headerRight"]
+{
+    width:              40pt;
+    text-align:         right;
+}
+
+.uslm-toc[role="twoColumnPageWidthTOC"] .uslm-column[class~="twoColumnRight"]
+{
+    font-weight:        bold;
+}
+
+*[class~="indentTo65ptsHang"] 
+{
+    text-indent:        -24pt;
+    padding-left:       36pt;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Section element rules */
+
+.uslm-section 
+{
+    display:            block;
+    margin-top:         24pt;
+    margin-bottom:      3pt;
+    margin-left:        0pt;
+    text-align:         left;
+    font-weight:        normal;
+    font-size:          11pt;
+}
+
+.uslm-section > .uslm-num  
+{
+    margin-left:        0pt;
+    font-size:          12pt;
+}
+
+.uslm-section > .uslm-heading:after 
+{
+    display:            block;
+    content:            " ";
+}
+
+.uslm-section > .uslm-heading 
+{
+    font-weight:        bold;
+    font-size:          12pt;
+}
+
+.uslm-section[data-status] > .uslm-num 
+{
+    color:              red;
+}
+
+.uslm-section[data-status] > .uslm-heading 
+{
+    color:              red;
+}
+
+.uslm-section > .uslm-content  
+{
+    text-indent:        12pt;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Below section element rules */
+
+.uslm-subsection, 
+.uslm-paragraph, 
+.uslm-subparagraph,
+.uslm-clause,
+.uslm-subclause, 
+.uslm-item,
+.uslm-subitem,
+.uslm-subsubitem, 
+.uslm-level 
+{
+    display:            block;
+    margin-top:         3pt;
+    margin-left:        12pt;
+    margin-bottom:      3pt;
+    text-align:         left;
+    text-indent:        12pt;
+    font-size:          11pt;
+}
+
+.uslm-subsection[data-status] > .uslm-num 
+{
+    color:              red;
+}
+
+.uslm-subsection[data-status] > .uslm-content 
+{
+    color:              red;
+}
+
+.uslm-paragraph[class~="indent-up1"] 
+{
+    margin-left:        0pt;
+}
+
+.uslm-chapeau  
+{
+    display:            inline;
+    text-indent:        12pt;
+}
+
+.uslm-chapeau[class~="blockIndent0"]  
+{
+    display:            block;
+    margin-left:        0pt;
+    text-indent:        12pt;
+}
+
+.uslm-chapeau[class~="blockIndent1"]  
+{
+    display:            block;
+    margin-left:        12pt;
+    text-indent:        12pt;
+}
+
+.uslm-chapeau[class~="blockIndent2"]  
+{
+    display:            block;
+    margin-left:        24pt;
+    text-indent:        12pt;
+}
+
+.uslm-continuation  
+{
+    display:            block;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Appendix Content */
+
+.uslm-reorganizationPlan > .uslm-content 
+{
+    display:            inline;
+    margin-top:         3pt;
+    margin-bottom:      3pt;
+    margin-right:       12pt;
+    text-align:         left;
+    text-indent:        12pt;
+    font-size:          12pt;
+    font-weight:        normal;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Notes and References */
+
+.uslm-notes 
+{
+    display:            block;
+    margin-top:         3pt;
+    margin-bottom:      3pt;
+    margin-left:        0pt;
+    color:              black;
+    font-weight:        normal;
+}
+
+.uslm-sourceCredit 
+{
+    display:            block;
+    margin-left:        0pt;
+    margin-top:         3pt;
+    margin-bottom:      3pt;
+    text-align:         left;
+    text-indent:        0pt;
+    font-size:          11pt;
+    font-weight:        normal;
+}
+
+.uslm-sourceCredit > p 
+{
+    text-indent:        0pt;
+}
+
+.uslm-note    
+{
+    display:            block;
+    margin-bottom:      3pt;
+    margin-right:       24pt;
+    text-align:         left;
+    text-indent:        0pt;
+    font-size:          11pt;
+    font-weight:        normal;
+}
+
+.uslm-note > .uslm-heading 
+{
+    margin-top:         24pt;
+    font-size:          11pt;
+    font-variant:       small-caps;
+    color:              maroon;
+    text-align:         center;
+    display:            block;
+    font-weight:        normal;
+}
+
+.uslm-note[data-type="footnote"]    
+{
+    display:            block;
+    margin-left:        6pt;
+    margin-top:         0pt;
+    margin-bottom:      0pt;
+    margin-right:       6pt;
+    text-align:         left;
+    text-indent:        0pt;
+    font-size:          10pt;
+    color:              green;
+}
+
+.uslm-note[data-type="footnote"] > .uslm-num  
+{
+    vertical-align:     super;
+    color:              green;
+    font-size:          x-small;
+}
+
+.uslm-ref[class~="footnoteRef"] 
+{
+    font-weight:        bold;
+    font-size:          x-small;
+    vertical-align:     super;
+    color:              green;
+}
+
+.uslm-note[data-topic="enacting"] > p   
+{
+    display:            block;
+    margin-left:        24pt;
+    margin-right:       24pt;
+    margin-top:         0pt;
+    margin-bottom:      0pt;
+    text-align:         center;
+    font-size:          11pt;
+    font-style:         italic;
+}
+
+.uslm-ref
+{
+    color:              blue;
+}
+
+/* ------------------------------------------------------------------------- */
+/* General Content Item Rules */
+
+*[class~="centered"]  
+{
+    display:            block;
+    margin-top:         6pt;
+    margin-bottom:      6pt;
+    margin-left:        0pt;
+    margin-right:       0pt;
+    text-indent:        0pt;
+    text-align:         center;
+}
+
+*[class~="bold"]  
+{
+    font-weight:        bold !important;
+}
+
+*[class~="italic"]  
+{
+    font-style:         italic !important;
+}
+
+*[class~="smallCaps"]  
+{
+    font-variant:       small-caps !important;
+}
+
+*[class~="inline"]  
+{
+    display:            inline !important;
+}
+
+*[class~="firstIndent-4"]  
+{
+    text-indent:        -4em !important;
+}
+
+*[class~="firstIndent-3"]  
+{
+    text-indent:        -3em !important;
+}
+
+*[class~="firstIndent-2"]  
+{
+    text-indent:        -2em !important;
+}
+
+*[class~="firstIndent-1"]  
+{
+    text-indent:        -1em !important;
+}
+
+*[class~="firstIndent0"]  
+{
+    text-indent:        0em !important;
+}
+
+*[class~="firstIndent2"]  
+{
+    text-indent:        2em !important;
+}
+
+*[class~="rightIndent1"]  
+{
+    display:            block;
+    margin-right:       1em;
+    text-align:         right;
+}
+
+*[class~="rightIndent3"]  
+{
+    display:            block;
+    margin-right:       3em;
+    text-align:         right;
+}
+
+*[class~="indent-1"]  
+{
+    display:            block;
+    margin-left:        0pt;
+    text-align:         center;
+}
+
+*[class~="indent0"]  
+{
+    display:            block;
+    margin-left:        0em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="indent1"]  
+{
+    display:            block;
+    margin-left:        1em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="indent2"]  
+{
+    display:            block;
+    margin-left:        2em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="indent3"]  
+{
+    display:            block;
+    margin-left:        3em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="indent4"]  
+{
+    display:            block;
+    margin-left:        4em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="indent5"]  
+{
+    display:            block;
+    margin-left:        5em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="indent6"]  
+{
+    display:            block;
+    margin-left:        6em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="indent7"]  
+{
+    display:            block;
+    margin-left:        7em;
+    text-align:         justify;
+    text-indent:        1em;
+}
+
+*[class~="fontsize6"]  
+{
+    font-size:          9pt;
+}
+
+*[class~="fontsize7"]  
+{
+    font-size:          0pt;
+}
+
+*[class~="fontsize8"]  
+{
+    font-size:          12pt;
+}
+
+p  
+{
+    display:            block;
+    margin-left:        0pt;
+    text-indent:        12pt;
+}
+
+.uslm-num  
+{
+    font-weight:        bold;
+}
+
+.uslm-content
+{
+   display:             inline;
+}
+
+.uslm-text 
+{
+    text-indent:        12pt;
+}
+
+.uslm-continuation 
+{
+    display:            block;
+    text-indent:        0pt;
+}
+
+.uslm-quotedContent 
+{
+    color:              MidnightBlue;
+    display:            inline;
+}
+
+.uslm-quotedContent > .uslm-section  
+{
+    display:            block;
+    margin-top:         3pt;
+}
+
+ul 
+{
+    display:            block;
+    margin-top:         0pt;
+    margin-bottom:      0pt;
+    margin-left:        -18pt;
+}
+
+li 
+{
+    display:            block;
+    margin-left:        12pt;
+    text-align:         left;
+}
+
+sup 
+{
+    vertical-align:     super;
+    font-size:          small;
+}
+
+sub 
+{
+    vertical-align:     sub;
+    font-size:          small;
+}
+
+i 
+{
+    font-style:         italic;
+}
+
+
+b 
+{
+    font-weight:        bold;
+}
+
+.uslm-date 
+{
+    color:              DarkBlue;
+}
+
+.uslm-inline  
+{
+    display:            inline;
+}
+
+.small-caps  
+{
+    font-variant:       small-caps;
+}
+
+.uslm-def  
+{
+    display:            inline;
+}
+
+.uslm-term  
+{
+    display: inline;
+    font-variant:       small-caps;
+}
+
+br  
+{
+    display:            block;
+}
+
+.uslm-longTitle  
+{
+    display:            block;
+    text-align:         left;
+    text-indent:        12pt;
+}
+
+.uslm-enactingFormula  
+{
+    display:            block;
+    text-align:         left;
+    text-indent:        12pt;
+}
+
+/* ------------------------------------------------------------------------- */
+/* Tables */
+
+table 
+{
+    display:            block;
+    border-style:       none;
+    border-color:       black;
+    margin-top:         12pt;
+    margin-bottom:      10pt;
+    margin-left:        24pt;
+    margin-right:       24pt;
+    text-align:         center;
+    border-collapse:    collapse;
+}
+
+colgroup 
+{
+    display:            table-column-group
+}
+
+col 
+{
+    display:            table-column
+}
+
+thead 
+{
+    display:            table-header-group;
+    text-align:         center;
+    margin:             3pt;
+}
+
+tbody 
+{
+    display:            table-row-group;
+    font-family:        Ionic, Times, serif;
+    font-size:          7pt;
+    text-align:         justify;
+}
+
+tr  
+{
+    display:            table-row;    
+}
+
+td, th  
+{
+    display:            table-cell;    
+    font-weight :       normal;
+    padding:            0pt;
+}
+
+/* ------------------------------------------------------------------------- */
+/* XHTML Tables formatting */
+
+body 
+{
+    font-family:        Ionic, Times, serif;
+    font-size:          7pt;
+    text-align:         justify;
+}
+
+.thinsp 
+{
+    width:              0.16em; 
+    display:            inline-block;
+}
+
+.small-caps 
+{
+    font-variant:       small-caps;
+}
+
+.sectionNumber
+{
+    font-weight:        bold;
+}
+
+.title
+{
+    font-size:          10pt;
+    font-family:        CenturySchoolbook, NewCenturySchlbk, TimesNewRoman, Times, Serif;
+    font-weight:        bold;
+    margin-bottom:      6pt;
+    text-align:         center; 
+}
+
+tr.headers
+{
+    vertical-align:     middle; 
+    text-align:         center;
+}
+
+td > p
+{ 
+    margin:             0pt; 
+}
+
+th > p 
+{ 
+    margin:             0pt; 
+    margin-left:        4pt; 
+    margin-right:       4pt; 
+}
+
+p.leaders 
+{
+    max-width:          40em;
+    padding:            0;
+    baseline-shift:     baseline;
+    overflow-x:         hidden;
+    list-style:         none;
+}
+
+p.leaders span:after 
+{
+    float:              left;
+    width:              0;
+    baseline-shift:     baseline;
+    white-space:        nowrap;
+    content:
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+    ". . . . . . . . . . . . . . . . . . . . "
+}
+
+p.leaders span:first-child 
+{
+    padding-right:      0.33em;
+    background:         white
+}
+
+/* ------------------------------------------------------------------------- */

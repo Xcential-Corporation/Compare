@@ -1,4 +1,5 @@
 
+@import url("front.css");
 @import url("house.css");
 
 body.clerk .docTitle { font-size: 24pt; font-weight: normal }

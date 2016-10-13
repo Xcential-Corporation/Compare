@@ -40,34 +40,19 @@
     }]);
 
     app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
-
-    
       
       var EXAMPLEPATH = 'static/examples';
       var LEFTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
       var RIGHTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
+      var RULESLEFTEX = EXAMPLEPATH + '/HouseRules/Rules113content.html';
+      var RULESRIGHTEX = EXAMPLEPATH + '/HouseRules/Rules114content.html';
       var BILLCSS = 'static/css/docexample.css';
       var RULESCSS = 'static/css/rules.css';
-      var USCODECSS = 'static/css/usctitle.css';
+      var USCODECSS = 'static/css/usctitle-html.css';
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
       $scope.leftDoc = {'name':'Doc 1','text': 'Loading...'};
       $scope.rightDoc = {'name':'Doc 2', 'text':'Loading...'};
-      
-
-      $http.get(LEFTDOCPATH).then(function(result){
-        $scope.leftDoc = {'name': 'Example 1: '+LEFTDOCPATH.replace(/.*\//,''),
-                          'text': result.data
-        };
-      }
-      );
-      $http.get(RIGHTDOCPATH).then(function(result){
-        $scope.rightDoc = {'name': 'Example 2: '+RIGHTDOCPATH.replace(/.*\//,''),
-                          'text': result.data
-        };
-      }
-      );
-      
 
       //For angular-diff-match-patch
       $scope.options = {
@@ -85,16 +70,48 @@
             'data-attr': 'equal'
           }
         },
+        docPaths : { leftdocpath: LEFTDOCPATH,
+        rightdocpath: RIGHTDOCPATH
+        },
         docType : 'bill',
         docCSS: BILLCSS
       };
+
+      var setExamples = function(){
+        alertify.log('Loading...');
+        $http.get($scope.options.docPaths.leftdocpath).then(function(result){
+            $scope.leftDoc = {'name': 'Example 1: '+$scope.options.docPaths.leftdocpath.replace(/.*\//,''),
+                          'text': result.data
+            };
+        }
+        );
+        $http.get($scope.options.docPaths.rightdocpath).then(function(result){
+            $scope.rightDoc = {'name': 'Example 2: '+$scope.options.docPaths.rightdocpath.replace(/.*\//,''),
+                              'text': result.data
+            };
+            jQuery('.alertify-log').click();
+        }
+        );
+        };
+      
+      setExamples();
       
       $scope.$watch('options.docType', function(newValue, oldValue) {
             if(newValue=='bill'){
                 $scope.options.docCSS = BILLCSS;
+                $scope.options.docPaths = {
+                    leftdocpath: RIGHTDOCPATH,
+                    rightdocpath: LEFTDOCPATH 
+                };
+                setExamples();
                 
             }else if(newValue=='rules'){
                 $scope.options.docCSS = RULESCSS;
+                $scope.options.docPaths = {
+                    leftdocpath: RULESLEFTEX,
+                    rightdocpath: RULESRIGHTEX
+                };
+                setExamples();
             }else if(newValue=='uscode'){
                 $scope.options.docCSS = USCODECSS;
             }

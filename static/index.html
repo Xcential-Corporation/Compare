@@ -36,8 +36,19 @@
       -ms-user-select: none;
       user-select: none;
     }
+    .nav-tabs{
+        position:fixed; 
+        width:100%;
+        background:white; 
+        opacity:1;
+        margin-top:-4px;
+        margin-bottom:10px;
+    }
     .tab-content {
         padding:20px;
+    }
+    .tab-pane {
+        padding-top:40px;
     }
     @media print { 
       textarea {
@@ -76,7 +87,7 @@
             </span>
       </div>
   </div><!-- .navbar -->
-  <div style="margin-top:50px;"> <!-- tabset -->
+  <div style="margin-top:50px; "> <!-- tabset -->
   <uib-tabset active="active">
     <uib-tab index="0" heading="">
       <uib-tab-heading>
