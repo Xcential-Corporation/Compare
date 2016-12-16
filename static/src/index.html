@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Legislative Diff</title>
 
-<!-- build:css(./) css/packed.css -->
+  <!-- build:css(./) css/packed.css -->
    <link rel="stylesheet" href="static/bower_components/alertify.js/themes/alertify.core.css" media="screen"/>
    <link rel="stylesheet" href="static/bower_components/alertify.js/themes/alertify.default.css" media="screen"/>
   <link rel="stylesheet" href="static/bower_components/bootstrap/dist/css/bootstrap.min.css" media="screen"/>
@@ -85,17 +85,17 @@
 <body ng-controller="diffCtrl">
     <link rel="stylesheet" ng-href="{{options.docCSS}}">
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#" data-toggle="modal" data-target="#aboutModal">LDiff</a>
-      </div><!--/.navbar-header -->
-      <div class="btn-group" uib-dropdown is-open="status.isopen" style="margin-left:20px; margin-top: 8px">
+    <div class="navbar-header">
+       <a class="navbar-brand" href="#" data-toggle="modal" data-target="#aboutModal">LDiff</a><span style="font-size:10px;">by</span><span><img src="static/imgs/Xcential-Logo.png" style="height:50px; width:120px; margin-left:10px margin-right:20px;"/></span>
+    </div><!--/.navbar-header -->
+    <div class="btn-group" uib-dropdown is-open="status.isopen" style="margin-left:20px; margin-top: 8px">
       <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
        {{options.docType | uppercase}} <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+        <li role="menuitem" ng-disabled="disabled" ng-click="options.docType='uscode'"><a href="#">US Code</a></li>
         <li role="menuitem"><a href="#" ng-click="options.docType='bill'">Bill</a></li>
         <li role="menuitem"><a href="#" ng-click="options.docType='rules'">Rules</a></li>
-        <li role="menuitem" ng-disabled="disabled" ng-click="options.docType='uscode'"><a href="#">US Code</a></li>
       </ul>
     </div>
       <div class="uploadbtngroup pull-right btn-group" style="margin-right: 40px !important; margin-top:5px;">

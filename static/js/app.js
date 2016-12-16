@@ -42,13 +42,16 @@
     app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
       
       var EXAMPLEPATH = 'static/examples';
-      var LEFTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
-      var RIGHTDOCPATH = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
-      var RULESLEFTEX = EXAMPLEPATH + '/HouseRules/Rules113content.html';
-      var RULESRIGHTEX = EXAMPLEPATH + '/HouseRules/Rules114content.html';
+      var DOCPATH_LEFT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
+      var DOCPATH_RIGHT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
+      var RULESEX_LEFT = EXAMPLEPATH + '/HouseRules/Rules113content.html';
+      var RULESEX_RIGHT= EXAMPLEPATH + '/HouseRules/Rules114content.html';
+      var USCEX_LEFT = EXAMPLEPATH + '/t44-ch3/usc44-ch3-before113-235.xml';
+      var USCEX_RIGHT = EXAMPLEPATH + '/t44-ch3/usc44-ch3-after113-235.xml';
       var BILLCSS = 'static/css/docexample.css';
       var RULESCSS = 'static/css/rules.css';
-      var USCODECSS = 'static/css/usctitle-html.css';
+      var USCODECSS = 'static/css/uslm.css';
+      var USCODEHTMLCSS = 'static/css/usctitle-html.css';
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
       $scope.leftDoc = {'name':'Doc 1','text': 'Loading...'};
@@ -70,11 +73,11 @@
             'data-attr': 'equal'
           }
         },
-        docPaths : { leftdocpath: LEFTDOCPATH,
-        rightdocpath: RIGHTDOCPATH
+        docPaths : { leftdocpath: USCEX_LEFT,
+        rightdocpath: USCEX_RIGHT
         },
-        docType : 'bill',
-        docCSS: BILLCSS
+        docType : 'uscode',
+        docCSS: USCODECSS
       };
 
       var setExamples = function(){
@@ -97,23 +100,31 @@
       setExamples();
       
       $scope.$watch('options.docType', function(newValue, oldValue) {
-            if(newValue=='bill'){
+            if(newValue==='uscode'){
+                $scope.options.docCSS = USCODECSS;
+                $scope.options.docPaths = {
+                    leftdocpath: USCEX_LEFT,
+                    rightdocpath: USCEX_RIGHT 
+                };
+                setExamples();
+               } 
+            else if(newValue==='bill'){
                 $scope.options.docCSS = BILLCSS;
                 $scope.options.docPaths = {
-                    leftdocpath: RIGHTDOCPATH,
-                    rightdocpath: LEFTDOCPATH 
+                    leftdocpath: DOCPATH_LEFT,
+                    rightdocpath: DOCPATH_RIGHT 
                 };
                 setExamples();
                 
-            }else if(newValue=='rules'){
+            }else if(newValue==='rules'){
                 $scope.options.docCSS = RULESCSS;
                 $scope.options.docPaths = {
-                    leftdocpath: RULESLEFTEX,
-                    rightdocpath: RULESRIGHTEX
+                    leftdocpath: RULESEX_LEFT,
+                    rightdocpath: RULESEX_RIGHT
                 };
                 setExamples();
-            }else if(newValue=='uscode'){
-                $scope.options.docCSS = USCODECSS;
+            }else if(newValue==='uscode2'){
+                $scope.options.docCSS = USCODEHTMLCSS;
             }
         });
     }]);
