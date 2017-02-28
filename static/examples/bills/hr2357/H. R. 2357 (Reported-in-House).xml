@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill.dtd//EN" "bill.dtd">
+<bill bill-stage="Reported-in-House" bill-type="olc" dms-id="H3E9C7201035F4C4DA4A0402AFBBB4430" public-private="public">
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title>114 HR 2357 RH: Accelerating Access to Capital Act of 2015</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date>2015-05-15</dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+		<distribution-code display="yes">IB</distribution-code>
+		<calendar display="yes">Union Calendar No. 386</calendar>
+		<congress display="yes">114th CONGRESS</congress>
+		<session display="yes">2d Session</session>
+		<legis-num>H. R. 2357</legis-num>
+		<associated-doc display="yes" role="report">[Report No. 114–506]</associated-doc>
+		<current-chamber display="yes">IN THE HOUSE OF REPRESENTATIVES</current-chamber>
+		<action>
+			<action-date date="20150515">May 15, 2015</action-date>
+			<action-desc><sponsor name-id="W000812">Mrs. Wagner</sponsor> introduced the following bill; which was referred to the <committee-name committee-id="HBA00">Committee on Financial Services</committee-name></action-desc>
+		</action>
+		<action>
+			<action-date>April 19, 2016</action-date>
+			<action-desc>Committed to the Committee of the Whole House on the State of the Union and ordered to be printed</action-desc>
+		</action>
+		<action><action-desc><pagebreak></pagebreak></action-desc></action><legis-type>A BILL</legis-type>
+		<official-title display="yes">To direct the Securities and Exchange Commission to revise Form S–3 so as to add listing and
+			 registration of a class of common equity securities on a national
+			 securities exchange as an additional basis for satisfying the requirements
+			 of General Instruction I.B.1. of such form and to remove such listing and
+			 registration as a requirement of General Instruction I.B.6. of such form.<pagebreak></pagebreak></official-title>
+	</form>
+	<legis-body id="H2F1B4AFE34A94ADCAC9D29BC2E45F7EE" style="OLC">
+ <section id="H8EB30CE4C6744434B5FE73E635E8110A" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Accelerating Access to Capital Act of 2015</short-title></quote>.</text> </section><section id="H73CE174F2DB84BABA0D8708308BA88C4"><enum>2.</enum><header>Expanded eligibility for use of Form S–3</header> <text display-inline="no-display-inline">Not later than 45 days after the date of the enactment of this Act, the Securities and Exchange Commission shall revise Form S–3—</text>
+ <paragraph id="HEAF28DCEE0F14DF78422986B42ED82B7"><enum>(1)</enum><text>so as to permit securities to be registered pursuant to General Instruction I.B.1. of such form provided that either—</text>
+ <subparagraph id="H1019FB14BEFB4D64997362A3F8214059"><enum>(A)</enum><text display-inline="yes-display-inline">the aggregate market value of the voting and non-voting common equity held by non-affiliates of the registrant is $75,000,000 or more; or</text>
+ </subparagraph><subparagraph id="HCBB3220D8537483DBF11407CC030A914"><enum>(B)</enum><text display-inline="yes-display-inline">the registrant has at least one class of common equity securities listed and registered on a national securities exchange; and</text>
+ </subparagraph></paragraph><paragraph id="HEADCAC8CCB6D4DDD916D03ABA1CDEBFC"><enum>(2)</enum><text>so as to remove the requirement of paragraph (c) from General Instruction I.B.6. of such form.</text> </paragraph></section></legis-body> <endorsement display="yes"> <action-date>April 19, 2016</action-date> <action-desc>Committed to the Committee of the Whole House on the State of the Union and ordered to be printed</action-desc></endorsement> </bill> 
+
