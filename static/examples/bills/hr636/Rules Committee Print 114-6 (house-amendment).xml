@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/xslt/billres.xsl" type="text/xsl"?>
+<!DOCTYPE amendment-doc PUBLIC "-//US Congress//DTDs/amend v2.8 20020720//EN" "http://xml.house.gov/amend.dtd"[]>
+<amendment-doc dms-id="H1F97B76151C2498AA8F2145439F857A2" amend-stage="proposed" amend-type="house-amendment" amend-degree="first" key="H">
+  <pre-form>
+    <meta-house>
+      <holc-filename>L:\XML\CPRT-114-HPRT-RU00-HR636.XML</holc-filename>
+      <holc-attorney>XML</holc-attorney>
+      <holc-last-author>mchinn</holc-last-author>
+      <holc-last-saved>2/6/2015 11:40</holc-last-saved>
+      <holc-creator>mchinn</holc-creator>
+      <holc-creation-date>02/05/2015 11:21</holc-creation-date>
+      <version>
+        <version-filename>L:\vr\020615\R020615.006.xml</version-filename>
+        <version-date>02/06/2015 11:42:01</version-date>
+        <version-creator>mchinn</version-creator>
+      </version>
+      <version>
+        <version-filename>x:\xx\xxxxxx\xxxxxx.xxx.xml</version-filename>
+        <version-date>xx/xx/xxxx xx:xx:xx xx</version-date>
+        <version-creator>mchinn</version-creator>
+      </version>
+    </meta-house>
+    <author-note display="no">
+      <?xm-replace_text {author-note}?>
+    </author-note>
+    <running-header display="no">[Discussion Draft]</running-header>
+    <legis-counsel>
+    </legis-counsel>
+    <first-page-header display="no">[Discussion Draft]</first-page-header>
+    <first-page-date display="yes">February 6, 2015</first-page-date>
+    <first-page-desc display="no">
+      <?xm-replace_text {first-page-desc}?>
+    </first-page-desc>
+  </pre-form>
+  <amendment-form>
+    <purpose display="no">
+      <?xm-replace_text {purpose}?>
+    </purpose>
+    <congress display="no">114th CONGRESS</congress>
+    <session display="no">1st Session</session>
+    <legis-num>Rules Committee Print 114-6</legis-num>
+    <action>
+      <action-desc blank-lines-after="1">Text of H.R. 636, America’s Small Business Tax Relief Act of 2015</action-desc>
+      <action-instruction>[Showing the texts of H.R. 636, H.R. 629, and H.R. 630 as ordered reported by the Committee on Ways and Means with conforming changes.]</action-instruction>
+    </action>
+  </amendment-form>
+  <amendment-body>
+    <amendment>
+      <amendment-instruction line-numbers="off">
+        <text>
+        </text>
+      </amendment-instruction>
+      <amendment-block style="OLC" id="H178F80106B244F679F2371921BA3A67D">
+        <section id="H95C766A1BA9D48438C91F2D835AE8557" section-type="section-one">
+          <enum>1.</enum>
+          <header>Short title</header>
+          <text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>America’s Small Business Tax Relief Act of 2015</short-title></quote>.</text>
+        </section>
+        <section id="HD23F88636D36430B97D28A601A1DF8E2">
+          <enum>2.</enum>
+          <header>Expensing certain depreciable business assets for small business</header>
+          <subsection id="H6A7A914C00EC4269A44C4EEDF0F88289">
+            <enum>(a)</enum>
+            <header>In general</header>
+            <paragraph id="H410B39F4B8924F4ABDC040BB775E405F">
+              <enum>(1)</enum>
+              <header>Dollar limitation</header>
+              <text>Section 179(b)(1) of the Internal Revenue Code of 1986 is amended by striking <quote>shall not exceed—</quote> and all that follows and inserting <quote>shall not exceed $500,000.</quote>.</text>
+            </paragraph>
+            <paragraph id="H94051D5EDD2843FC87ED40649EC00734">
+              <enum>(2)</enum>
+              <header>Reduction in limitation</header>
+              <text>Section 179(b)(2) of such Code is amended by striking <quote>exceeds—</quote> and all that follows and inserting <quote>exceeds $2,000,000.</quote>.</text>
+            </paragraph>
+          </subsection>
+          <subsection id="H242259CFD5EC4B2E93581C63947677C7">
+            <enum>(b)</enum>
+            <header>Computer software</header>
+            <text display-inline="yes-display-inline">Section 179(d)(1)(A)(ii) of such Code is amended by striking <quote>, to which section 167 applies, and which is placed in service in a taxable year beginning after 2002 and before 2015</quote> and inserting <quote>and to which section 167 applies</quote>.</text>
+          </subsection>
+          <subsection id="H4A22DFCE8A984F1DA76030028648B64E">
+            <enum>(c)</enum>
+            <header>Election</header>
+            <text>Section 179(c)(2) of such Code is amended—</text>
+            <paragraph id="H66DBA6043A37487F8B5227D2C4961F0F">
+              <enum>(1)</enum>
+              <text>by striking <quote>may not be revoked</quote> and all that follows through <quote>and before 2015</quote>, and</text>
+            </paragraph>
+            <paragraph id="H474E892606964511A7868F1BB8D1C603">
+              <enum>(2)</enum>
+              <text>by striking <quote><header-in-text level="paragraph" style="OLC">irrevocable</header-in-text></quote> in the heading thereof.</text>
+            </paragraph>
+          </subsection>
+          <subsection commented="no" id="HCAC934B883B841D3BB8F34DF955CD42A">
+            <enum>(d)</enum>
+            <header>Air conditioning and heating units</header>
+            <text>Section 179(d)(1) of such Code is amended by striking <quote>and shall not include air conditioning or heating units</quote>.</text>
+          </subsection>
+          <subsection id="H6DB16CA39EFD4562BAFD6E5BDD2C6A93">
+            <enum>(e)</enum>
+            <header>Qualified real property</header>
+            <text display-inline="yes-display-inline">Section 179(f) of such Code is amended—</text>
+            <paragraph id="H47CEA4EBCE454F2BABB4C6834247D913">
+              <enum>(1)</enum>
+              <text>by striking <quote>beginning after 2009 and before 2015</quote> in paragraph (1), and</text>
+            </paragraph>
+            <paragraph id="H66AA179C12784870AE941B1DB98C0E7B">
+              <enum>(2)</enum>
+              <text>by striking paragraphs (3) and (4).</text>
+            </paragraph>
+          </subsection>
+          <subsection id="H601F7FD37B984AADBCF5B6235EED52DD">
+            <enum>(f)</enum>
+            <header>Inflation adjustment</header>
+            <text>Section 179(b) of such Code is amended by adding at the end the following new paragraph:</text>
+            <quoted-block display-inline="no-display-inline" id="H8EFC57CD86E64999A15712F95386A05A" style="OLC">
+              <paragraph id="HED87B666DDC3479394C5F3544CDA9D0B">
+                <enum>(6)</enum>
+                <header>Inflation adjustment</header>
+                <subparagraph id="H78A3BF2B27FF4F4D88A522CA7BAC1D76">
+                  <enum>(A)</enum>
+                  <header>In general</header>
+                  <text>In the case of any taxable year beginning after 2015, the dollar amounts in paragraphs (1) and (2) shall each be increased by an amount equal to—</text>
+                  <clause id="H32B344FDD29E4604A261B64976E1F064">
+                    <enum>(i)</enum>
+                    <text>such dollar amount, multiplied by</text>
+                  </clause>
+                  <clause id="H082A1E39D9BB4194AE8E1EC54235EF97">
+                    <enum>(ii)</enum>
+                    <text>the cost-of-living adjustment determined under section 1(f)(3) for the calendar year in which the taxable year begins, determined by substituting <quote>calendar year 2014</quote> for <quote>calendar year 1992</quote> in subparagraph (B) thereof.</text>
+                  </clause>
+                </subparagraph>
+                <subparagraph id="H8952C600A9D348CDA5867C494FE295EF">
+                  <enum>(B)</enum>
+                  <header>Rounding</header>
+                  <text display-inline="yes-display-inline">The amount of any increase under subparagraph (A) shall be rounded to the nearest multiple of $10,000.</text>
+                </subparagraph>
+              </paragraph>
+              <after-quoted-block>.</after-quoted-block>
+            </quoted-block>
+          </subsection>
+          <subsection id="HE6C1C55CA90C48E497783E8FC225727F">
+            <enum>(g)</enum>
+            <header>Effective date</header>
+            <text>The amendments made by this section shall apply to taxable years beginning after December 31, 2014.</text>
+          </subsection>
+        </section>
+        <section id="H1D323601CE3E432681C5FF60BF5AE684" commented="no" section-type="subsequent-section">
+          <enum>3.</enum>
+          <header>Reduced recognition period for built-in gains of S corporations made permanent</header>
+          <subsection id="HA5F4F333E9F54F3D9E6410A3C936B885" commented="no">
+            <enum>(a)</enum>
+            <header>In general</header>
+            <text>Paragraph (7) of section 1374(d) of the Internal Revenue Code of 1986 is amended to read as follows:</text>
+            <quoted-block style="OLC" id="HEA84692151A94B77910A8C7615D9BE4D">
+              <paragraph id="H740255E1F2BE4DEAAE8F177EF4941C57" commented="no">
+                <enum>(7)</enum>
+                <header>Recognition period</header>
+                <subparagraph id="H752D7DA836C94745AEBF79A3178C7EC7">
+                  <enum>(A)</enum>
+                  <header>In general</header>
+                  <text>The term <term>recognition period</term> means the 5-year period beginning with the 1st day of the 1st taxable year for which the corporation was an S corporation. For purposes of applying this section to any amount includible in income by reason of distributions to shareholders pursuant to section 593(e), the preceding sentence shall be applied without regard to the phrase <quote>5-year</quote>.</text>
+                </subparagraph>
+                <subparagraph id="HF4BFC1DA84BA4020AF2DE5AF5098E235">
+                  <enum>(B)</enum>
+                  <header>Installment sales</header>
+                  <text>If an S corporation sells an asset and reports the income from the sale using the installment method under section 453, the treatment of all payments received shall be governed by the provisions of this paragraph applicable to the taxable year in which such sale was made.</text>
+                </subparagraph>
+              </paragraph>
+              <after-quoted-block>.</after-quoted-block>
+            </quoted-block>
+          </subsection>
+          <subsection id="H7A3F165681084AA7A33AFD2043899882" commented="no">
+            <enum>(b)</enum>
+            <header>Effective date</header>
+            <text display-inline="yes-display-inline">The amendment made by this section shall apply to taxable years beginning after December 31, 2014.</text>
+          </subsection>
+        </section>
+        <section id="HD24E8DA1B69842A9B081031DD9AA6BA0" commented="no" display-inline="no-display-inline" section-type="subsequent-section">
+          <enum>4.</enum>
+          <header>Permanent rule regarding basis adjustment to stock of S corporations making charitable contributions of property</header>
+          <subsection id="HDFA342424FE841F5BB563D90443ABF92" commented="no">
+            <enum>(a)</enum>
+            <header>In general</header>
+            <text>Section 1367(a)(2) of the Internal Revenue Code of 1986 is amended by striking the last sentence.</text>
+          </subsection>
+          <subsection id="H06C023B603F940FA8E3320F8AF75E77A" commented="no">
+            <enum>(b)</enum>
+            <header>Effective date</header>
+            <text>The amendment made by this section shall apply to contributions made in taxable years beginning after December 31, 2014.</text>
+          </subsection>
+        </section>
+        <section id="HD333709D857C4ABF950EF618A6F7733F">
+          <enum>5.</enum>
+          <header>Budgetary effects</header>
+          <text display-inline="no-display-inline">The budgetary effects of this Act shall not be entered on either PAYGO scorecard maintained pursuant to section 4(d) of the Statutory Pay-As-You-Go Act of 2010.</text>
+        </section>
+      </amendment-block>
+    </amendment>
+  </amendment-body>
+</amendment-doc>
