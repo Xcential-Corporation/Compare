@@ -8,14 +8,14 @@ module.exports = function(grunt) {
     "bower-install-simple": {
         options: {
             cwd: "static",
-            command: "install" 
+            command: "install"
         },
         "prod": {
             options: {
                 production: true
             }
         }
-    },      
+    },
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
@@ -39,20 +39,21 @@ module.exports = function(grunt) {
         post: {
             expand: true,
             files: [
-                { src: 'static/index.html', dest: './index.html' }
+                { src: 'static/index.html', dest: './index.html' },
+                { src: 'static/all.html', dest: './all.html' }
             ],
             filter: 'isFile'
         }
     },
     useminPrepare: {
-        html: ['static/index.html'],
+        html: ['static/index.html', 'static/all.html'],
         options: {
             src: 'static',
             dest: 'static'
         }
     },
     usemin: {
-        html: ['static/index.html'],
+        html: ['static/index.html', 'static/all.html'],
         options: {
             assetDirs: ["static/js","static/css"],
             blockReplacements: {
@@ -116,7 +117,7 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-bower-install-simple');  
+  grunt.loadNpmTasks('grunt-bower-install-simple');
   grunt.loadNpmTasks('grunt-markdown');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
