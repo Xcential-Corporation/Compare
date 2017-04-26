@@ -11,7 +11,7 @@
                     fileReader.onload = function (event) {
                         var fileText = event.target.result;
                         //Save fileText to an object
-                        
+
                         scope.$parent.$apply(
                             function($scope){
                                 $scope[textSourceName].text= fileText;
@@ -31,7 +31,7 @@
             enabled: true,
             requireBase: false
         });
-    
+
       delete $httpProvider.defaults.headers.common['X-Requested-With'];
       fileUploadProvider.defaults.redirect = window.location.href.replace(
                     /\/[^\/]*$/,
@@ -40,10 +40,12 @@
     }]);
 
     app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
-      
+
       var EXAMPLEPATH = 'static/examples';
       var DOCPATH_LEFT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
       var DOCPATH_RIGHT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
+      var 114HR50_LEFT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rfs.xml';
+      var 114HR50_RIGHT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rh.xml';
       var RULESEX_LEFT = EXAMPLEPATH + '/HouseRules/Rules113content.html';
       var RULESEX_RIGHT= EXAMPLEPATH + '/HouseRules/Rules114content.html';
       var USCEX_LEFT = EXAMPLEPATH + '/t44-ch3/usc44-ch3-before113-235.xml';
@@ -96,26 +98,34 @@
         }
         );
         };
-      
+
       setExamples();
-      
+
       $scope.$watch('options.docType', function(newValue, oldValue) {
             if(newValue==='uscode'){
                 $scope.options.docCSS = USCODECSS;
                 $scope.options.docPaths = {
                     leftdocpath: USCEX_LEFT,
-                    rightdocpath: USCEX_RIGHT 
+                    rightdocpath: USCEX_RIGHT
                 };
                 setExamples();
-               } 
+               }
             else if(newValue==='bill'){
                 $scope.options.docCSS = BILLCSS;
                 $scope.options.docPaths = {
                     leftdocpath: DOCPATH_LEFT,
-                    rightdocpath: DOCPATH_RIGHT 
+                    rightdocpath: DOCPATH_RIGHT
                 };
                 setExamples();
-                
+
+            }else if(newValue==='bill2'){
+                $scope.options.docCSS = BILLCSS;
+                $scope.options.docPaths = {
+                    leftdocpath: 114HR50_LEFT,
+                    rightdocpath: 114HR50_RIGHT
+                };
+                setExamples();
+
             }else if(newValue==='rules'){
                 $scope.options.docCSS = RULESCSS;
                 $scope.options.docPaths = {
@@ -137,7 +147,7 @@
     app.directive('textFileUpload', [function () {
         return {
             scope: true,
-            controller: function($scope, $attrs){ 
+            controller: function($scope, $attrs){
                 $scope.options = {
                     url: 'upload',
                     dropZone: $($attrs.dropzoneselect),
@@ -185,5 +195,5 @@
                 }
             }
         ]);
-    
+
 })();
