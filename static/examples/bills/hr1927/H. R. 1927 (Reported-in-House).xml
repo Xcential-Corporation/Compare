@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
+<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill.dtd//EN" "bill.dtd">
+<bill bill-stage="Reported-in-House" bill-type="olc" dms-id="H9B2A2ABE639C421FB73F8BCBA9EA2254" public-private="public">
+	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+<dublinCore>
+<dc:title>114 HR 1927 RH: Fairness in Class Action Litigation Act of 2015</dc:title>
+<dc:publisher>U.S. House of Representatives</dc:publisher>
+<dc:date>2015-04-22</dc:date>
+<dc:format>text/xml</dc:format>
+<dc:language>EN</dc:language>
+<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
+</dublinCore>
+</metadata>
+<form>
+		<distribution-code display="yes">IB</distribution-code>
+		<calendar display="yes">Union Calendar No. 249</calendar>
+		<congress display="yes">114th CONGRESS</congress>
+		<session display="yes">1st Session</session>
+		<legis-num>H. R. 1927</legis-num>
+		<associated-doc display="yes" role="report">[Report No. 114–328]</associated-doc>
+		<current-chamber display="yes">IN THE HOUSE OF REPRESENTATIVES</current-chamber>
+		<action>
+			<action-date date="20150422">April 22, 2015</action-date>
+			<action-desc><sponsor name-id="G000289">Mr. Goodlatte</sponsor> (for himself and <cosponsor name-id="F000448">Mr. Franks of Arizona</cosponsor>) introduced the following bill; which was referred to the <committee-name added-display-style="italic" committee-id="HJU00" deleted-display-style="strikethrough">Committee on the Judiciary</committee-name></action-desc>
+		</action>
+		<action>
+			<action-date>November 5, 2015</action-date>
+			<action-desc>Reported with an amendment, committed to the Committee of the Whole House on the State of the
+			 Union, and ordered to be printed</action-desc>
+			<action-instruction>Strike out all after the enacting clause and insert the part printed in italic</action-instruction>
+			<action-instruction>For text of introduced bill, see copy of bill as introduced on April 22, 2015</action-instruction>
+		</action>
+		<action display="yes">
+			<action-desc display="yes"><pagebreak></pagebreak></action-desc>
+		</action>
+		<legis-type>A BILL</legis-type>
+		<official-title display="yes">To amend title 28, United States Code, to improve fairness in class action litigation.<pagebreak></pagebreak></official-title>
+	</form>
+	<legis-body changed="added" committee-id="HJU00" display-enacting-clause="yes-display-enacting-clause" id="H49F8E1BCC83E46E88C5D13AA5BFDEBD8" reported-display-style="italic" style="OLC">
+ <section id="H72095B6544B24E8A91AD8CCD4E5972AC" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Fairness in Class Action Litigation Act of 2015</short-title></quote>.</text> </section><section id="H7B66634AB4E9450EBD63B35535BF722B" section-type="subsequent-section"><enum>2.</enum><header>Class member injury required</header> <subsection id="H6B7C2CE473364137AC39AA98CA02AE26"><enum>(a)</enum><header>In general</header><text>No Federal court shall certify any proposed class seeking monetary relief for personal injury or economic loss unless the party seeking to maintain such a class action affirmatively demonstrates that each proposed class member suffered the same type and scope of injury as the named class representative or representatives.</text>
+ </subsection><subsection id="HAEA3D200D6FD4C2F93A1584DEAF76905"><enum>(b)</enum><header>Certification order</header><text>An order issued under Rule 23(c)(1) of the Federal Rules of Civil Procedure that certifies a class seeking monetary relief for personal injury or economic loss shall include a determination, based on a rigorous analysis of the evidence presented, that the requirement in subsection (a) of this section is satisfied.</text>
+			</subsection></section></legis-body>
+	<endorsement display="yes">
+		<action-date>November 5, 2015</action-date>
+		<action-desc>Reported with an amendment, committed to the Committee of the Whole House on the State of the
+			 Union, and ordered to be printed</action-desc></endorsement>
+</bill>
+
+
