@@ -44,8 +44,8 @@
       var EXAMPLEPATH = 'static/examples';
       var DOCPATH_LEFT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
       var DOCPATH_RIGHT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
-      var 114HR50_LEFT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rfs.xml';
-      var 114HR50_RIGHT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rh.xml';
+      var HR50_LEFT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rfs.xml';
+      var HR50_RIGHT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rh.xml';
       var RULESEX_LEFT = EXAMPLEPATH + '/HouseRules/Rules113content.html';
       var RULESEX_RIGHT= EXAMPLEPATH + '/HouseRules/Rules114content.html';
       var USCEX_LEFT = EXAMPLEPATH + '/t44-ch3/usc44-ch3-before113-235.xml';
@@ -121,8 +121,8 @@
             }else if(newValue==='bill2'){
                 $scope.options.docCSS = BILLCSS;
                 $scope.options.docPaths = {
-                    leftdocpath: 114HR50_LEFT,
-                    rightdocpath: 114HR50_RIGHT
+                    leftdocpath: HR50_LEFT,
+                    rightdocpath: HR50_RIGHT
                 };
                 setExamples();
 
