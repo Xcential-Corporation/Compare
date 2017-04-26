@@ -30,11 +30,11 @@ module.exports = function(grunt) {
             src: '**',
             dest: 'static/'
         },
-        glyph: {
-            expand: true,
-            cwd: 'static/bower_components/bootstrap/dist/fonts',
-            src: '**',
-            dest: 'static/fonts'
+        myfiles: {
+            files: [
+                { expand: true, cwd: 'static/bower_components/bootstrap/dist/fonts', src: '**', dest: 'static/fonts'},
+                { src: 'static/bower_components/angular-diff-match-patch/angular-diff-match-patch.js', dest: 'static/js/angular-diff-match-patch.js' }
+            ]
         },
         post: {
             expand: true,
@@ -128,7 +128,7 @@ module.exports = function(grunt) {
 
 
   // Build task.
-  grunt.registerTask('build', ['bower-install-simple', 'markdown', 'copy:pre', 'copy:glyph','useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin', 'copy:post']);
+  grunt.registerTask('build', ['bower-install-simple', 'markdown', 'copy:pre', 'copy:myfiles','useminPrepare', 'concat:generated', 'cssmin:generated', 'uglify:generated', 'filerev', 'usemin', 'copy:post']);
 
 };
 

@@ -4,7 +4,7 @@
  @license: MIT
 */
 angular.module('diff-match-patch', [])
-	.factory('dmp', ['$window', function dmpFactory($window) {
+	.factory('dmp', ['$window', function ($window) {
 		var DiffMatchPatch = $window.diff_match_patch;
 		var displayType = {
 			INSDEL: 0,
@@ -132,7 +132,7 @@ angular.module('diff-match-patch', [])
 				op = diffData[y][0];
 				text = diffData[y][1];
 				if (display === displayType.LINEDIFF) {
-					if (angular.isDefined(options) && angular.isDefined(options.interLineDiff) && options.interLineDiff && diffs[y][0] === DIFF_DELETE && diffs[y + 1][0] === DIFF_INSERT && diffs[y][1].indexOf('\n') === -1) {
+					if (angular.isDefined(options) && angular.isDefined(options.interLineDiff) && options.interLineDiff && diffs[y][0] === DIFF_DELETE && angular.isDefined(diffs[y + 1]) && diffs[y + 1][0] === DIFF_INSERT && diffs[y][1].indexOf('\n') === -1) {
 						intraDiffs = dmp.diff_main(diffs[y][1], diffs[y + 1][1]);
 						dmp.diff_cleanupSemantic(intraDiffs);
 						intraHtml1 = createHtmlFromDiffs(intraDiffs, displayType.INSDEL, options, DIFF_INSERT);
@@ -154,8 +154,60 @@ angular.module('diff-match-patch', [])
 			return angular.isString(left) && angular.isString(right);
 		}
 
+		// Taken from source https://code.google.com/p/google-diff-match-patch/
+		// and then modified for style and to strip newline
+		function linesToChars(text1, text2, ignoreTrailingNewLines) {
+			var lineArray = [];
+			var lineHash = {};
+			lineArray[0] = '';
+
+			function linesToCharsMunge(text) {
+				var chars = '';
+				var lineStart = 0;
+				var lineEnd = -1;
+				var lineArrayLength = lineArray.length;
+				var hasNewLine = false;
+				while (lineEnd < text.length - 1) {
+					lineEnd = text.indexOf('\n', lineStart);
+					hasNewLine = (lineEnd !== -1);
+					if (!hasNewLine) {
+						lineEnd = text.length - 1;
+					}
+
+					var line = text.substring(lineStart, lineEnd + ((ignoreTrailingNewLines && hasNewLine) ? 0 : 1));
+					lineStart = lineEnd + 1;
+
+					if (Object.prototype.hasOwnProperty.call(lineHash, line)) {
+						chars += String.fromCharCode(lineHash[line]);
+					} else {
+						chars += String.fromCharCode(lineArrayLength);
+						lineHash[line] = lineArrayLength;
+						lineArray[lineArrayLength++] = line;
+					}
+				}
+				return chars;
+			}
+
+			var chars1 = linesToCharsMunge(text1);
+			var chars2 = linesToCharsMunge(text2);
+			return {chars1: chars1, chars2: chars2, lineArray: lineArray};
+		}
+
+		// Taken from source https://code.google.com/p/google-diff-match-patch/
+		// and then modified for style and to strip newline
+		function charsToLines(diffs, lineArray, ignoreTrailingNewLines) {
+			for (var x = 0; x < diffs.length; x++) {
+				var chars = diffs[x][1];
+				var text = [];
+				for (var y = 0; y < chars.length; y++) {
+					text[y] = lineArray[chars.charCodeAt(y)];
+				}
+				diffs[x][1] = text.join((ignoreTrailingNewLines) ? '\n' : '');
+			}
+		}
+
 		return {
-			createDiffHtml: function createDiffHtml(left, right, options) {
+			createDiffHtml: function (left, right, options) {
 				var diffs;
 				if (assertArgumentsIsStrings(left, right)) {
 					diffs = new DiffMatchPatch().diff_main(left, right);
@@ -164,7 +216,7 @@ angular.module('diff-match-patch', [])
 				return '';
 			},
 
-			createProcessingDiffHtml: function createProcessingDiffHtml(left, right, options) {
+			createProcessingDiffHtml: function (left, right, options) {
 				var dmp;
 				var diffs;
 				if (assertArgumentsIsStrings(left, right)) {
@@ -181,7 +233,7 @@ angular.module('diff-match-patch', [])
 				return '';
 			},
 
-			createSemanticDiffHtml: function createSemanticDiffHtml(left, right, options) {
+			createSemanticDiffHtml: function (left, right, options) {
 				var dmp;
 				var diffs;
 				if (assertArgumentsIsStrings(left, right)) {
@@ -193,32 +245,37 @@ angular.module('diff-match-patch', [])
 				return '';
 			},
 
-			createLineDiffHtml: function createLineDiffHtml(left, right, options) {
+			createLineDiffHtml: function (left, right, options) {
 				var dmp;
 				var chars;
 				var diffs;
 				if (assertArgumentsIsStrings(left, right)) {
 					dmp = new DiffMatchPatch();
-					chars = dmp.diff_linesToChars_(left, right);
+					var ignoreTrailingNewLines = angular.isDefined(options) && angular.isDefined(options.ignoreTrailingNewLines) && options.ignoreTrailingNewLines;
+					chars = linesToChars(left, right, ignoreTrailingNewLines);
 					diffs = dmp.diff_main(chars.chars1, chars.chars2, false);
-					dmp.diff_charsToLines_(diffs, chars.lineArray);
+					charsToLines(diffs, chars.lineArray, ignoreTrailingNewLines);
 					return createHtmlFromDiffs(diffs, displayType.LINEDIFF, options);
 				}
 				return '';
 			}
 		};
 	}])
-	.directive('diff', ['$compile', 'dmp', function factory($compile, dmp) {
+	.directive('diff', ['$compile', 'dmp', function ($compile, dmp) {
 		var ddo = {
 			scope: {
 				left: '=leftObj',
 				right: '=rightObj',
 				options: '=options'
 			},
-			link: function postLink(scope, iElement) {
-				var listener = function listener() {
+			link: function (scope, iElement) {
+				var listener = function () {
 					iElement.html(dmp.createDiffHtml(scope.left, scope.right, scope.options));
-					$compile(iElement.contents())(scope);
+					// If no options given, or, we have been given options and don't want to skip angular compiling
+					// Then compile angular in the diff.
+					if (!scope.options || (scope.options && !scope.options.skipAngularCompilingOnDiff)) {
+						$compile(iElement.contents())(scope);
+					}
 				};
 				scope.$watch('left', listener);
 				scope.$watch('right', listener);
@@ -226,17 +283,21 @@ angular.module('diff-match-patch', [])
 		};
 		return ddo;
 	}])
-	.directive('processingDiff', ['$compile', 'dmp', function factory($compile, dmp) {
+	.directive('processingDiff', ['$compile', 'dmp', function ($compile, dmp) {
 		var ddo = {
 			scope: {
 				left: '=leftObj',
 				right: '=rightObj',
 				options: '=options'
 			},
-			link: function postLink(scope, iElement) {
-				var listener = function listener() {
+			link: function (scope, iElement) {
+				var listener = function () {
 					iElement.html(dmp.createProcessingDiffHtml(scope.left, scope.right, scope.options));
-					$compile(iElement.contents())(scope);
+					// If no options given, or, we have been given options and don't want to skip angular compiling
+					// Then compile angular in the diff.
+					if (!scope.options || (scope.options && !scope.options.skipAngularCompilingOnDiff)) {
+						$compile(iElement.contents())(scope);
+					}
 				};
 				scope.$watch('left', listener);
 				scope.$watch('right', listener);
@@ -245,17 +306,21 @@ angular.module('diff-match-patch', [])
 		};
 		return ddo;
 	}])
-	.directive('semanticDiff', ['$compile', 'dmp', function factory($compile, dmp) {
+	.directive('semanticDiff', ['$compile', 'dmp', function ($compile, dmp) {
 		var ddo = {
 			scope: {
 				left: '=leftObj',
 				right: '=rightObj',
 				options: '=options'
 			},
-			link: function postLink(scope, iElement) {
-				var listener = function listener() {
+			link: function (scope, iElement) {
+				var listener = function () {
 					iElement.html(dmp.createSemanticDiffHtml(scope.left, scope.right, scope.options));
-					$compile(iElement.contents())(scope);
+					// If no options given, or, we have been given options and don't want to skip angular compiling
+					// Then compile angular in the diff.
+					if (!scope.options || (scope.options && !scope.options.skipAngularCompilingOnDiff)) {
+						$compile(iElement.contents())(scope);
+					}
 				};
 				scope.$watch('left', listener);
 				scope.$watch('right', listener);
@@ -263,21 +328,26 @@ angular.module('diff-match-patch', [])
 		};
 		return ddo;
 	}])
-	.directive('lineDiff', ['$compile', 'dmp', function factory($compile, dmp) {
+	.directive('lineDiff', ['$compile', 'dmp', function ($compile, dmp) {
 		var ddo = {
 			scope: {
 				left: '=leftObj',
 				right: '=rightObj',
 				options: '=options'
 			},
-			link: function postLink(scope, iElement) {
-				var listener = function listener() {
+			link: function (scope, iElement) {
+				var listener = function () {
 					iElement.html(dmp.createLineDiffHtml(scope.left, scope.right, scope.options));
-					$compile(iElement.contents())(scope);
+					// If no options given, or, we have been given options and don't want to skip angular compiling
+					// Then compile angular in the diff.
+					if (!scope.options || (scope.options && !scope.options.skipAngularCompilingOnDiff)) {
+						$compile(iElement.contents())(scope);
+					}
 				};
 				scope.$watch('left', listener);
 				scope.$watch('right', listener);
 				scope.$watch('options.interLineDiff', listener, true);
+				scope.$watch('options.ignoreTrailingNewLines', listener, true);
 			}
 		};
 		return ddo;
