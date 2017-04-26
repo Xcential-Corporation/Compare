@@ -44,8 +44,8 @@
       var EXAMPLEPATH = 'static/examples';
       var DOCPATH_LEFT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
       var DOCPATH_RIGHT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
-      var HR50_LEFT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rfs.xml';
-      var HR50_RIGHT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rh.xml';
+      var HR50_LEFT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rh.xml';
+      var HR50_RIGHT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rfs.xml';
       var RULESEX_LEFT = EXAMPLEPATH + '/HouseRules/Rules113content.html';
       var RULESEX_RIGHT= EXAMPLEPATH + '/HouseRules/Rules114content.html';
       var USCEX_LEFT = EXAMPLEPATH + '/t44-ch3/usc44-ch3-before113-235.xml';
