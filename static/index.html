@@ -45,6 +45,9 @@
   </style>
 
   <style>
+    .navbar-header{
+        margin-right: 20px;
+    }
     #navbarToggleDiv{
         margin-top: -55px;
     }
@@ -119,8 +122,8 @@
 <body ng-controller="diffCtrl">
   <link rel="stylesheet" ng-href="{{app_constants.CSS_PATHS[options.doc.css]}}"/>
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="navbar-header">
-       <a class="navbar-brand" href="#" data-toggle="modal" data-target="#aboutModal" >LDiff</a>
+  <div class="navbar-header">
+       <a class="navbar-brand" href="#" data-toggle="modal" data-target="#aboutModal">LDiff</a><span style="font-size:10px;">by</span><span><img src="static/imgs/Xcential-Logo.png" style="height:50px; width:120px; margin-left:10px margin-right:20px;"></span>
        <span id="appversion" style="display:block;">Version:&nbsp;&nbsp;{{app_constants.APP_VERSION}}</span>
     </div><!--/.navbar-header -->
   </button>
