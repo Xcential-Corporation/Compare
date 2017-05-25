@@ -1,0 +1,258 @@
+body {
+	background-color:#FFFFFF;
+	text-align:center;
+}
+
+.text {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12pt;
+	font-weight: normal;
+	text-align: justify;
+}
+
+.text-bold {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: justify;
+}
+
+.text-lg {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14pt;
+	text-align: justify;
+}
+
+.text-lg-bold {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: justify;
+}
+
+.headnote {
+	font-weight: bold;
+}
+
+
+.mrs-text {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 12pt;
+	font-weight: normal;
+	text-align: justify;
+}
+
+.letpara {
+	margin-left: 2em;
+}
+
+.headline-lg {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: normal;
+	text-align: center;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+}
+
+.headline-lg-bold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+}
+
+.headline-sm {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-weight: normal;
+	text-align: center;
+	margin-bottom: 5pt;
+}
+
+.headline-sm-bold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12pt;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 5pt;
+}
+
+.history {
+	font-family: "Courier New", Courier, mono;
+	font-size: 10pt;
+}
+
+.header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	text-align: center;
+}
+
+.footer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	text-align: center;
+}
+
+
+.note {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 10pt;
+	font-style: italic;
+	font-weight: normal;
+	color: brown;
+	margin-top: 5pt;
+	margin-bottom: 5pt;
+}
+.disclaimer {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 9pt;
+	font-weight: normal;
+	letter-spacing: -0.3pt;
+	text-align: center;
+	margin-top: 4pt;
+	margin-bottom: 4pt;
+	font-style: italic;
+}
+.paragraph {
+	text-indent: 0em;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	text-align: left;
+}
+.indpara {
+	text-indent: 2em;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+	text-align: left;
+}
+.section {
+	text-align: left;
+	text-indent: 2em;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+}
+.resolvesection {
+	text-align: left;
+	text-indent: 2em;
+	margin-top: 6pt;
+	margin-bottom: 6pt;
+}
+
+.subsection {
+	margin-top: 3pt;
+}
+
+.list {
+	margin-left: 2em;
+}
+
+.quote {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11pt;
+	font-weight: normal;
+	text-align: justify;
+	text-indent: 0pt;
+	margin-top: 15pt;
+	margin-right: 3em;
+	margin-bottom: 15pt;
+	margin-left: 3em;
+}
+.subpara {
+	margin-left: 4em;
+}
+.division {
+	margin-left: 6em;
+}
+.subdivision {
+	margin-left: 8em;
+}
+.MRSSection {
+	text-indent: 0em;
+	margin-top: 8pt;
+	margin-bottom: 8pt;
+}
+.MRSSubSection {
+	text-indent: 2em;
+	margin-top: 10pt;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+.MRSheading {
+	text-align: center;
+	text-indent: 0em;
+	margin-top: 8pt;
+	margin-bottom: 8pt;
+}
+.table {
+	margin-top: 10pt;
+	margin-bottom: 10pt;
+	margin-left: 2pt;
+}
+
+.td {
+	margin: 2pt;
+}
+
+table_cell {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	margin: 2pt;
+}
+
+.border_none {
+	border: 0px none black;
+}
+.border_all {
+	border: 0.5pt solid black;
+}
+.border_left {
+	border-left-width: 0.5pt;
+	border-left-style: solid;
+	border-left-color: black;
+}
+.border_right {
+	border-right-width: 0.5pt;
+	border-right-style: solid;
+	border-right-color: black;
+}
+.border_top {
+	border-top-width: 0.5pt;
+	border-top-style: solid;
+	border-top-color: black;
+}
+.border_bottom {
+	border-bottom-width: 0.5pt;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+}
+
+.billtextbody {
+	margin-bottom:0.5em; margin-top:0.5em;  
+	width:80%;
+}
+
+.return_link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size: 90%;
+
+}
+
+.docdata {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+
+.dateline {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size:smaller;
+}
+
+.page {
+	width: 100%;
+	text-align: center;
+}

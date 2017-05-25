@@ -4,7 +4,8 @@
       "EXAMPLE_PATH": "static/examples/",
       "CSS_PATHS":{
         "RULES_CSS": "static/css/rules.css",
-        "USLM_CSS": "static/css/uslm.css"
+        "USLM_CSS": "static/css/uslm.css",
+        "MAINE_CSS": "static/examples/Maine/billtext.css"
       }
     },
       "SAMPLE_DOCS" : [{
@@ -40,6 +41,14 @@
                     "right": "HouseRules/Rules114content.html"
                 },
                 "css": "RULES_CSS"
+            },
+            {
+                "name": "Maine Bill (html)",
+                "paths":{
+                    "left": "Maine/LD237.html",
+                    "right": "Maine/LD237-amendments.html"
+                },
+                "css": "MAINE_CSS"
             }
       ]
 }

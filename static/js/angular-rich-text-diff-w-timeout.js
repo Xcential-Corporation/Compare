@@ -27,7 +27,7 @@ var AngularRichTextDiff;
             //NOTE: Added this to avoid timing out
             //SET to 0 to allow full-quality comparison
             //TODO: Can allow users to toggle this option
-            this.dmp.Diff_Timeout = 2;
+            this.dmp.Diff_Timeout = 0;
             this.doDiff();
         }
         RichTextDiffController.prototype.doDiff = function () {
