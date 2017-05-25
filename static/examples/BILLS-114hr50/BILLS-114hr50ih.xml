@@ -1,208 +1,105 @@
-<?xml version="1.0"?>
-<?xml-stylesheet type="text/xsl" href="billres.xsl"?>
-<!DOCTYPE bill PUBLIC "-//US Congress//DTDs/bill.dtd//EN" "bill.dtd">
-<bill bill-stage="Introduced-in-House" bill-type="olc" dms-id="H0581B5CE6C244C5F86057E5397A06EF2" public-private="public">
-	<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
-<dublinCore>
-<dc:title>114 HR 50 IH: Unfunded Mandates Information and Transparency Act of 2015</dc:title>
-<dc:publisher>U.S. House of Representatives</dc:publisher>
-<dc:date>2015-01-06</dc:date>
-<dc:format>text/xml</dc:format>
-<dc:language>EN</dc:language>
-<dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights>
-</dublinCore>
-</metadata>
-<form>
-		<distribution-code display="yes">I</distribution-code>
-		<congress>114th CONGRESS</congress>
-		<session>1st Session</session>
-		<legis-num>H. R. 50</legis-num>
-		<current-chamber>IN THE HOUSE OF REPRESENTATIVES</current-chamber>
-		<action>
-			<action-date date="20150106">January 6, 2015</action-date>
-			<action-desc><sponsor name-id="F000450">Ms. Foxx</sponsor> (for herself and <cosponsor name-id="S000030">Ms. Loretta Sanchez of California</cosponsor>) introduced the following bill; which was referred to the <committee-name committee-id="HGO00">Committee on Oversight and Government Reform</committee-name>, and in addition to the Committees on the <committee-name committee-id="HBU00">Budget</committee-name>, <committee-name committee-id="HRU00">Rules</committee-name>, and <committee-name committee-id="HJU00">the Judiciary</committee-name>, for a period to be subsequently determined by the Speaker, in each case for consideration of such
-			 provisions as fall within the jurisdiction of the committee concerned</action-desc>
-		</action>
-		<legis-type>A BILL</legis-type>
-		<official-title>To provide for additional safeguards with respect to imposing Federal mandates, and for other
-			 purposes.</official-title>
-	</form>
-	<legis-body id="H44CCDE9405294BD68F6C232DAB98B1D6" style="OLC">
-		<section id="H0A1404B06FF84B8EAF33E25F9D823A53" section-type="section-one"><enum>1.</enum><header>Short title</header><text display-inline="no-display-inline">This Act may be cited as the <quote><short-title>Unfunded Mandates Information and Transparency Act of 2015</short-title></quote>.</text>
-		</section><section id="HC4243D204C8C494EA8C0148308578F57"><enum>2.</enum><header>Purpose</header><text display-inline="no-display-inline">The purpose of this Act is—</text>
-			<paragraph id="H0BF2C528A5D3494DAADBFCD72C23D1AF"><enum>(1)</enum><text display-inline="yes-display-inline">to improve the quality of the deliberations of Congress with respect to proposed Federal mandates
-			 by—</text>
-				<subparagraph id="H73738D36390D457887F695A2D6AC31D4"><enum>(A)</enum><text display-inline="yes-display-inline">providing Congress and the public with more complete information about the effects of such
-			 mandates; and</text>
-				</subparagraph><subparagraph id="HE835107A60D94A7BB3DECFF0CC77A80C"><enum>(B)</enum><text>ensuring that Congress acts on such mandates only after focused deliberation on their effects; and</text>
-				</subparagraph></paragraph><paragraph id="H2BDAF60654A047ABB8F4B79C86F74B87"><enum>(2)</enum><text display-inline="yes-display-inline">to enhance the ability of Congress and the public to identify Federal mandates that may impose
+<?xml version='1.0' encoding='UTF-8'?>
+<bill xmlns="http://xml.house.gov/schemas/uslm/1.0" xmlns:u="http://xml.house.gov/schemas/uslm/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:customfn="http://customfn.com" xsi:schemaLocation="http://xml.house.gov/schemas/uslm/1.0 USLM-1.0.18.xsd" xml:lang="en"><meta><dc:title>114 HR 50 IH: Unfunded Mandates Information and Transparency Act of 2015</dc:title><dc:publisher>U.S. House of Representatives</dc:publisher><dc:date>2015-01-06</dc:date><dc:format>text/xml</dc:format><dc:language>EN</dc:language><dc:rights>Pursuant to Title 17 Section 105 of the United States Code, this file is not subject to copyright protection and is in the public domain.</dc:rights><property role="congress">114th CONGRESS</property><property role="session">1st Session</property><property role="legis-type">A BILL</property><property role="legis-num">H. R. 50</property></meta><main id="H255613C210B011E7BA58A886DD9D4940" identifier=""><longTitle><p>A BILL</p><p>To provide for additional safeguards with respect to imposing Federal mandates, and for other
+			 purposes.</p></longTitle><enactingFormula>Be it enacted by the Senate and House of Representatives of the United States of America in Congress assembled,</enactingFormula><section id="H0A1404B06FF84B8EAF33E25F9D823A53" class="bill-dtd-OLC" identifier="/s1"><num value="1">Section 1.</num><heading>Short title</heading><content><p class="indent0">This Act may be cited as the <quotedContent>''<shortTitle>Unfunded Mandates Information and Transparency Act of 2015</shortTitle>''</quotedContent>.</p></content></section><section id="HC4243D204C8C494EA8C0148308578F57" class="bill-dtd-OLC" identifier="/s2"><num value="2">Sec. 2.</num><heading>Purpose</heading><chapeau><p class="indent0">The purpose of this Act is—</p></chapeau><paragraph id="H0BF2C528A5D3494DAADBFCD72C23D1AF" class="bill-dtd-OLC" identifier="/s2/1"><num value="1">(1)</num><chapeau>to improve the quality of the deliberations of Congress with respect to proposed Federal mandates
+			 by—</chapeau><subparagraph id="H73738D36390D457887F695A2D6AC31D4" class="bill-dtd-OLC" identifier="/s2/1/A"><num value="A">(A)</num><content>providing Congress and the public with more complete information about the effects of such
+			 mandates; and</content></subparagraph><subparagraph id="HE835107A60D94A7BB3DECFF0CC77A80C" class="bill-dtd-OLC" identifier="/s2/1/B"><num value="B">(B)</num><content>ensuring that Congress acts on such mandates only after focused deliberation on their effects; and</content></subparagraph></paragraph><paragraph id="H2BDAF60654A047ABB8F4B79C86F74B87" class="bill-dtd-OLC" identifier="/s2/2"><num value="2">(2)</num><content>to enhance the ability of Congress and the public to identify Federal mandates that may impose
 			 undue harm on consumers, workers, employers, small businesses, and State,
-			 local, and tribal governments.</text>
-			</paragraph></section><section commented="no" id="H6858A93DC3EF4FAFBDAE31FAA133161E"><enum>3.</enum><header>Providing for Congressional Budget Office studies on policies involving changes in conditions of
-			 grant aid</header><text display-inline="no-display-inline">Section 202(g) of the Congressional Budget Act of 1974 (<external-xref legal-doc="usc" parsable-cite="usc/2/602">2 U.S.C. 602(g)</external-xref>) is amended by adding at
-			 the end the following new paragraph:</text>
-			<quoted-block display-inline="no-display-inline" id="H01D9A017D0EE462A983111AB1B905645" style="OLC">
-				<paragraph id="H234098B98FB94D07A58D2A830B2BD68B"><enum>(3)</enum><header>Additional studies</header><text display-inline="yes-display-inline">At the request of any Chairman or ranking member of the minority of a Committee of the Senate or
+			 local, and tribal governments.</content></paragraph></section><section id="H6858A93DC3EF4FAFBDAE31FAA133161E" class="bill-dtd-OLC" identifier="/s3"><num value="3">Sec. 3.</num><heading>Providing for Congressional Budget Office studies on policies involving changes in conditions of
+			 grant aid</heading><p><p class="indent0">Section 202(g) of the Congressional Budget Act of 1974 (<ref href="/us/usc/2/602">2 U.S.C. 602(g)</ref>) is amended by adding at
+			 the end the following new paragraph:</p></p><quotedContent id="H01D9A017D0EE462A983111AB1B905645" identifier="/s3/qB"><paragraph id="H234098B98FB94D07A58D2A830B2BD68B" class="bill-dtd-OLC" identifier="/s3/qB/3"><num value="3">''(3)</num><heading>Additional studies.—</heading><content>At the request of any Chairman or ranking member of the minority of a Committee of the Senate or
 			 the House of Representatives, the Director shall conduct an assessment
 			 comparing the authorized level of funding in a bill or resolution to the
 			 prospective costs of carrying out any changes to a condition of Federal
 			 assistance being imposed on State, local, or tribal governments
 			 participating in the Federal assistance program concerned or, in the case
 			 of a bill or joint resolution that authorizes such sums as are necessary,
-			 an assessment of an estimated level of funding compared to such costs.</text></paragraph><after-quoted-block>.</after-quoted-block></quoted-block>
-		</section><section id="H475C3B320BD24395A3D21EB01D4F3875"><enum>4.</enum><header>Clarifying the definition of direct costs to reflect Congressional Budget Office practice</header><text display-inline="no-display-inline">Section 421(3) of the Congressional Budget Act of 1974 (<external-xref legal-doc="usc" parsable-cite="usc/2/658">2 U.S.C. 658(3)(A)(i)</external-xref>) is amended—</text>
-			<paragraph id="H4BF36A05719246AE8A0C93AD0507634D"><enum>(1)</enum><text>in subparagraph (A)(i), by inserting <quote>incur or</quote> before <quote>be required</quote>; and</text>
-			</paragraph><paragraph id="H287BBF1566EB40A0B930E15314A363ED"><enum>(2)</enum><text>in subparagraph (B), by inserting after <quote>to spend</quote> the following: <quote>or could forgo in profits, including costs passed on to consumers or other entities taking into
-			 account, to the extent practicable, behavioral changes,</quote>.</text>
-			</paragraph></section><section id="H3189A62799A048C097D6F1C4998692C8"><enum>5.</enum><header>Expanding the scope of reporting requirements to include regulations imposed by independent
-			 regulatory agencies</header><text display-inline="no-display-inline">Paragraph (1) of section 421 of the Congressional Budget Act of 1974 (<external-xref legal-doc="usc" parsable-cite="usc/2/658">2 U.S.C. 658</external-xref>) is amended by
-			 striking <quote>, but does not include independent regulatory agencies</quote> and inserting <quote>, except it does not include the Board of Governors of the Federal Reserve System or the Federal
-			 Open Market Committee</quote>.</text>
-		</section><section id="H63B669AEFDED45ACAA8CE7EA0C83C613"><enum>6.</enum><header>Amendments to replace Office of Management and Budget with Office of Information and Regulatory
-			 Affairs</header><text display-inline="no-display-inline">The Unfunded Mandates Reform Act of 1995 (<external-xref legal-doc="public-law" parsable-cite="pl/104/4">Public Law 104–4</external-xref>; <external-xref legal-doc="usc" parsable-cite="usc/2/1511">2 U.S.C. 1511 et seq.</external-xref>) is amended—</text>
-			<paragraph id="H1F78AE4135DE482381713C75B0727A61"><enum>(1)</enum><text>in section 103(c) (<external-xref legal-doc="usc" parsable-cite="usc/2/1511">2 U.S.C. 1511(c)</external-xref>)—</text>
-				<subparagraph id="H34D87FDB275D4DB6BF0FF754C6F38643"><enum>(A)</enum><text>in the subsection heading, by striking <quote><header-in-text level="subsection" style="OLC">Office of Management and Budget</header-in-text></quote> and inserting <quote><header-in-text level="subsection" style="OLC">Office of Information and Regulatory Affairs</header-in-text></quote>; and</text>
-				</subparagraph><subparagraph id="H5894CD768D4549BBA118D3A57F2132B7"><enum>(B)</enum><text>by striking <quote>Director of the Office of Management and Budget</quote> and inserting <quote>Administrator of the Office of Information and Regulatory Affairs</quote>;</text>
-				</subparagraph></paragraph><paragraph id="HE8CF0B5BF57E4FE19B014BAE497B05CD"><enum>(2)</enum><text>in section 205(c) (<external-xref legal-doc="usc" parsable-cite="usc/2/1535">2 U.S.C. 1535(c)</external-xref>)—</text>
-				<subparagraph id="H6AF79F7A68B0424FBEF2E213BD6140A3"><enum>(A)</enum><text>in the subsection heading, by striking <quote><header-in-text level="subsection" style="OLC">OMB</header-in-text></quote>; and</text>
-				</subparagraph><subparagraph id="H1D9595FEB6BC4F78A369B71DA95F3A79"><enum>(B)</enum><text>by striking <quote>Director of the Office of Management and Budget</quote> and inserting <quote>Administrator of the Office of Information and Regulatory Affairs</quote>; and</text>
-				</subparagraph></paragraph><paragraph id="H2EDF6115557A4D5CAD8883E3C37B5B07"><enum>(3)</enum><text>in section 206 (<external-xref legal-doc="usc" parsable-cite="usc/2/1536">2 U.S.C. 1536</external-xref>), by striking <quote>Director of the Office of Management and Budget</quote> and inserting <quote>Administrator of the Office of Information and Regulatory Affairs</quote>.</text>
-			</paragraph></section><section id="H66D6409729A24E06AC18CB35010CB26F" section-type="subsequent-section"><enum>7.</enum><header>Applying substantive point of order to private sector mandates</header><text display-inline="no-display-inline">Section 425(a)(2) of the Congressional Budget Act of 1974 (<external-xref legal-doc="usc" parsable-cite="usc/2/658d">2 U.S.C. 658d(a)(2)</external-xref>) is amended—</text>
-			<paragraph id="H26A67C2FA7FC4BA6B0F1FE5AF9F5454A"><enum>(1)</enum><text>by striking <quote>Federal intergovernmental mandates</quote> and inserting <quote>Federal mandates</quote>; and</text>
-			</paragraph><paragraph id="HD1F1D526888348E4814D4A071F52DEE7"><enum>(2)</enum><text>by inserting <quote>or 424(b)(1)</quote> after <quote>section 424(a)(1)</quote>.</text>
-			</paragraph></section><section id="HCEDED35EE382440EAA86F7F34DE7D75D"><enum>8.</enum><header>Regulatory process and principles</header><text display-inline="no-display-inline">Section 201 of the Unfunded Mandates Reform Act of 1995 (<external-xref legal-doc="usc" parsable-cite="usc/2/1531">2 U.S.C. 1531</external-xref>) is amended to read as
-			 follows:</text>
-			<quoted-block display-inline="no-display-inline" id="H1551D03C02254B958EA8F840B745CE1D" style="OLC">
-				<section id="H1A3B1F9F9AF74E5BA0CB91FD386E0CEB"><enum>201.</enum><header>Regulatory process and principles</header>
-					<subsection id="HCFD5F6BA3F7745CBA03D3F87E4433520"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Each agency shall, unless otherwise expressly prohibited by law, assess the effects of Federal
+			 an assessment of an estimated level of funding compared to such costs.''.</content></paragraph></quotedContent></section><section id="H475C3B320BD24395A3D21EB01D4F3875" class="bill-dtd-OLC" identifier="/s4"><num value="4">Sec. 4.</num><heading>Clarifying the definition of direct costs to reflect Congressional Budget Office practice</heading><chapeau><p class="indent0">Section 421(3) of the Congressional Budget Act of 1974 (<ref href="/us/usc/2/658">2 U.S.C. 658(3)(A)(i)</ref>) is amended—</p></chapeau><paragraph id="H4BF36A05719246AE8A0C93AD0507634D" class="bill-dtd-OLC" identifier="/s4/1"><num value="1">(1)</num><content>in subparagraph (A)(i), by inserting <quotedContent>''incur or''</quotedContent> before <quotedContent>''be required''</quotedContent>; and</content></paragraph><paragraph id="H287BBF1566EB40A0B930E15314A363ED" class="bill-dtd-OLC" identifier="/s4/2"><num value="2">(2)</num><content>in subparagraph (B), by inserting after <quotedContent>''to spend''</quotedContent> the following: <quotedContent>''or could forgo in profits, including costs passed on to consumers or other entities taking into
+			 account, to the extent practicable, behavioral changes,''</quotedContent>.</content></paragraph></section><section id="H3189A62799A048C097D6F1C4998692C8" class="bill-dtd-OLC" identifier="/s5"><num value="5">Sec. 5.</num><heading>Expanding the scope of reporting requirements to include regulations imposed by independent
+			 regulatory agencies</heading><content><p class="indent0">Paragraph (1) of section 421 of the Congressional Budget Act of 1974 (<ref href="/us/usc/2/658">2 U.S.C. 658</ref>) is amended by
+			 striking <quotedContent>'', but does not include independent regulatory agencies''</quotedContent> and inserting <quotedContent>'', except it does not include the Board of Governors of the Federal Reserve System or the Federal
+			 Open Market Committee''</quotedContent>.</p></content></section><section id="H63B669AEFDED45ACAA8CE7EA0C83C613" class="bill-dtd-OLC" identifier="/s6"><num value="6">Sec. 6.</num><heading>Amendments to replace Office of Management and Budget with Office of Information and Regulatory
+			 Affairs</heading><chapeau><p class="indent0">The Unfunded Mandates Reform Act of 1995 (<ref href="/us/pl/104/4">Public Law 104–4</ref>; <ref href="/us/usc/2/1511">2 U.S.C. 1511 et seq.</ref>) is amended—</p></chapeau><paragraph id="H1F78AE4135DE482381713C75B0727A61" class="bill-dtd-OLC" identifier="/s6/1"><num value="1">(1)</num><chapeau>in section 103(c) (<ref href="/us/usc/2/1511">2 U.S.C. 1511(c)</ref>)—</chapeau><subparagraph id="H34D87FDB275D4DB6BF0FF754C6F38643" class="bill-dtd-OLC" identifier="/s6/1/A"><num value="A">(A)</num><content>in the subsection heading, by striking <quotedContent>''Office of Management and Budget''</quotedContent> and inserting <quotedContent>''Office of Information and Regulatory Affairs''</quotedContent>; and</content></subparagraph><subparagraph id="H5894CD768D4549BBA118D3A57F2132B7" class="bill-dtd-OLC" identifier="/s6/1/B"><num value="B">(B)</num><content>by striking <quotedContent>''Director of the Office of Management and Budget''</quotedContent> and inserting <quotedContent>''Administrator of the Office of Information and Regulatory Affairs''</quotedContent>;</content></subparagraph></paragraph><paragraph id="HE8CF0B5BF57E4FE19B014BAE497B05CD" class="bill-dtd-OLC" identifier="/s6/2"><num value="2">(2)</num><chapeau>in section 205(c) (<ref href="/us/usc/2/1535">2 U.S.C. 1535(c)</ref>)—</chapeau><subparagraph id="H6AF79F7A68B0424FBEF2E213BD6140A3" class="bill-dtd-OLC" identifier="/s6/2/A"><num value="A">(A)</num><content>in the subsection heading, by striking <quotedContent>''OMB''</quotedContent>; and</content></subparagraph><subparagraph id="H1D9595FEB6BC4F78A369B71DA95F3A79" class="bill-dtd-OLC" identifier="/s6/2/B"><num value="B">(B)</num><content>by striking <quotedContent>''Director of the Office of Management and Budget''</quotedContent> and inserting <quotedContent>''Administrator of the Office of Information and Regulatory Affairs''</quotedContent>; and</content></subparagraph></paragraph><paragraph id="H2EDF6115557A4D5CAD8883E3C37B5B07" class="bill-dtd-OLC" identifier="/s6/3"><num value="3">(3)</num><content>in section 206 (<ref href="/us/usc/2/1536">2 U.S.C. 1536</ref>), by striking <quotedContent>''Director of the Office of Management and Budget''</quotedContent> and inserting <quotedContent>''Administrator of the Office of Information and Regulatory Affairs''</quotedContent>.</content></paragraph></section><section id="H66D6409729A24E06AC18CB35010CB26F" class="bill-dtd-OLC" identifier="/s7"><num value="7">Sec. 7.</num><heading>Applying substantive point of order to private sector mandates</heading><chapeau><p class="indent0">Section 425(a)(2) of the Congressional Budget Act of 1974 (<ref href="/us/usc/2/658d">2 U.S.C. 658d(a)(2)</ref>) is amended—</p></chapeau><paragraph id="H26A67C2FA7FC4BA6B0F1FE5AF9F5454A" class="bill-dtd-OLC" identifier="/s7/1"><num value="1">(1)</num><content>by striking <quotedContent>''Federal intergovernmental mandates''</quotedContent> and inserting <quotedContent>''Federal mandates''</quotedContent>; and</content></paragraph><paragraph id="HD1F1D526888348E4814D4A071F52DEE7" class="bill-dtd-OLC" identifier="/s7/2"><num value="2">(2)</num><content>by inserting <quotedContent>''or 424(b)(1)''</quotedContent> after <quotedContent>''section 424(a)(1)''</quotedContent>.</content></paragraph></section><section id="HCEDED35EE382440EAA86F7F34DE7D75D" class="bill-dtd-OLC" identifier="/s8"><num value="8">Sec. 8.</num><heading>Regulatory process and principles</heading><p><p class="indent0">Section 201 of the Unfunded Mandates Reform Act of 1995 (<ref href="/us/usc/2/1531">2 U.S.C. 1531</ref>) is amended to read as
+			 follows:</p></p><quotedContent id="H1551D03C02254B958EA8F840B745CE1D" identifier="/s8/qB"><section id="H1A3B1F9F9AF74E5BA0CB91FD386E0CEB" class="bill-dtd-OLC" identifier="/s8/qB/s201"><num value="201">''Sec. 201.</num><heading>Regulatory process and principles</heading><subsection id="HCFD5F6BA3F7745CBA03D3F87E4433520" class="bill-dtd-OLC" identifier="/s8/qB/s201/a"><num value="a">''(a)</num><heading>In general.—</heading><chapeau>Each agency shall, unless otherwise expressly prohibited by law, assess the effects of Federal
 			 regulatory actions on State, local, and tribal governments and the private
 			 sector (other than to the extent that such regulatory actions incorporate
 			 requirements specifically set forth in law) in accordance with the
-			 following principles:</text>
-						<paragraph id="H08A8F96B8B0C410AA40DB3C4CC70F417"><enum>(1)</enum><text display-inline="yes-display-inline">Each agency shall identify the problem that it intends to address (including, if applicable, the
+			 following principles:</chapeau><paragraph id="H08A8F96B8B0C410AA40DB3C4CC70F417" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/1"><num value="1">''(1)</num><content>Each agency shall identify the problem that it intends to address (including, if applicable, the
 			 failures of private markets or public institutions that warrant new agency
-			 action) as well as assess the significance of that problem.</text>
-						</paragraph><paragraph id="H6ACC3D9D34A546FABCF2885EFB4CD16D"><enum>(2)</enum><text>Each agency shall examine whether existing regulations (or other law) have created, or contributed
+			 action) as well as assess the significance of that problem.</content></paragraph><paragraph id="H6ACC3D9D34A546FABCF2885EFB4CD16D" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/2"><num value="2">''(2)</num><content>Each agency shall examine whether existing regulations (or other law) have created, or contributed
 			 to, the problem that a new regulation is intended to correct and whether
 			 those regulations (or other law) should be modified to achieve the
-			 intended goal of regulation more effectively.</text>
-						</paragraph><paragraph id="HB7F2C499AACD479AB0D7CEC5CDD2A5CA"><enum>(3)</enum><text>Each agency shall identify and assess available alternatives to direct regulation, including
+			 intended goal of regulation more effectively.</content></paragraph><paragraph id="HB7F2C499AACD479AB0D7CEC5CDD2A5CA" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/3"><num value="3">''(3)</num><content>Each agency shall identify and assess available alternatives to direct regulation, including
 			 providing economic incentives to encourage the desired behavior, such as
 			 user fees or marketable permits, or providing information upon which
-			 choices can be made by the public.</text>
-						</paragraph><paragraph id="H6D08BE4F79954994A1CD75FA36C6B0F5"><enum>(4)</enum><text>If an agency determines that a regulation is the best available method of achieving the regulatory
+			 choices can be made by the public.</content></paragraph><paragraph id="H6D08BE4F79954994A1CD75FA36C6B0F5" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/4"><num value="4">''(4)</num><content>If an agency determines that a regulation is the best available method of achieving the regulatory
 			 objective, it shall design its regulations in the most cost-effective
 			 manner to achieve the regulatory objective. In doing so, each agency shall
 			 consider incentives for innovation, consistency, predictability, the costs
 			 of enforcement and compliance (to the government, regulated entities, and
-			 the public), flexibility, distributive impacts, and equity.</text>
-						</paragraph><paragraph id="H49219C6574454114AE236F2BC79090F0"><enum>(5)</enum><text display-inline="yes-display-inline">Each agency shall assess both the costs and the benefits of the intended regulation and,
+			 the public), flexibility, distributive impacts, and equity.</content></paragraph><paragraph id="H49219C6574454114AE236F2BC79090F0" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/5"><num value="5">''(5)</num><content>Each agency shall assess both the costs and the benefits of the intended regulation and,
 			 recognizing that some costs and benefits are difficult to quantify,
 			 propose or adopt a regulation, unless expressly prohibited by law, only
 			 upon a reasoned determination that the benefits of the intended regulation
-			 justify its costs.</text>
-						</paragraph><paragraph id="H913B3CAA2A3A410BA30AC5BB515B5DEF"><enum>(6)</enum><text>Each agency shall base its decisions on the best reasonably obtainable scientific, technical,
+			 justify its costs.</content></paragraph><paragraph id="H913B3CAA2A3A410BA30AC5BB515B5DEF" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/6"><num value="6">''(6)</num><content>Each agency shall base its decisions on the best reasonably obtainable scientific, technical,
 			 economic, and other information concerning the need for, and consequences
-			 of, the intended regulation.</text>
-						</paragraph><paragraph id="HF364D91F49C344958341A92291B4DE33"><enum>(7)</enum><text>Each agency shall identify and assess alternative forms of regulation and shall, to the extent
+			 of, the intended regulation.</content></paragraph><paragraph id="HF364D91F49C344958341A92291B4DE33" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/7"><num value="7">''(7)</num><content>Each agency shall identify and assess alternative forms of regulation and shall, to the extent
 			 feasible, specify performance objectives, rather than specifying the
-			 behavior or manner of compliance that regulated entities must adopt.</text>
-						</paragraph><paragraph id="HC6693F5F9637405CA01B94EDE6885EC8"><enum>(8)</enum><text>Each agency shall avoid regulations that are inconsistent, incompatible, or duplicative with its
-			 other regulations or those of other Federal agencies.</text>
-						</paragraph><paragraph id="HA5BE19824B674AA9A968F4C48E44FF15"><enum>(9)</enum><text>Each agency shall tailor its regulations to minimize the costs of the cumulative impact of
-			 regulations.</text>
-						</paragraph><paragraph id="H1DC91D24FC274328BA5D8A481C4A879D"><enum>(10)</enum><text display-inline="yes-display-inline">Each agency shall draft its regulations to be simple and easy to understand, with the goal of
+			 behavior or manner of compliance that regulated entities must adopt.</content></paragraph><paragraph id="HC6693F5F9637405CA01B94EDE6885EC8" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/8"><num value="8">''(8)</num><content>Each agency shall avoid regulations that are inconsistent, incompatible, or duplicative with its
+			 other regulations or those of other Federal agencies.</content></paragraph><paragraph id="HA5BE19824B674AA9A968F4C48E44FF15" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/9"><num value="9">''(9)</num><content>Each agency shall tailor its regulations to minimize the costs of the cumulative impact of
+			 regulations.</content></paragraph><paragraph id="H1DC91D24FC274328BA5D8A481C4A879D" class="bill-dtd-OLC" identifier="/s8/qB/s201/a/10"><num value="10">''(10)</num><content>Each agency shall draft its regulations to be simple and easy to understand, with the goal of
 			 minimizing the potential for uncertainty and litigation arising from such
-			 uncertainty.</text>
-						</paragraph></subsection><subsection id="H799B17FCA83D447CB3295F77E9B51577"><enum>(b)</enum><header>Regulatory action defined</header><text>In this section, the term <term>regulatory action</term> means any substantive action by an agency (normally published in the Federal Register) that
+			 uncertainty.</content></paragraph></subsection><subsection id="H799B17FCA83D447CB3295F77E9B51577" class="bill-dtd-OLC" identifier="/s8/qB/s201/b"><num value="b">''(b)</num><heading>Regulatory action defined.—</heading><content>In this section, the term <quotedContent>'regulatory action'</quotedContent> means any substantive action by an agency (normally published in the Federal Register) that
 			 promulgates or is expected to lead to the promulgation of a final rule or
 			 regulation, including advance notices of proposed rulemaking and notices
-			 of proposed rulemaking.</text></subsection></section><after-quoted-block>.</after-quoted-block></quoted-block>
-		</section><section id="H34E295F33671433A85C318196F9E3C55"><enum>9.</enum><header>Expanding the scope of statements to accompany significant regulatory actions</header>
-			<subsection id="H13C3693C5DA44044BD4E383CCE6A645D"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Subsection (a) of section 202 of the Unfunded Mandates Reform Act of 1995 (<external-xref legal-doc="usc" parsable-cite="usc/2/1532">2 U.S.C. 1532</external-xref>) is
-			 amended to read as follows:</text>
-				<quoted-block display-inline="no-display-inline" id="HFE3D4CD3959B4292B8B0FCA10883997C" style="OLC">
-					<subsection id="H3BD4F5DDF71347CBA554BA234AF9DF9F"><enum>(a)</enum><header>In general</header><text display-inline="yes-display-inline">Unless otherwise expressly prohibited by law, before promulgating any general notice of proposed
+			 of proposed rulemaking.''.</content></subsection></section></quotedContent></section><section id="H34E295F33671433A85C318196F9E3C55" class="bill-dtd-OLC" identifier="/s9"><num value="9">Sec. 9.</num><heading>Expanding the scope of statements to accompany significant regulatory actions</heading><subsection id="H13C3693C5DA44044BD4E383CCE6A645D" class="bill-dtd-OLC" identifier="/s9/a"><num value="a">(a)</num><heading>In general.—</heading><p>Subsection (a) of section 202 of the Unfunded Mandates Reform Act of 1995 (<ref href="/us/usc/2/1532">2 U.S.C. 1532</ref>) is
+			 amended to read as follows:</p><quotedContent id="HFE3D4CD3959B4292B8B0FCA10883997C" identifier="/s9/a/qB"><subsection id="H3BD4F5DDF71347CBA554BA234AF9DF9F" class="bill-dtd-OLC" identifier="/s9/a/qB/a"><num value="a">''(a)</num><heading>In general.—</heading><chapeau>Unless otherwise expressly prohibited by law, before promulgating any general notice of proposed
 			 rulemaking or any final rule, or within six months after promulgating any
 			 final rule that was not preceded by a general notice of proposed
 			 rulemaking, if the proposed rulemaking or final rule includes a Federal
 			 mandate that may result in an annual effect on State, local, or tribal
 			 governments, or to the private sector, in the aggregate of $100,000,000 or
 			 more in any 1 year, the agency shall prepare a written statement
-			 containing the following:</text>
-						<paragraph id="HA42982FFDADC450EBC781805B9316360"><enum>(1)</enum><text>The text of the draft proposed rulemaking or final rule, together with a reasonably detailed
+			 containing the following:</chapeau><paragraph id="HA42982FFDADC450EBC781805B9316360" class="bill-dtd-OLC" identifier="/s9/a/qB/a/1"><num value="1">''(1)</num><content>The text of the draft proposed rulemaking or final rule, together with a reasonably detailed
 			 description of the need for the proposed rulemaking or final rule and an
 			 explanation of how the proposed rulemaking or final rule will meet that
-			 need.</text>
-						</paragraph><paragraph id="H1440EBA176EF47E1A6F12994C46563D8"><enum>(2)</enum><text>An assessment of the potential costs and benefits of the proposed rulemaking or final rule,
+			 need.</content></paragraph><paragraph id="H1440EBA176EF47E1A6F12994C46563D8" class="bill-dtd-OLC" identifier="/s9/a/qB/a/2"><num value="2">''(2)</num><content>An assessment of the potential costs and benefits of the proposed rulemaking or final rule,
 			 including an explanation of the manner in which the proposed rulemaking or
 			 final rule is consistent with a statutory requirement and avoids undue
 			 interference with State, local, and tribal governments in the exercise of
-			 their governmental functions.</text>
-						</paragraph><paragraph id="H8BA1244752464C8EAEB57730C07CF335"><enum>(3)</enum><text>A qualitative and quantitative assessment, including the underlying analysis, of benefits
+			 their governmental functions.</content></paragraph><paragraph id="H8BA1244752464C8EAEB57730C07CF335" class="bill-dtd-OLC" identifier="/s9/a/qB/a/3"><num value="3">''(3)</num><content>A qualitative and quantitative assessment, including the underlying analysis, of benefits
 			 anticipated from the proposed rulemaking or final rule (such as the
 			 promotion of the efficient functioning of the economy and private markets,
 			 the enhancement of health and safety, the protection of the natural
-			 environment, and the elimination or reduction of discrimination or bias).</text>
-						</paragraph><paragraph id="H1BBEC728F66D4610BA2E2DF77700835C"><enum>(4)</enum><text>A qualitative and quantitative assessment, including the underlying analysis, of costs anticipated
+			 environment, and the elimination or reduction of discrimination or bias).</content></paragraph><paragraph id="H1BBEC728F66D4610BA2E2DF77700835C" class="bill-dtd-OLC" identifier="/s9/a/qB/a/4"><num value="4">''(4)</num><content>A qualitative and quantitative assessment, including the underlying analysis, of costs anticipated
 			 from the proposed rulemaking or final rule (such as the direct costs both
 			 to the Government in administering the final rule and to businesses and
 			 others in complying with the final rule, and any adverse effects on the
 			 efficient functioning of the economy, private markets (including
 			 productivity, employment, and international competitiveness), health,
-			 safety, and the natural environment).</text>
-						</paragraph><paragraph id="HB4508A1C79B9499AA4C0975682F46BF3"><enum>(5)</enum><text>Estimates by the agency, if and to the extent that the agency determines that accurate estimates
-			 are reasonably feasible, of—</text>
-							<subparagraph id="HE482C0716B3540E28467203C9005B544"><enum>(A)</enum><text>the future compliance costs of the Federal mandate; and</text>
-							</subparagraph><subparagraph id="HCCCCD13B011E4EF3A518AD08EEA84D91"><enum>(B)</enum><text>any disproportionate budgetary effects of the Federal mandate upon any particular regions of the
+			 safety, and the natural environment).</content></paragraph><paragraph id="HB4508A1C79B9499AA4C0975682F46BF3" class="bill-dtd-OLC" identifier="/s9/a/qB/a/5"><num value="5">''(5)</num><chapeau>Estimates by the agency, if and to the extent that the agency determines that accurate estimates
+			 are reasonably feasible, of—</chapeau><subparagraph id="HE482C0716B3540E28467203C9005B544" class="bill-dtd-OLC" identifier="/s9/a/qB/a/5/A"><num value="A">''(A)</num><content>the future compliance costs of the Federal mandate; and</content></subparagraph><subparagraph id="HCCCCD13B011E4EF3A518AD08EEA84D91" class="bill-dtd-OLC" identifier="/s9/a/qB/a/5/B"><num value="B">''(B)</num><content>any disproportionate budgetary effects of the Federal mandate upon any particular regions of the
 			 Nation or particular State, local, or tribal governments, urban or rural
 			 or other types of communities, or particular segments of the private
-			 sector.</text>
-							</subparagraph></paragraph><paragraph id="HE187F2976ABC449F83DF9F4602AB349D"><enum>(6)</enum>
-							<subparagraph commented="no" display-inline="yes-display-inline" id="HB8DCF65EC34B4B40AE1557C2C35525CC"><enum>(A)</enum><text>A detailed description of the extent of the agency’s prior consultation with the private sector and
+			 sector.</content></subparagraph></paragraph><paragraph id="HE187F2976ABC449F83DF9F4602AB349D" class="bill-dtd-OLC" identifier="/s9/a/qB/a/6"><num value="6">''(6)</num><subparagraph id="HB8DCF65EC34B4B40AE1557C2C35525CC" class="bill-dtd-OLC" identifier="/s9/a/qB/a/6/A"><num value="A">''(A)</num><content>A detailed description of the extent of the agency’s prior consultation with the private sector and
 			 elected representatives (under section 204) of the affected State, local,
-			 and tribal governments.</text>
-							</subparagraph><subparagraph id="H7EE3AF3F28144D668CCC3B3D597384D3" indent="up1"><enum>(B)</enum><text>A detailed summary of the comments and concerns that were presented by the private sector and
+			 and tribal governments.</content></subparagraph><subparagraph id="H7EE3AF3F28144D668CCC3B3D597384D3" class="bill-dtd-OLC" identifier="/s9/a/qB/a/6/B"><num value="B">''(B)</num><content>A detailed summary of the comments and concerns that were presented by the private sector and
 			 State, local, or tribal governments either orally or in writing to the
-			 agency.</text>
-							</subparagraph><subparagraph id="H543F8D66BDB64F4E808D67846041E7B8" indent="up1"><enum>(C)</enum><text>A detailed summary of the agency’s evaluation of those comments and concerns.</text>
-							</subparagraph></paragraph><paragraph id="H9E50C3F9F6EA4366AFAC9204D69D10A9"><enum>(7)</enum><text display-inline="yes-display-inline">A detailed summary of how the agency complied with each of the regulatory principles described in
-			 section 201.</text></paragraph></subsection><after-quoted-block>.</after-quoted-block></quoted-block>
-			</subsection><subsection id="H30204F01A9D44BE4807648F4028EB09E"><enum>(b)</enum><header>Requirement for detailed summary</header><text>Subsection (b) of section 202 of such Act is amended by inserting <quote>detailed</quote> before <quote>summary</quote>.</text>
-			</subsection></section><section id="H9A5CDE9700964351ABB393043C05EEBC"><enum>10.</enum><header>Enhanced stakeholder consultation</header><text display-inline="no-display-inline">Section 204 of the Unfunded Mandates Reform Act of 1995 (<external-xref legal-doc="usc" parsable-cite="usc/2/1534">2 U.S.C. 1534</external-xref>) is amended—</text>
-			<paragraph id="H8BB3C54B412940C7A7E555DBF80209F5"><enum>(1)</enum><text>in the section heading, by inserting <quote><header-in-text level="section" style="OLC">and private sector</header-in-text></quote> before <quote><header-in-text level="section" style="OLC">input</header-in-text></quote>;</text>
-			</paragraph><paragraph id="HA96FE0146F0A4B3A8F640CC2895B80D7"><enum>(2)</enum><text>in subsection (a)—</text>
-				<subparagraph id="H2ACA0C76A47F4A25B93CF78D99A39896"><enum>(A)</enum><text>by inserting <quote>, and impacted parties within the private sector (including small business),</quote> after <quote>on their behalf)</quote>; and</text>
-				</subparagraph><subparagraph id="H9075F30920B64EA59E20535F40642E23"><enum>(B)</enum><text>by striking <quote>Federal intergovernmental mandates</quote> and inserting <quote>Federal mandates</quote>; and</text>
-				</subparagraph></paragraph><paragraph id="H9DD35B990A1A41FDB2FAE110696D1ABD"><enum>(3)</enum><text>by amending subsection (c) to read as follows:</text>
-				<quoted-block display-inline="no-display-inline" id="H3EB69BCE041440C5B61BC5AD5377EBC3" style="OLC">
-					<subsection id="HD19453F0F7A94CBDB8758703DF8FF8A3"><enum>(c)</enum><header>Guidelines</header><text>For appropriate implementation of subsections (a) and (b) consistent with applicable laws and
-			 regulations, the following guidelines shall be followed:</text>
-						<paragraph id="H961E387F0EAC4B22A6AF3F153A4EC941"><enum>(1)</enum><text>Consultations shall take place as early as possible, before issuance of a notice of proposed
+			 agency.</content></subparagraph><subparagraph id="H543F8D66BDB64F4E808D67846041E7B8" class="bill-dtd-OLC" identifier="/s9/a/qB/a/6/C"><num value="C">''(C)</num><content>A detailed summary of the agency’s evaluation of those comments and concerns.</content></subparagraph></paragraph><paragraph id="H9E50C3F9F6EA4366AFAC9204D69D10A9" class="bill-dtd-OLC" identifier="/s9/a/qB/a/7"><num value="7">''(7)</num><content>A detailed summary of how the agency complied with each of the regulatory principles described in
+			 section 201.''.</content></paragraph></subsection></quotedContent></subsection><subsection id="H30204F01A9D44BE4807648F4028EB09E" class="bill-dtd-OLC" identifier="/s9/b"><num value="b">(b)</num><heading>Requirement for detailed summary.—</heading><content>Subsection (b) of section 202 of such Act is amended by inserting <quotedContent>''detailed''</quotedContent> before <quotedContent>''summary''</quotedContent>.</content></subsection></section><section id="H9A5CDE9700964351ABB393043C05EEBC" class="bill-dtd-OLC" identifier="/s10"><num value="10">Sec. 10.</num><heading>Enhanced stakeholder consultation</heading><chapeau><p class="indent0">Section 204 of the Unfunded Mandates Reform Act of 1995 (<ref href="/us/usc/2/1534">2 U.S.C. 1534</ref>) is amended—</p></chapeau><paragraph id="H8BB3C54B412940C7A7E555DBF80209F5" class="bill-dtd-OLC" identifier="/s10/1"><num value="1">(1)</num><content>in the section heading, by inserting <quotedContent>''and private sector''</quotedContent> before <quotedContent>''input''</quotedContent>;</content></paragraph><paragraph id="HA96FE0146F0A4B3A8F640CC2895B80D7" class="bill-dtd-OLC" identifier="/s10/2"><num value="2">(2)</num><chapeau>in subsection (a)—</chapeau><subparagraph id="H2ACA0C76A47F4A25B93CF78D99A39896" class="bill-dtd-OLC" identifier="/s10/2/A"><num value="A">(A)</num><content>by inserting <quotedContent>'', and impacted parties within the private sector (including small business),''</quotedContent> after <quotedContent>''on their behalf)''</quotedContent>; and</content></subparagraph><subparagraph id="H9075F30920B64EA59E20535F40642E23" class="bill-dtd-OLC" identifier="/s10/2/B"><num value="B">(B)</num><content>by striking <quotedContent>''Federal intergovernmental mandates''</quotedContent> and inserting <quotedContent>''Federal mandates''</quotedContent>; and</content></subparagraph></paragraph><paragraph id="H9DD35B990A1A41FDB2FAE110696D1ABD" class="bill-dtd-OLC" identifier="/s10/3"><num value="3">(3)</num><content>by amending subsection (c) to read as follows:</content><quotedContent id="H3EB69BCE041440C5B61BC5AD5377EBC3" identifier="/s10/3/qB"><subsection id="HD19453F0F7A94CBDB8758703DF8FF8A3" class="bill-dtd-OLC" identifier="/s10/3/qB/c"><num value="c">''(c)</num><heading>Guidelines.—</heading><chapeau>For appropriate implementation of subsections (a) and (b) consistent with applicable laws and
+			 regulations, the following guidelines shall be followed:</chapeau><paragraph id="H961E387F0EAC4B22A6AF3F153A4EC941" class="bill-dtd-OLC" identifier="/s10/3/qB/c/1"><num value="1">''(1)</num><content>Consultations shall take place as early as possible, before issuance of a notice of proposed
 			 rulemaking, continue through the final rule stage, and be integrated
-			 explicitly into the rulemaking process.</text>
-						</paragraph><paragraph id="H65F8084646AA4616871EF64E32054E8F"><enum>(2)</enum><text>Agencies shall consult with a wide variety of State, local, and tribal officials and impacted
+			 explicitly into the rulemaking process.</content></paragraph><paragraph id="H65F8084646AA4616871EF64E32054E8F" class="bill-dtd-OLC" identifier="/s10/3/qB/c/2"><num value="2">''(2)</num><content>Agencies shall consult with a wide variety of State, local, and tribal officials and impacted
 			 parties within the private sector (including small businesses).
 			 Geographic, political, and other factors that may differentiate varying
-			 points of view should be considered.</text>
-						</paragraph><paragraph id="HC0EEC38D3CD5418D8C9C0F7DF78610F3"><enum>(3)</enum><text>Agencies should estimate benefits and costs to assist with these consultations. The scope of the
+			 points of view should be considered.</content></paragraph><paragraph id="HC0EEC38D3CD5418D8C9C0F7DF78610F3" class="bill-dtd-OLC" identifier="/s10/3/qB/c/3"><num value="3">''(3)</num><content>Agencies should estimate benefits and costs to assist with these consultations. The scope of the
 			 consultation should reflect the cost and significance of the Federal
-			 mandate being considered.</text>
-						</paragraph><paragraph id="H2D8490089F1A4520A011DD9AAA3C1495"><enum>(4)</enum><text>Agencies shall, to the extent practicable—</text>
-							<subparagraph id="H6472AF123A0C4753817629423C05F00F"><enum>(A)</enum><text>seek out the views of State, local, and tribal governments, and impacted parties within the private
-			 sector (including small business), on costs, benefits, and risks; and</text>
-							</subparagraph><subparagraph id="H248F11DFD4504CAE95B555093D412DA8"><enum>(B)</enum><text>solicit ideas about alternative methods of compliance and potential flexibilities, and input on
+			 mandate being considered.</content></paragraph><paragraph id="H2D8490089F1A4520A011DD9AAA3C1495" class="bill-dtd-OLC" identifier="/s10/3/qB/c/4"><num value="4">''(4)</num><chapeau>Agencies shall, to the extent practicable—</chapeau><subparagraph id="H6472AF123A0C4753817629423C05F00F" class="bill-dtd-OLC" identifier="/s10/3/qB/c/4/A"><num value="A">''(A)</num><content>seek out the views of State, local, and tribal governments, and impacted parties within the private
+			 sector (including small business), on costs, benefits, and risks; and</content></subparagraph><subparagraph id="H248F11DFD4504CAE95B555093D412DA8" class="bill-dtd-OLC" identifier="/s10/3/qB/c/4/B"><num value="B">''(B)</num><content>solicit ideas about alternative methods of compliance and potential flexibilities, and input on
 			 whether the Federal regulation will harmonize with and not duplicate
-			 similar laws in other levels of government.</text>
-							</subparagraph></paragraph><paragraph id="H4307B02FDFE846BDAE9677021BA054B6"><enum>(5)</enum><text>Consultations shall address the cumulative impact of regulations on the affected entities.</text>
-						</paragraph><paragraph id="H4004A0D4C0584866A30C8B7EC901A4D7"><enum>(6)</enum><text>Agencies may accept electronic submissions of comments by relevant parties but may not use those
+			 similar laws in other levels of government.</content></subparagraph></paragraph><paragraph id="H4307B02FDFE846BDAE9677021BA054B6" class="bill-dtd-OLC" identifier="/s10/3/qB/c/5"><num value="5">''(5)</num><content>Consultations shall address the cumulative impact of regulations on the affected entities.</content></paragraph><paragraph id="H4004A0D4C0584866A30C8B7EC901A4D7" class="bill-dtd-OLC" identifier="/s10/3/qB/c/6"><num value="6">''(6)</num><content>Agencies may accept electronic submissions of comments by relevant parties but may not use those
 			 comments as the sole method of satisfying the guidelines in this
-			 subsection.</text></paragraph></subsection><after-quoted-block>.</after-quoted-block></quoted-block>
-			</paragraph></section><section id="H872518CE6D334D09BF8D8DB63AEB30EE"><enum>11.</enum><header>New authorities and responsibilities for Office of Information and Regulatory Affairs</header><text display-inline="no-display-inline">Section 208 of the Unfunded Mandates Reform Act of 1995 (<external-xref legal-doc="usc" parsable-cite="usc/2/1538">2 U.S.C. 1538</external-xref>) is amended to read as
-			 follows:</text>
-			<quoted-block display-inline="no-display-inline" id="H227154A547564530A7BB376AE18E367C" style="OLC">
-				<section id="H20B33190EF90445598C52AA07A265BF3"><enum>208.</enum><header>Office of Information and Regulatory Affairs responsibilities</header>
-					<subsection id="H7F1A96144A9644D2B4D19119D964DFC7"><enum>(a)</enum><header>In General</header><text display-inline="yes-display-inline">The Administrator of the Office of Information and Regulatory Affairs shall provide meaningful
+			 subsection.''.</content></paragraph></subsection></quotedContent></paragraph></section><section id="H872518CE6D334D09BF8D8DB63AEB30EE" class="bill-dtd-OLC" identifier="/s11"><num value="11">Sec. 11.</num><heading>New authorities and responsibilities for Office of Information and Regulatory Affairs</heading><p><p class="indent0">Section 208 of the Unfunded Mandates Reform Act of 1995 (<ref href="/us/usc/2/1538">2 U.S.C. 1538</ref>) is amended to read as
+			 follows:</p></p><quotedContent id="H227154A547564530A7BB376AE18E367C" identifier="/s11/qB"><section id="H20B33190EF90445598C52AA07A265BF3" class="bill-dtd-OLC" identifier="/s11/qB/s208"><num value="208">''Sec. 208.</num><heading>Office of Information and Regulatory Affairs responsibilities</heading><subsection id="H7F1A96144A9644D2B4D19119D964DFC7" class="bill-dtd-OLC" identifier="/s11/qB/s208/a"><num value="a">''(a)</num><heading>In General.—</heading><content>The Administrator of the Office of Information and Regulatory Affairs shall provide meaningful
 			 guidance and oversight so that each agency’s regulations for which a
 			 written statement is required under section 202 are consistent with the
 			 principles and requirements of this title, as well as other applicable
@@ -213,8 +110,7 @@
 			 laws, or conflict with the policies or actions of another agency, the
 			 Administrator shall identify areas of non-compliance, notify the agency,
 			 and request that the agency comply before the agency finalizes the
-			 regulation concerned.</text>
-					</subsection><subsection id="H2B25111AF4D74F6AA724FE53766910A9"><enum>(b)</enum><header>Annual Statements to Congress on Agency Compliance</header><text display-inline="yes-display-inline">The Director of the Office of Information and Regulatory Affairs annually shall submit to Congress,
+			 regulation concerned.</content></subsection><subsection id="H2B25111AF4D74F6AA724FE53766910A9" class="bill-dtd-OLC" identifier="/s11/qB/s208/b"><num value="b">''(b)</num><heading>Annual Statements to Congress on Agency Compliance.—</heading><content>The Director of the Office of Information and Regulatory Affairs annually shall submit to Congress,
 			 including the Committee on Homeland Security and Governmental Affairs of
 			 the Senate and the Committee on Oversight and Government Reform of the
 			 House of Representatives, a written report detailing compliance by each
@@ -222,46 +118,22 @@
 			 which a written statement is required by section 202, including activities
 			 undertaken at the request of the Director to improve compliance, during
 			 the preceding reporting period. The report shall also contain an appendix
-			 detailing compliance by each agency with section 204.</text></subsection></section><after-quoted-block>.</after-quoted-block></quoted-block>
-		</section><section id="H008E8B854BDC4BE1BB7A1FF432C43CF0"><enum>12.</enum><header>Retrospective analysis of existing Federal regulations</header><text display-inline="no-display-inline">The Unfunded Mandates Reform Act of 1995 (<external-xref legal-doc="public-law" parsable-cite="pl/104/4">Public Law 104–4</external-xref>; <external-xref legal-doc="usc" parsable-cite="usc/2/1511">2 U.S.C. 1511 et seq.</external-xref>) is amended—</text>
-			<paragraph id="H42BE15748EF8497AACD1912806772D67"><enum>(1)</enum><text>by redesignating section 209 as section 210; and</text>
-			</paragraph><paragraph id="H1144D07502D0435A8672D19495E1E345"><enum>(2)</enum><text>by inserting after section 208 the following new section 209:</text>
-				<quoted-block display-inline="no-display-inline" id="HB9AC39A0FFB140489EDA8771BE319463" style="OLC">
-					<section id="HD1217930694749FC902095DA35CBCD98"><enum>209.</enum><header>Retrospective analysis of existing Federal regulations</header>
-						<subsection id="HA00D0805045C424F8B4250F11A77066E"><enum>(a)</enum><header>Requirement</header><text display-inline="yes-display-inline">At the request of the chairman or ranking minority member of a standing or select committee of the
+			 detailing compliance by each agency with section 204.''.</content></subsection></section></quotedContent></section><section id="H008E8B854BDC4BE1BB7A1FF432C43CF0" class="bill-dtd-OLC" identifier="/s12"><num value="12">Sec. 12.</num><heading>Retrospective analysis of existing Federal regulations</heading><chapeau><p class="indent0">The Unfunded Mandates Reform Act of 1995 (<ref href="/us/pl/104/4">Public Law 104–4</ref>; <ref href="/us/usc/2/1511">2 U.S.C. 1511 et seq.</ref>) is amended—</p></chapeau><paragraph id="H42BE15748EF8497AACD1912806772D67" class="bill-dtd-OLC" identifier="/s12/1"><num value="1">(1)</num><content>by redesignating section 209 as section 210; and</content></paragraph><paragraph id="H1144D07502D0435A8672D19495E1E345" class="bill-dtd-OLC" identifier="/s12/2"><num value="2">(2)</num><content>by inserting after section 208 the following new section 209:</content><quotedContent id="HB9AC39A0FFB140489EDA8771BE319463" identifier="/s12/2/qB"><section id="HD1217930694749FC902095DA35CBCD98" class="bill-dtd-OLC" identifier="/s12/2/qB/s209"><num value="209">''Sec. 209.</num><heading>Retrospective analysis of existing Federal regulations</heading><subsection id="HA00D0805045C424F8B4250F11A77066E" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/a"><num value="a">''(a)</num><heading>Requirement.—</heading><content>At the request of the chairman or ranking minority member of a standing or select committee of the
 			 House of Representatives or the Senate, an agency shall conduct a
 			 retrospective analysis of an existing Federal regulation promulgated by an
-			 agency.</text>
-						</subsection><subsection id="H451D68469D054E478E4C3DAE6BA950CB"><enum>(b)</enum><header>Report</header><text display-inline="yes-display-inline">Each agency conducting a retrospective analysis of existing Federal regulations pursuant to
+			 agency.</content></subsection><subsection id="H451D68469D054E478E4C3DAE6BA950CB" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b"><num value="b">''(b)</num><heading>Report.—</heading><chapeau>Each agency conducting a retrospective analysis of existing Federal regulations pursuant to
 			 subsection (a) shall submit to the chairman of the relevant committee,
 			 Congress, and the Comptroller General a report containing, with respect to
-			 each Federal regulation covered by the analysis—</text>
-							<paragraph id="H4E779FF4F39E44C09EB89A5F9BC148CB"><enum>(1)</enum><text>a copy of the Federal regulation;</text>
-							</paragraph><paragraph id="H618F86277CF2451182D930982480E399"><enum>(2)</enum><text>the continued need for the Federal regulation;</text>
-							</paragraph><paragraph id="H506695B7C4FC407DB3DC25308EAF1E84"><enum>(3)</enum><text>the nature of comments or complaints received concerning the Federal regulation from the public
-			 since the Federal regulation was promulgated;</text>
-							</paragraph><paragraph id="H27326C153F9047A4881BFBF1DEA232BD"><enum>(4)</enum><text>the extent to which the Federal regulation overlaps, duplicates, or conflicts with other Federal
+			 each Federal regulation covered by the analysis—</chapeau><paragraph id="H4E779FF4F39E44C09EB89A5F9BC148CB" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b/1"><num value="1">''(1)</num><content>a copy of the Federal regulation;</content></paragraph><paragraph id="H618F86277CF2451182D930982480E399" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b/2"><num value="2">''(2)</num><content>the continued need for the Federal regulation;</content></paragraph><paragraph id="H506695B7C4FC407DB3DC25308EAF1E84" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b/3"><num value="3">''(3)</num><content>the nature of comments or complaints received concerning the Federal regulation from the public
+			 since the Federal regulation was promulgated;</content></paragraph><paragraph id="H27326C153F9047A4881BFBF1DEA232BD" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b/4"><num value="4">''(4)</num><content>the extent to which the Federal regulation overlaps, duplicates, or conflicts with other Federal
 			 regulations, and, to the extent feasible, with State and local
-			 governmental rules;</text>
-							</paragraph><paragraph id="H2C1B8860670A4FB59D5E8BA742360FDC"><enum>(5)</enum><text>the degree to which technology, economic conditions, or other factors have changed in the area
-			 affected by the Federal regulation;</text>
-							</paragraph><paragraph id="HF5D0444C6E0D4FA5A47FAC20FD4276CC"><enum>(6)</enum><text display-inline="yes-display-inline">a complete analysis of the retrospective direct costs and benefits of the Federal regulation that
+			 governmental rules;</content></paragraph><paragraph id="H2C1B8860670A4FB59D5E8BA742360FDC" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b/5"><num value="5">''(5)</num><content>the degree to which technology, economic conditions, or other factors have changed in the area
+			 affected by the Federal regulation;</content></paragraph><paragraph id="HF5D0444C6E0D4FA5A47FAC20FD4276CC" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b/6"><num value="6">''(6)</num><content>a complete analysis of the retrospective direct costs and benefits of the Federal regulation that
 			 considers studies done outside the Federal Government (if any) estimating
-			 such costs or benefits; and</text>
-							</paragraph><paragraph id="HEEC4C398129D48938DC0914DA588D61A"><enum>(7)</enum><text>any litigation history challenging the Federal regulation.</text></paragraph></subsection></section><after-quoted-block>.</after-quoted-block></quoted-block>
-			</paragraph></section><section commented="no" id="HB348A8F23A664E37A53DE4509A4644C0"><enum>13.</enum><header>Expansion of judicial review</header><text display-inline="no-display-inline">Section 401(a) of the Unfunded Mandates Reform Act of 1995 (<external-xref legal-doc="usc" parsable-cite="usc/2/1571">2 U.S.C. 1571(a)</external-xref>) is amended—</text>
-			<paragraph commented="no" id="H4F1BC5FC0E914F68896252D3BA894F4C"><enum>(1)</enum><text>in paragraphs (1) and (2)(A)—</text>
-				<subparagraph commented="no" id="HD946961C3E9B45CDA91D06DE434D78A0"><enum>(A)</enum><text>by striking <quote>sections 202 and 203(a)(1) and (2)</quote> each place it appears and inserting <quote>sections 201, 202, 203(a)(1) and (2), and 205(a) and (b)</quote>; and</text>
-				</subparagraph><subparagraph commented="no" id="HF7531EB83B144F27A69A6E6DB4E7C0D0"><enum>(B)</enum><text>by striking <quote>only</quote> each place it appears;</text>
-				</subparagraph></paragraph><paragraph commented="no" id="H416132381185493BB9EA97498564F1AA"><enum>(2)</enum><text>in paragraph (2)(B), by striking <quote>section 202</quote> and all that follows through the period at the end and inserting the following: <quote>section 202, prepare the written plan under section 203(a)(1) and (2), or comply with section
+			 such costs or benefits; and</content></paragraph><paragraph id="HEEC4C398129D48938DC0914DA588D61A" class="bill-dtd-OLC" identifier="/s12/2/qB/s209/b/7"><num value="7">''(7)</num><content>any litigation history challenging the Federal regulation.''.</content></paragraph></subsection></section></quotedContent></paragraph></section><section id="HB348A8F23A664E37A53DE4509A4644C0" class="bill-dtd-OLC" identifier="/s13"><num value="13">Sec. 13.</num><heading>Expansion of judicial review</heading><chapeau><p class="indent0">Section 401(a) of the Unfunded Mandates Reform Act of 1995 (<ref href="/us/usc/2/1571">2 U.S.C. 1571(a)</ref>) is amended—</p></chapeau><paragraph id="H4F1BC5FC0E914F68896252D3BA894F4C" class="bill-dtd-OLC" identifier="/s13/1"><num value="1">(1)</num><chapeau>in paragraphs (1) and (2)(A)—</chapeau><subparagraph id="HD946961C3E9B45CDA91D06DE434D78A0" class="bill-dtd-OLC" identifier="/s13/1/A"><num value="A">(A)</num><content>by striking <quotedContent>''sections 202 and 203(a)(1) and (2)''</quotedContent> each place it appears and inserting <quotedContent>''sections 201, 202, 203(a)(1) and (2), and 205(a) and (b)''</quotedContent>; and</content></subparagraph><subparagraph id="HF7531EB83B144F27A69A6E6DB4E7C0D0" class="bill-dtd-OLC" identifier="/s13/1/B"><num value="B">(B)</num><content>by striking <quotedContent>''only''</quotedContent> each place it appears;</content></subparagraph></paragraph><paragraph id="H416132381185493BB9EA97498564F1AA" class="bill-dtd-OLC" identifier="/s13/2"><num value="2">(2)</num><content>in paragraph (2)(B), by striking <quotedContent>''section 202''</quotedContent> and all that follows through the period at the end and inserting the following: <quotedContent>''section 202, prepare the written plan under section 203(a)(1) and (2), or comply with section
 			 205(a) and (b), a court may compel the agency to prepare such written
-			 statement, prepare such written plan, or comply with such section.</quote>; and</text>
-			</paragraph><paragraph commented="no" id="H8AFDAD85EFC745D2B1902D77D7E44CEF"><enum>(3)</enum><text>in paragraph (3), by striking <quote>written statement or plan is required</quote> and all that follows through <quote>shall not</quote> and inserting the following: <quote>written statement under section 202, a written plan under section 203(a)(1) and (2), or compliance
+			 statement, prepare such written plan, or comply with such section.''</quotedContent>; and</content></paragraph><paragraph id="H8AFDAD85EFC745D2B1902D77D7E44CEF" class="bill-dtd-OLC" identifier="/s13/3"><num value="3">(3)</num><content>in paragraph (3), by striking <quotedContent>''written statement or plan is required''</quotedContent> and all that follows through <quotedContent>''shall not''</quotedContent> and inserting the following: <quotedContent>''written statement under section 202, a written plan under section 203(a)(1) and (2), or compliance
 			 with sections 201 and 205(a) and (b) is required, the inadequacy or
 			 failure to prepare such statement (including the inadequacy or failure to
 			 prepare any estimate, analysis, statement, or description), to prepare
-			 such written plan, or to comply with such section may</quote>.</text>
-			</paragraph></section></legis-body>
-</bill>
-
-
+			 such written plan, or to comply with such section may''</quotedContent>.</content></paragraph></section></main></bill>

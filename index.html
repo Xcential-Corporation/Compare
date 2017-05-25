@@ -9,8 +9,67 @@
   <link rel="stylesheet" href="static/css/packed.css"/>
 
 <script type="text/javascript" src="static/js/packed.min.js"></script>
+  <script src="static/js/angular-rich-text-diff-w-timeout.js"></script>
+  <style>
+    uslm-title{
+        display:            block;
+        margin-top:         1em;
+        margin-bottom:      0.3em;
+        text-align:         center;
+    }
+
+    uslm-title>num, uslm-title>a>num, uslm-title>heading  {
+        font-size:          2em;
+        font-weight:        bold;
+    }
+
+    uslm-title toc > layout > header[role="tocSubtitleHeader"] > column  {
+        display:            block;
+        margin-top:         0.5em;
+        margin-bottom:      0.5em;
+        text-align:         center;
+        font-size:          1.5em;
+        font-weight:        bold;
+    }
+    bill>main>uslm-title>num, bill>main>uslm-title>a>num, bill>main>uslm-title>heading  {
+        margin-top:         1em;
+        margin-bottom:      1em;
+        text-align:         center;
+        font-size:          1.4em;
+    }
+
+    bill>main>uslm-title>num, bill>main>uslm-title>a>num, bill>main>uslm-title>heading, division>uslm-title>num, division>uslm-title>a>num, division>uslm-title>div>a>num, division>uslm-title>heading, division>uslm-title>div>heading  {
+    text-transform: uppercase;
+}
+
+  </style>
 
   <style>
+    #navbarToggleDiv{
+        margin-top: -55px;
+    }
+    #uploadButtonsMenu{
+        margin-top: 8px;
+    }
+    #navbar-brand{
+    padding-right: 20px;
+    }
+    #appversion{
+        padding-left: 15px;
+        padding-right: 20px;
+        padding-bottom: 5px;
+    }
+    #toggleTabs{
+        margin-right: 15px;
+    }
+    #bodyDiv{
+        margin-top:100px;
+    }
+    .dualview{
+        border: solid 1px;
+        padding-left: 40px;
+        padding-right: 40px;
+    },
     .match,
     .textdiff span {
       color: gray;
@@ -58,37 +117,60 @@
   </style>
 </head>
 <body ng-controller="diffCtrl">
-    <link rel="stylesheet" ng-href="{{options.docCSS}}">
+  <link rel="stylesheet" ng-href="{{app_constants.CSS_PATHS[options.doc.css]}}"/>
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="navbar-header">
-       <a class="navbar-brand" href="#" data-toggle="modal" data-target="#aboutModal">LDiff</a><span style="font-size:10px;">by</span><span><img src="static/imgs/Xcential-Logo.png" style="height:50px; width:120px; margin-left:10px margin-right:20px;"/></span>
+       <a class="navbar-brand" href="#" data-toggle="modal" data-target="#aboutModal" >LDiff</a>
+       <span id="appversion" style="display:block;">Version:&nbsp;&nbsp;{{app_constants.APP_VERSION}}</span>
     </div><!--/.navbar-header -->
-    <div class="btn-group" uib-dropdown is-open="status.isopen" style="margin-left:20px; margin-top: 8px">
-      <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
-       {{options.docType | uppercase}} <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-        <li role="menuitem" ng-disabled="disabled" ng-click="options.docType='uscode'"><a href="#">US Code</a></li>
-        <li role="menuitem"><a href="#" ng-click="options.docType='bill'">Bill</a></li>
-        <li role="menuitem"><a href="#" ng-click="options.docType='bill2'">Bill (114hr50)</a></li>
-        <li role="menuitem"><a href="#" ng-click="options.docType='rules'">Rules</a></li>
-      </ul>
+  </button>
+    <div id="uploadButtonsMenu" class="collapse navbar-collapse" uib-collapse="!isNavCollapsed">
+        <div class="btn-group" >
+              <span id="leftDocInput" text-file-upload="" data-file-upload="options" textsourcename="leftDoc" dropzoneselect="#leftDocInput" class="btn btn-default btn-md fileinput-button" title="Upload Document (left)" ng-click="uploadLeft($event)" style="height:40px; width:310px;">
+                  <i class="glyphicon glyphicon-upload"></i>&#160;
+                  <span>{{leftDoc.name}}</span>
+                  <input type="file" name="files[]" style="height: 50px" ng-disabled="disabled"/>
+              </span>
+
+              <span id="rightDocInput" text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)" style="height:40px; width:310px;">
+              <i class="glyphicon glyphicon-upload"></i>&#160;
+              <span>{{rightDoc.name}}</span>
+              <input type="file" name="files[]" style="height: 50px" ng-disabled="disabled"/>
+              </span>
+        </div>
+        <button id="toggleTabs" type="button" class="btn btn-primary pull-right" ng-class="{'btn-info' : isCollapsedHorizontal, 'btn-primary': !isCollapsedHorizontal}" ng-click="isCollapsedHorizontal = !isCollapsedHorizontal">
+          Toggle View
+        </button>
+        <div class="btn-group pull-right" uib-dropdown is-open="status.isopen" style="width:160px;">
+          <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+           {{options.doc.name | uppercase}} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+            <li role="menuitem" ng-click="setExamplesTimeout(doc)" ng-repeat="doc in SAMPLE_DOCS track by $index"><a href="#">{{doc.name}}</a></li>
+          </ul>
+          </div>
     </div>
-      <div class="uploadbtngroup pull-right btn-group" style="margin-right: 40px !important; margin-top:5px;">
-            <span id="leftDocInput" text-file-upload="" data-file-upload="options" textsourcename="leftDoc" dropzoneselect="#leftDocInput" class="btn btn-default btn-md fileinput-button" title="Upload Document (left)" ng-click="uploadLeft($event)" style="height:40px; width:310px;">
-                <i class="glyphicon glyphicon-upload"></i>&#160;
-                <span>{{leftDoc.name}}</span>
-                <input type="file" name="files[]" ng-disabled="disabled"/>
-            </span>
-            
-            <span id="rightDocInput" text-file-upload="" data-file-upload="options" dropzoneselect="#rightDocInput" textsourcename="rightDoc" class="btn btn-default btn-md fileinput-button" title="Upload Document (right)" ng-click="uploadRight($event)" style="height:40px; width:310px;">
-            <i class="glyphicon glyphicon-upload"></i>&#160;
-            <span>{{rightDoc.name}}</span>
-            <input type="file" name="files[]" ng-disabled="disabled"/>
-            </span>
-      </div>
+    <div class="pull-right" id="navbarToggleDiv">
+        <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
   </div><!-- .navbar -->
-  <div style="margin-top:50px; "> <!-- tabset -->
+  <div  id="bodyDiv">
+  <div  id="sideBySideViewDiv" class="container horizontal-collapse sideBySideView" uib-collapse="isCollapsedHorizontal" horizontal>
+    <div class="row">
+        <div class="col-xs-6 dualview well">
+            <div ng-bind-html="leftDoc.text | trust" ></div>
+        </div>
+        <div class="col-xs-6 dualview well">
+            <rich-text-diff left="leftDoc.text" right="rightDoc.text"></rich-text-diff>
+        </div>
+    </div>
+ </div>
+  <div id="tabViewDiv" class="horizontal-collapse tabView" uib-collapse="!isCollapsedHorizontal" horizontal> <!-- tabset -->
   <uib-tabset active="active">
     <uib-tab index="0" heading="">
       <uib-tab-heading>
@@ -119,13 +201,16 @@
       </uib-tab>
       </uib-tabset>
   </div>
-<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">About&#160;LDiff</h4>
-      </div>
+
+  </div>
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                  <h4 class="modal-title" id="myModalLabel">About&#160;LDiff</h4>
+              </div>
+              <div class="modal-body">
       <div class="modal-body">
           <i>LDiff</i> compares two documents in the browser. You can upload two files to compare using the buttons on the right of the navbar, at the top of the page, or simply drag and drop a file from your desktop onto each button. To copy and paste text to compare, click on the 'edit' icon next to the document name.
           <i>LDiff</i>  works for both structured and unstructured text. The 'Structured Compare' tab is best for viewing comparisons of xml or html documents; the 'Text Compare' is best for plain text documents. The default styling, and the initial example, is for a U.S. House bill.
@@ -139,5 +224,5 @@
 </div>
 </body>
 <script type="text/javascript" defer src="static/js/angular-diff-match-patch.js"></script>
-<script type="text/javascript" defer src="static/js/app.js"></script>
+<script type="text/javascript" defer src="static/js/ldiff.js"></script>
 </html>

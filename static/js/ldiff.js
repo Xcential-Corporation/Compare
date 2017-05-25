@@ -1,12 +1,28 @@
 (function(){
+        "use strict";
+        /* global jQuery */
+        /* global angular */
+        /* global alertify */
+
        //TODO support pdf
-       //Add process action to fileupload
+
+       //Preprocessing of documents
+       var titleRegExp = new RegExp(/<(\/?)title/, 'g');
+
+    var handleTitles = function(text){
+        return text.replace(titleRegExp, '<$1uslm-title');
+      };
+
+    var processText = function(inputText){
+        var processedText = handleTitles(inputText);
+        return processedText;
+    };
     jQuery.blueimp.fileupload.prototype.processActions.extractText = function(data, options){
                     //setReader here uses the readerFactory-provided setter function
                     var scope = options.setVar().scope;
                     var textSourceName = options.setVar().textSourceName;
                     var file = data.files[data.index],
-                    dfd = $.Deferred();
+                    dfd = jQuery.Deferred();
                     var fileReader = new FileReader();
                     fileReader.onload = function (event) {
                         var fileText = event.target.result;
@@ -14,6 +30,7 @@
 
                         scope.$parent.$apply(
                             function($scope){
+                                $scope[textSourceName].text= processText(fileText);
                                 $scope[textSourceName].text= fileText;
                                 $scope[textSourceName].name= file.name;
                             }
@@ -23,7 +40,7 @@
                     return dfd.resolveWith(this, [data]);
                 };
 
-    var app = angular.module('diffDemo', ['ng',  'ui.bootstrap', 'diff-match-patch', 'angular-rich-text-diff', 'blueimp.fileupload']);
+    var app = angular.module('diffDemo', ['ng', 'ui.bootstrap', 'diff-match-patch', 'angular-rich-text-diff', 'blueimp.fileupload']);
 
     app.config(['$locationProvider', '$httpProvider', 'fileUploadProvider', function($locationProvider, $httpProvider, fileUploadProvider) {
 
@@ -39,21 +56,8 @@
                 );
     }]);
 
-    app.controller('diffCtrl', ['$scope', '$http', function($scope, $http) {
+    app.controller('diffCtrl', ['$scope', '$http', '$q', '$timeout', function($scope, $http, $q, $timeout) {
 
-      var EXAMPLEPATH = 'static/examples';
-      var DOCPATH_LEFT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766ih.xml';
-      var DOCPATH_RIGHT = EXAMPLEPATH + '/BILLS-114hr766/BILLS-114hr766rh.xml';
-      var HR50_LEFT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rh.xml';
-      var HR50_RIGHT = EXAMPLEPATH + '/BILLS-114hr50/BILLS-114hr50rfs.xml';
-      var RULESEX_LEFT = EXAMPLEPATH + '/HouseRules/Rules113content.html';
-      var RULESEX_RIGHT= EXAMPLEPATH + '/HouseRules/Rules114content.html';
-      var USCEX_LEFT = EXAMPLEPATH + '/t44-ch3/usc44-ch3-before113-235.xml';
-      var USCEX_RIGHT = EXAMPLEPATH + '/t44-ch3/usc44-ch3-after113-235.xml';
-      var BILLCSS = 'static/css/docexample.css';
-      var RULESCSS = 'static/css/rules.css';
-      var USCODECSS = 'static/css/uslm.css';
-      var USCODEHTMLCSS = 'static/css/usctitle-html.css';
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
       $scope.leftDoc = {'name':'Doc 1','text': 'Loading...'};
@@ -75,69 +79,55 @@
             'data-attr': 'equal'
           }
         },
-        docPaths : { leftdocpath: USCEX_LEFT,
-        rightdocpath: USCEX_RIGHT
-        },
-        docType : 'uscode',
-        docCSS: USCODECSS
       };
 
-      var setExamples = function(){
-        alertify.log('Loading...');
-        $http.get($scope.options.docPaths.leftdocpath).then(function(result){
-            $scope.leftDoc = {'name': 'Example 1: '+$scope.options.docPaths.leftdocpath.replace(/.*\//,''),
-                          'text': result.data
-            };
+    var CONFIG_PATH = "static/js/config.js";
+    var config = {};
+    var setExamples = function(doc){
+        $scope.options.doc = angular.copy(config.SAMPLE_DOCS[0]);
+        if(doc){
+            angular.extend($scope.options.doc, doc);
         }
-        );
-        $http.get($scope.options.docPaths.rightdocpath).then(function(result){
-            $scope.rightDoc = {'name': 'Example 2: '+$scope.options.docPaths.rightdocpath.replace(/.*\//,''),
-                              'text': result.data
-            };
+        var promiseLeft = $http.get($scope.app_constants.EXAMPLE_PATH + $scope.options.doc.paths.left);
+        var promiseRight = $http.get($scope.app_constants.EXAMPLE_PATH + $scope.options.doc.paths.right);
+
+        $q.all([promiseLeft, promiseRight]).then(function(responseArray){
             jQuery('.alertify-log').click();
+            alertify.log('Comparing...', 100);
+            $scope.leftDoc = {'name': 'Example 1: '+$scope.options.doc.paths.left.replace(/.*\//,''),
+                          'text':  processText(responseArray[0].data)
+            };
+            $scope.rightDoc = {'name': 'Example 2: '+$scope.options.doc.paths.right.replace(/.*\//,''),
+                              'text': processText(responseArray[1].data)
+            };
         }
         );
         };
+   $http({
+        method: 'GET',
+        dataType: 'json',
+        url: CONFIG_PATH,
+        contentType: "application/json; charset=utf-8",
+        mimeType: 'application/json'
+                                })
+                                .then(function(response){
+                                    config = response.data;
+                                    $scope.app_constants = config.app_constants;
+                                    setExamples(config.SAMPLE_DOCS[0]);
+                                    $scope.SAMPLE_DOCS = config.SAMPLE_DOCS;
+                                }, function(error){console.log('Error getting LDiff configuration'); console.log(error);});
 
-      setExamples();
+      $scope.setExamplesTimeout = function(doc){
 
-      $scope.$watch('options.docType', function(newValue, oldValue) {
-            if(newValue==='uscode'){
-                $scope.options.docCSS = USCODECSS;
-                $scope.options.docPaths = {
-                    leftdocpath: USCEX_LEFT,
-                    rightdocpath: USCEX_RIGHT
-                };
-                setExamples();
-               }
-            else if(newValue==='bill'){
-                $scope.options.docCSS = BILLCSS;
-                $scope.options.docPaths = {
-                    leftdocpath: DOCPATH_LEFT,
-                    rightdocpath: DOCPATH_RIGHT
-                };
-                setExamples();
+            alertify.log('Loading...');
 
-            }else if(newValue==='bill2'){
-                $scope.options.docCSS = BILLCSS;
-                $scope.options.docPaths = {
-                    leftdocpath: HR50_LEFT,
-                    rightdocpath: HR50_RIGHT
-                };
-                setExamples();
+        $timeout(function(){
+            setExamples(doc);
+        },200);
+      }
 
-            }else if(newValue==='rules'){
-                $scope.options.docCSS = RULESCSS;
-                $scope.options.docPaths = {
-                    leftdocpath: RULESEX_LEFT,
-                    rightdocpath: RULESEX_RIGHT
-                };
-                setExamples();
-            }else if(newValue==='uscode2'){
-                $scope.options.docCSS = USCODEHTMLCSS;
-            }
-        });
     }]);
+
     app.filter("trust", ['$sce', function($sce) {
         return function(htmlCode){
             return $sce.trustAsHtml(htmlCode);
@@ -150,7 +140,7 @@
             controller: function($scope, $attrs){
                 $scope.options = {
                     url: 'upload',
-                    dropZone: $($attrs.dropzoneselect),
+                    dropZone: jQuery($attrs.dropzoneselect),
                     autoUpload: false,
                     setVar: function(){return {textSourceName: $attrs.textsourcename, scope: $scope};},
                     processQueue: [
