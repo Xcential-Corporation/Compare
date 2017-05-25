@@ -7,27 +7,27 @@ body {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 12pt;
 	font-weight: normal;
-	text-align: justify;
+	text-align: justify !important;
 }
 
 .text-bold {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 12pt;
 	font-weight: bold;
-	text-align: justify;
+	text-align: justify !important;
 }
 
 .text-lg {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 14pt;
-	text-align: justify;
+	text-align: justify !important;
 }
 
 .text-lg-bold {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 14pt;
 	font-weight: bold;
-	text-align: justify;
+	text-align: justify !important;
 }
 
 .headnote {
@@ -39,7 +39,7 @@ body {
 	font-family: "Times New Roman", Times, serif;
 	font-size: 12pt;
 	font-weight: normal;
-	text-align: justify;
+	text-align: justify !important;
 }
 
 .letpara {
@@ -176,7 +176,7 @@ body {
 	margin-bottom: 8pt;
 }
 .MRSSubSection {
-	text-indent: 2em;
+	/* text-indent: 2em;*/
 	margin-top: 10pt;
 	margin-left: 0;
 	margin-bottom: 0;

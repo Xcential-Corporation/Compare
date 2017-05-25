@@ -28,6 +28,7 @@ var AngularRichTextDiff;
             //SET to 0 to allow full-quality comparison
             //TODO: Can allow users to toggle this option
             this.dmp.Diff_Timeout = 0;
+            this.dmp.Diff_EditCost = 7;
             this.doDiff();
         }
         RichTextDiffController.prototype.doDiff = function () {
