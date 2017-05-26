@@ -3,7 +3,7 @@ LegisPro Compare
 LegisPro Compare shows the differences between two documents. It is intended primarily for legislative documents (e.g. amended bills and regulations, updated compilations or codes). 
 
 ## Quick Start
-Try it out [here](https://xcential-corporation.github.io/compare/index.html). The initial demo shows two versions of a U.S. House bill. The first two tabs show the two bills, HR766 as 'introduced' in the House, and HR766 as 'reported' in the House. The third tab shows the differences between the two bills and the fourth tab shows the differences in the underlying XML of the bill documents. Replace these samples to compare your own documents.
+Try it out [here](https://xcential-corporation.github.io/Compare/index.html). The initial demo shows two versions of a U.S. House bill. The first two tabs show the two bills, HR766 as 'introduced' in the House, and HR766 as 'reported' in the House. The third tab shows the differences between the two bills and the fourth tab shows the differences in the underlying XML of the bill documents. Replace these samples to compare your own documents.
 
 ### Upload documents
 There are three ways to upload documents to compare:
