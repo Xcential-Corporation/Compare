@@ -1,13 +1,13 @@
 (function(){
-    "use strict";
-    /* global jQuery */
-    /* global angular */
-    /* global alertify */
+        "use strict";
+        /* global jQuery */
+        /* global angular */
+        /* global alertify */
 
-    //TODO support pdf
+       //TODO support pdf
 
-    //Preprocessing of documents
-    var titleRegExp = new RegExp(/<(\/?)title/, 'g');
+       //Preprocessing of documents
+       var titleRegExp = new RegExp(/<(\/?)title/, 'g');
 
     var handleTitles = function(text){
         return text.replace(titleRegExp, '<$1uslm-title');
@@ -31,6 +31,7 @@
                         scope.$parent.$apply(
                             function($scope){
                                 $scope[textSourceName].text= processText(fileText);
+                                $scope[textSourceName].text= fileText;
                                 $scope[textSourceName].name= file.name;
                             }
                             );
@@ -60,9 +61,9 @@
       $scope.showRichTextDiff = true;
       $scope.showSemanticDiff = true;
       $scope.leftDoc = {'name':'Doc 1','text': 'Loading...'};
-      $scope.rightdoc = {'name':'doc 2', 'text':'loading...'};
+      $scope.rightDoc = {'name':'Doc 2', 'text':'Loading...'};
 
-      //for angular-diff-match-patch
+      //For angular-diff-match-patch
       $scope.options = {
         editCost: 4,
         interLineDiff: true,
@@ -80,13 +81,16 @@
         },
       };
 
+    var CONFIG_PATH = "static/js/config.js";
+    var config = {};
     var setExamples = function(doc){
-    $scope.options.doc = angular.copy(config.SAMPLE_DOCS[0]);
+        $scope.options.doc = angular.copy(config.SAMPLE_DOCS[0]);
         if(doc){
             angular.extend($scope.options.doc, doc);
         }
         var promiseLeft = $http.get($scope.app_constants.EXAMPLE_PATH + $scope.options.doc.paths.left);
         var promiseRight = $http.get($scope.app_constants.EXAMPLE_PATH + $scope.options.doc.paths.right);
+
         $q.all([promiseLeft, promiseRight]).then(function(responseArray){
             jQuery('.alertify-log').click();
             alertify.log('Comparing...', 100);
@@ -99,9 +103,6 @@
         }
         );
         };
-
-   var CONFIG_PATH = "static/js/config.js";
-   var config = {};
    $http({
         method: 'GET',
         dataType: 'json',
@@ -123,8 +124,10 @@
         $timeout(function(){
             setExamples(doc);
         },200);
-      };
+      }
+
     }]);
+
     app.filter("trust", ['$sce', function($sce) {
         return function(htmlCode){
             return $sce.trustAsHtml(htmlCode);
