@@ -12,8 +12,8 @@
         "name": "CFR",
         "css": "USLM_CSS",
         "paths": {
-            "left": "CFR/2016-ch3-after113-235.xml",
-            "right": "CFR/2018-ch3-after113-235.xml"
+            "left": "CFR/2016-CFR-s52.39.xml",
+            "right": "CFR/2018-CFR-s52.39.xml"
             }
         },{
             "type" : "uscode",
