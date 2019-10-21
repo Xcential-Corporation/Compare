@@ -8,6 +8,14 @@
       }
     },
       "SAMPLE_DOCS" : [{
+        "type" : "cfr",
+        "name": "CFR",
+        "css": "USLM_CSS",
+        "paths": {
+            "left": "CFR/2016-ch3-after113-235.xml",
+            "right": "CFR/2018-ch3-after113-235.xml"
+            }
+        },{
             "type" : "uscode",
             "name": "US CODE",
             "css": "USLM_CSS",
